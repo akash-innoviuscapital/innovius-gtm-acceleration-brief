@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innovius Capital — Portfolio Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F6F2;
+    --surface: #FFFFFF;
+    --border: #E2E0D8;
+    --border-light: #EEECE6;
+    --text-primary: #1A1916;
+    --text-secondary: #6B6860;
+    --text-muted: #9E9C96;
+    --green: #1D6B4A;
+    --green-bg: #EBF5EF;
+    --green-border: #A8D5BC;
+    --blue: #1A4A7A;
+    --blue-bg: #EBF0F7;
+    --amber: #7A4A0A;
+    --amber-bg: #FBF3E6;
+    --amber-border: #E8C97A;
+    --red-bg: #FBF0EF;
+    --slack: #5C2D7C;
+    --slack-bg: #F3EDF8;
+    --gmail-bg: #FBEDEC;
+    --gmail: #8C1F1A;
+    --granola-bg: #EBF5EF;
+    --granola: #1D6B4A;
+    --mono: 'DM Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── Layout ── */
+  .shell {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* ── Header ── */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .wordmark-firm {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .wordmark-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  /* ── Day nav bubbles ── */
+  .day-nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .day-bubble {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+  }
+
+  .day-bubble:hover { background: var(--surface); border-color: var(--text-muted); }
+
+  .day-bubble.active {
+    background: var(--text-primary);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .day-bubble.no-data {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .run-btn {
+    background: var(--text-primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+    transition: opacity 0.15s;
+  }
+
+  .run-btn:hover { opacity: 0.82; }
+
+  /* ── Source row ── */
+  .sources {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .src {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--green-border);
+    color: var(--green);
+    background: var(--green-bg);
+  }
+
+  .src.off {
+    border-color: var(--border);
+    color: var(--text-muted);
+    background: transparent;
+  }
+
+  /* ── Company tabs ── */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .tab {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-secondary);
+    transition: all 0.12s;
+  }
+
+  .tab:hover { background: var(--surface); }
+  .tab.active {
+    background: var(--text-primary);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  /* ── Company card ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .company-name {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .badge.active { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge.winding { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .badge.advisory { background: var(--blue-bg); color: var(--blue); border: 1px solid #B8CCE4; }
+  .badge.monitoring { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+
+  .meta-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .meta-item {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .meta-item strong { color: var(--text-primary); font-weight: 500; }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bullets + .section-label {
+    margin-top: 4px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+
+  .bullets { list-style: none; margin-bottom: 14px; }
+
+  .bullets li {
+    font-size: 13px;
+    line-height: 1.65;
+    padding: 6px 0 6px 16px;
+    position: relative;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-primary);
+  }
+
+  .bullets li:last-child { border-bottom: none; }
+
+  /* ── Action checkboxes ── */
+  .action-item { padding-left: 0 !important; }
+  .action-item::before { display: none !important; }
+  .action-item label {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .action-item input[type="checkbox"] {
+    margin-top: 5px;
+    flex-shrink: 0;
+    accent-color: var(--green);
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+  }
+  .action-item.done label span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  /* ── Note checkboxes ── */
+  .note-item input[type="checkbox"] {
+    accent-color: var(--green);
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .note-item.done .note-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+
+  .know li::before { background: #1A4A7A; }
+  .action li::before { background: #1D6B4A; }
+
+  /* ── Source chips ── */
+  .chip {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  .chip-slack { background: var(--slack-bg); color: var(--slack); }
+  .chip-gmail { background: var(--gmail-bg); color: var(--gmail); }
+  .chip-granola { background: var(--granola-bg); color: var(--granola); }
+
+  /* ── No signal ── */
+  .no-signal {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 4px 0;
+    line-height: 1.6;
+  }
+
+  /* ── Cross-portfolio ── */
+  .cross-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-top: 4px;
+  }
+
+  .cross-title {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  /* ── Empty state ── */
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    gap: 12px;
+    color: var(--text-muted);
+  }
+
+  .empty-icon {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .empty-text { font-size: 13px; }
+
+  /* ── In-person note panel ── */
+  .note-panel {
+    margin-top: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .note-panel-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .note-icon {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+  }
+
+  .note-form {
+    display: grid;
+    grid-template-columns: 1fr 160px auto;
+    gap: 8px;
+    margin-bottom: 12px;
+    align-items: start;
+  }
+
+  @media (max-width: 600px) {
+    .note-form { grid-template-columns: 1fr; }
+  }
+
+  .note-input {
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text-primary);
+    resize: none;
+    outline: none;
+    line-height: 1.5;
+    min-height: 38px;
+  }
+
+  .note-input:focus { border-color: #A8D5BC; }
+  .note-input::placeholder { color: var(--text-muted); }
+
+  .note-select {
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text-primary);
+    outline: none;
+    height: 38px;
+    cursor: pointer;
+  }
+
+  .note-select:focus { border-color: #A8D5BC; }
+
+  .note-add-btn {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--text-primary);
+    color: var(--surface);
+    cursor: pointer;
+    height: 38px;
+    white-space: nowrap;
+  }
+
+  .note-add-btn:hover { opacity: 0.82; }
+
+  .notes-list { list-style: none; }
+
+  .note-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-primary);
+  }
+
+  .note-item:last-child { border-bottom: none; }
+
+  .note-co {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 1px 7px;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .note-time {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .note-text { flex: 1; }
+
+  .note-del {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 14px;
+    padding: 0 2px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .note-del:hover { color: var(--text-primary); }
+
+  .notes-empty {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 4px 0;
+  }
+
+  /* ── Pipeline metrics ── */
+  .metrics-panel {
+    margin-top: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .metrics-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0;
+  }
+
+  @media (max-width: 600px) {
+    .metrics-grid { grid-template-columns: repeat(4, 1fr); gap: 12px 0; }
+  }
+
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 16px 0 0;
+    border-right: 1px solid var(--border-light);
+  }
+
+  .metric-item:last-child { border-right: none; padding-right: 0; }
+
+  .metric-value {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+
+  .metric-value.green { color: var(--green); }
+  .metric-value.amber { color: var(--amber); }
+  .metric-value.red   { color: #B83C36; }
+  .metric-value.muted { color: var(--text-muted); }
+
+  .metric-name {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .footer-note {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Hot sections ── */
+  .hot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 640px) { .hot-grid { grid-template-columns: 1fr; } }
+  .hot-card { border-radius: 12px; padding: 18px 20px; }
+  .hot-signals-card { background: #1A1916; border: 1px solid #1A1916; }
+  .hot-actions-card { background: #EBF5EF; border: 1px solid var(--green-border); }
+  .hot-label {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .hot-signals-card .hot-label { color: #9E9C96; }
+  .hot-actions-card .hot-label { color: var(--green); }
+  .hot-pulse {
+    width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+    animation: hotpulse 2s ease-in-out infinite;
+  }
+  .hot-signals-card .hot-pulse { background: #F97B6B; }
+  .hot-actions-card .hot-pulse { background: var(--green); }
+  @keyframes hotpulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.75); }
+  }
+  .hot-list { list-style: none; }
+  .hot-list li {
+    font-size: 12.5px; line-height: 1.6;
+    padding: 7px 0 7px 13px; position: relative; border-bottom: 1px solid;
+  }
+  .hot-signals-card .hot-list li { color: #E8E6DF; border-bottom-color: #2E2C28; }
+  .hot-signals-card .hot-list li:last-child { border-bottom: none; }
+  .hot-actions-card .hot-list li { color: var(--text-primary); border-bottom-color: var(--green-border); }
+  .hot-actions-card .hot-list li:last-child { border-bottom: none; }
+  .hot-list li::before {
+    content: ''; position: absolute; left: 0; top: 15px;
+    width: 5px; height: 5px; border-radius: 50%;
+  }
+  .hot-signals-card .hot-list li::before { background: #F97B6B; }
+  .hot-actions-card .hot-list li::before { background: var(--green); }
+  .hot-signals-card .chip-slack { background: #2D1A40; color: #C89EE8; }
+  .hot-signals-card .chip-gmail { background: #3A1815; color: #F4A09A; }
+  .hot-signals-card .chip-granola { background: #122B1E; color: #6BCCA0; }
+  .hot-actions-card .action-item { padding-left: 0 !important; }
+  .hot-actions-card .action-item.done label span { color: var(--green); opacity: 0.5; }
+
+  /* ── How to update banner ── */
+  .copy-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+  .copy-btn:hover { background: var(--bg); border-color: var(--text-muted); }
+  .copy-btn.copied { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
+  .copy-toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    background: var(--text-primary);
+    color: var(--surface);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
+    z-index: 100;
+  }
+  .copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .update-banner {
+    background: var(--amber-bg);
+    border: 1px solid var(--amber-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: var(--amber);
+    display: none;
+  }
+
+  .update-banner.visible { display: block; }
+  .update-banner strong { font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <div class="topbar">
+    <div class="wordmark">
+      <div class="wordmark-firm">Innovius Capital</div>
+      <div class="wordmark-title">Portfolio Intelligence Brief</div>
+    </div>
+    <div class="controls">
+      <button class="run-btn" onclick="loadBrief()">&#9654;&nbsp; Run Brief</button>
+      <button class="copy-btn" id="copyBtn" onclick="copyBriefData()" style="display:none">&#10064;&nbsp; Copy Data</button>
+    </div>
+  </div>
+  <div id="copyToast" class="copy-toast">Copied — paste into brief-data.js and refresh</div>
+
+  <!-- 7-day rolling date index -->
+  <div class="day-nav" id="dayNav"></div>
+
+  <div class="sources">
+    <div class="src">Gmail</div>
+    <div class="src">Slack</div>
+    <div class="src">Granola</div>
+    <div class="src">Google Drive</div>
+    <div class="src off">Attio</div>
+  </div>
+
+  <div id="hotSection" style="display:none">
+    <div class="hot-grid">
+      <div class="hot-card hot-signals-card">
+        <div class="hot-label">🔴 Hot Signals</div>
+        <ul class="hot-list" id="hotSignalsList"></ul>
+      </div>
+      <div class="hot-card hot-actions-card">
+        <div class="hot-label">⚡ Hot Actions</div>
+        <ul class="hot-list" id="hotActionsList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="update-banner" id="updateBanner">
+    <strong>To update:</strong> Run the brief in Claude, paste the new <code>BRIEF_DATA</code> JSON into <code>brief-data.js</code>, then refresh this page.
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+  <div id="briefArea"></div>
+
+  <!-- In-person note capture -->
+  <div class="note-panel">
+    <div class="note-panel-label">
+      <span class="note-icon">+</span>
+      In-person notes
+    </div>
+    <div class="note-form">
+      <input class="note-input" id="noteText" placeholder="What happened? (e.g. 'Dave said pipeline is stalling due to procurement freeze')" />
+      <select class="note-select" id="noteCo">
+        <option value="">— Company —</option>
+        <option>Sewer AI</option>
+        <option>Auditoria</option>
+        <option>CloudZero</option>
+        <option>Delightree</option>
+        <option>X-Cures</option>
+        <option>ClearML</option>
+        <option>RightRev</option>
+        <option>General</option>
+      </select>
+      <button class="note-add-btn" onclick="addNote()">Add note</button>
+    </div>
+    <ul class="notes-list" id="notesList">
+      <li class="notes-empty" id="notesEmpty">No in-person notes yet today.</li>
+    </ul>
+  </div>
+
+  <!-- Pipeline accuracy metrics -->
+  <div class="metrics-panel" id="metricsPanel" style="display:none">
+    <div class="metrics-label">🔬 Pipeline Accuracy</div>
+    <div class="metrics-grid" id="metricsGrid"></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-note">Daily cadence &nbsp;·&nbsp; 1-day comms lookback &nbsp;·&nbsp; 7-day Drive</div>
+    <div class="footer-note" id="lastRun"></div>
+  </div>
+
+</div>
+
+<!-- Brief data lives in brief-data.js — update that file to refresh content -->
+<script src="brief-data.js"></script>
+<script>
+const COMPANIES = ['Sewer AI','Auditoria','CloudZero','Delightree','X-Cures','ClearML','RightRev'];
+const COMPANY_EMOJI = {
+  'Sewer AI':   '🏗️',
+  'Auditoria':  '🤖',
+  'CloudZero':  '☁️',
+  'Delightree': '🌿',
+  'X-Cures':    '🧬',
+  'ClearML':    '🧠',
+  'RightRev':   '💰'
+};
+let actionState = { actions: {}, notes: [] };
+let activeTab = 'all';
+let selectedDayIndex = 0;
+
+// Returns the history array (supports both new _history format and legacy flat format)
+function getHistory() {
+  if (typeof BRIEF_DATA === 'undefined') return [];
+  if (BRIEF_DATA._history && BRIEF_DATA._history.length) return BRIEF_DATA._history;
+  // Legacy flat format — wrap it
+  return [BRIEF_DATA];
+}
+
+// Returns the data object for the currently selected day
+function currentDay() {
+  const h = getHistory();
+  return h[selectedDayIndex] || h[0] || {};
+}
+
+function renderDayNav() {
+  const history = getHistory();
+  const nav = document.getElementById('dayNav');
+  if (!history.length) { nav.innerHTML = ''; return; }
+
+  // Build last 7 calendar days, newest first
+  const today = new Date();
+  const bubbles = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(today.getDate() - i);
+    const dayNum = d.getDate();
+    // Find matching history entry by day number in _date string
+    const histIdx = history.findIndex(entry => {
+      if (!entry._date) return false;
+      const entryDay = new Date(entry._date).getDate();
+      return entryDay === dayNum;
+    });
+    bubbles.push({ dayNum, histIdx });
+  }
+
+  nav.innerHTML = bubbles.map(({ dayNum, histIdx }) => {
+    const hasData = histIdx !== -1;
+    const isActive = hasData && histIdx === selectedDayIndex;
+    const cls = ['day-bubble', isActive ? 'active' : '', !hasData ? 'no-data' : ''].filter(Boolean).join(' ');
+    const onclick = hasData ? `selectDay(${histIdx})` : '';
+    return `<button class="${cls}" ${onclick ? `onclick="${onclick}"` : 'disabled'}>${dayNum}</button>`;
+  }).join('');
+}
+
+function selectDay(idx) {
+  selectedDayIndex = idx;
+  renderDayNav();
+  renderHot();
+  renderBrief();
+  renderMetrics();
+  const day = currentDay();
+  document.getElementById('lastRun').textContent = 'Data: ' + (day._date || '—');
+}
+
+function buildTabs() {
+  const container = document.getElementById('tabs');
+  container.innerHTML = '';
+  [['all', 'All companies'], ...COMPANIES.map(c => [c, c])].forEach(([key, label]) => {
+    const btn = document.createElement('button');
+    btn.className = 'tab' + (activeTab === key ? ' active' : '');
+    btn.textContent = label;
+    btn.onclick = () => { activeTab = key; buildTabs(); renderBrief(); };
+    container.appendChild(btn);
+  });
+}
+
+function chip(type) {
+  return `<span class="chip chip-${type}">${type}</span>`;
+}
+
+function engagementClass(e) {
+  const map = { 'Active': 'active', 'Winding Down': 'winding', 'Advisory': 'advisory', 'Monitoring': 'monitoring' };
+  return map[e] || 'active';
+}
+
+function renderBrief() {
+  if (!getHistory().length) { renderEmpty(); return; }
+  const day = currentDay();
+  const area = document.getElementById('briefArea');
+  const companies = activeTab === 'all' ? COMPANIES : [activeTab];
+  let html = '';
+
+  companies.forEach(c => {
+    const d = day[c];
+    if (!d) return;
+    const badgeCls = engagementClass(d.engagement);
+
+    if (d.hasSignal === false) {
+      html += `<div class="card">
+        <div class="card-top">
+          <div class="company-name">${COMPANY_EMOJI[c] || '🏢'} ${c}</div>
+          <span class="badge ${badgeCls}">${d.engagement || 'Monitoring'}</span>
+        </div>
+        <p class="no-signal">${d.noSignalMsg || 'No signal today.'}</p>
+      </div>`;
+      return;
+    }
+
+    html += `<div class="card">
+      <div class="card-top">
+        <div class="company-name">${COMPANY_EMOJI[c] || '🏢'} ${c}</div>
+        <span class="badge ${badgeCls}">${d.engagement}</span>
+      </div>
+      <div class="meta-row">
+        <div class="meta-item">Last touch: <strong>${d.lastTouch || '—'}</strong></div>
+        <div class="meta-item">Team: <strong>${d.teamVisibility || '—'}</strong></div>
+      </div>
+      <div class="section-label">What you need to know</div>
+      <ul class="bullets know">${(d.know || []).map(b => `<li>${b}</li>`).join('')}</ul>
+      <div class="section-label">What you need to action</div>
+      <ul class="bullets action">${(d.action || []).map(b => {
+        const key = c + '||' + b;
+        const done = !!(actionState.actions && actionState.actions[key]);
+        return `<li class="action-item${done ? ' done' : ''}"><label><input type="checkbox" ${done ? 'checked' : ''} data-co="${escAttr(c)}" data-txt="${escAttr(b)}" onchange="toggleAction(this)"> <span>${b}</span></label></li>`;
+      }).join('')}</ul>
+    </div>`;
+  });
+
+  if (activeTab === 'all' && day._cross) {
+    html += `<div class="cross-card">
+      <div class="cross-title">🔗 Cross-Portfolio Patterns</div>
+      <ul class="bullets action" style="margin:0">${day._cross.map(b => `<li>${b}</li>`).join('')}</ul>
+    </div>`;
+  }
+
+  area.innerHTML = html || '<div class="empty"><div class="empty-text">No data for this view.</div></div>';
+}
+
+function renderEmpty() {
+  document.getElementById('briefArea').innerHTML = `
+    <div class="empty">
+      <div class="empty-icon">&#9654;</div>
+      <div class="empty-text">Press "Run brief" to load today's intelligence.</div>
+    </div>`;
+}
+
+function renderHot() {
+  if (!getHistory().length) return;
+  const day = currentDay();
+  const sec = document.getElementById('hotSection');
+  const signals = document.getElementById('hotSignalsList');
+  const actions = document.getElementById('hotActionsList');
+  if (day._hotSignals && day._hotActions) {
+    signals.innerHTML = (day._hotSignals || []).map(b => `<li>${b}</li>`).join('');
+    actions.innerHTML = (day._hotActions || []).map(b => {
+      const key = '_hot||' + b;
+      const done = !!(actionState.actions && actionState.actions[key]);
+      return `<li class="action-item${done ? ' done' : ''}"><label><input type="checkbox" ${done ? 'checked' : ''} data-co="_hot" data-txt="${escAttr(b)}" onchange="toggleAction(this)"> <span>${b}</span></label></li>`;
+    }).join('');
+    sec.style.display = 'block';
+  }
+}
+
+function loadBrief() {
+  if (typeof BRIEF_DATA === 'undefined') {
+    document.getElementById('updateBanner').classList.add('visible');
+    renderEmpty();
+    return;
+  }
+  selectedDayIndex = 0;
+  loadState().then(() => {
+    document.getElementById('copyBtn').style.display = 'inline-block';
+    renderDayNav();
+    renderHot();
+    renderBrief();
+    renderNotes();
+    renderMetrics();
+    document.getElementById('lastRun').textContent = 'Data: ' + (currentDay()._date || 'today');
+  });
+}
+
+function copyBriefData() {
+  const btn = document.getElementById('copyBtn');
+  const toast = document.getElementById('copyToast');
+  const text = 'const BRIEF_DATA = ' + JSON.stringify(BRIEF_DATA, null, 2) + ';';
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copied';
+    btn.classList.add('copied');
+    toast.classList.add('show');
+    setTimeout(() => {
+      btn.textContent = '⊡ Copy data';
+      btn.classList.remove('copied');
+      toast.classList.remove('show');
+    }, 2500);
+  }).catch(() => {
+    // fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✓ Copied';
+    btn.classList.add('copied');
+    toast.classList.add('show');
+    setTimeout(() => {
+      btn.textContent = '⊡ Copy data';
+      btn.classList.remove('copied');
+      toast.classList.remove('show');
+    }, 2500);
+  });
+}
+
+// ── State persistence (actions + notes carry-over) ──
+function escAttr(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function loadState() {
+  try {
+    const r = await fetch('/innovius-brief/action-state.json?t=' + Date.now());
+    if (r.ok) {
+      const data = await r.json();
+      actionState = data;
+      if (!actionState.actions) actionState.actions = {};
+      if (!actionState.notes) actionState.notes = [];
+    }
+  } catch {
+    const s = localStorage.getItem('innovius_action_state');
+    if (s) { try { actionState = JSON.parse(s); } catch {} }
+  }
+}
+
+function saveState() {
+  fetch('/innovius-brief/save-state', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(actionState)
+  }).catch(() => {
+    localStorage.setItem('innovius_action_state', JSON.stringify(actionState));
+  });
+}
+
+function toggleAction(cb) {
+  const key = cb.dataset.co + '||' + cb.dataset.txt;
+  if (!actionState.actions) actionState.actions = {};
+  actionState.actions[key] = cb.checked;
+  cb.closest('li').classList.toggle('done', cb.checked);
+  saveState();
+}
+
+function toggleNote(id, checked) {
+  const note = actionState.notes.find(n => n.id === id);
+  if (note) {
+    note.checked = checked;
+    const li = document.querySelector(`[data-note-id="${id}"]`);
+    if (li) li.classList.toggle('done', checked);
+    saveState();
+  }
+}
+
+// ── In-person notes ──
+let notes = JSON.parse(localStorage.getItem('innovius_notes_' + new Date().toDateString()) || '[]');
+
+function renderNotes() {
+  const list = document.getElementById('notesList');
+  const empty = document.getElementById('notesEmpty');
+  if (!notes.length) { empty.style.display = 'block'; list.innerHTML = '<li class="notes-empty" id="notesEmpty">No in-person notes yet today.</li>'; return; }
+  list.innerHTML = notes.map((n, i) => {
+    const stateNote = (actionState.notes || []).find(s => s.id === n.id);
+    const done = stateNote ? stateNote.checked : (n.checked || false);
+    const id = n.id || String(i);
+    return `<li class="note-item${done ? ' done' : ''}" data-note-id="${id}">
+      <input type="checkbox" ${done ? 'checked' : ''} onchange="toggleNote('${id}', this.checked)">
+      ${n.company ? `<span class="note-co">${n.company}</span>` : ''}
+      <span class="note-time">${n.time}</span>
+      <span class="note-text">${n.text}</span>
+      <button class="note-del" onclick="deleteNote(${i})" title="Remove">&#215;</button>
+    </li>`;
+  }).join('');
+}
+
+function addNote() {
+  const text = document.getElementById('noteText').value.trim();
+  const company = document.getElementById('noteCo').value;
+  if (!text) { document.getElementById('noteText').focus(); return; }
+  const now = new Date();
+  const note = {
+    id: Date.now().toString(),
+    text,
+    company,
+    time: now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}),
+    date: now.toDateString(),
+    checked: false
+  };
+  notes.unshift(note);
+  if (!actionState.notes) actionState.notes = [];
+  actionState.notes.unshift(note);
+  localStorage.setItem('innovius_notes_' + now.toDateString(), JSON.stringify(notes));
+  saveState();
+  document.getElementById('noteText').value = '';
+  document.getElementById('noteCo').value = '';
+  renderNotes();
+}
+
+function deleteNote(i) {
+  notes.splice(i, 1);
+  localStorage.setItem('innovius_notes_' + new Date().toDateString(), JSON.stringify(notes));
+  renderNotes();
+}
+
+function renderMetrics() {
+  const day = currentDay();
+  if (!day._metrics) return;
+  const m = day._metrics;
+  const panel = document.getElementById('metricsPanel');
+  const grid  = document.getElementById('metricsGrid');
+  const items = [
+    { key: 'slackMsgs',      label: 'Slack msgs',      color: '' },
+    { key: 'emails',         label: 'Emails',          color: '' },
+    { key: 'totalRetrieved', label: 'Total retrieved',  color: '' },
+    { key: 'sourcesCited',   label: 'Sources cited',    color: '' },
+    { key: 'coverage',       label: 'Coverage',         color: '' },
+    { key: 'claimsKept',     label: 'Claims kept',      color: 'green' },
+    { key: 'dropped',        label: 'Dropped',          color: '' },
+    { key: 'rewritten',      label: 'Rewritten',        color: '' },
+  ];
+  grid.innerHTML = items.map(item => {
+    const raw = m[item.key];
+    const val = (raw !== undefined && raw !== null) ? raw : '—';
+    let colorClass = item.color || '';
+    if (item.key === 'dropped'   && Number(raw) > 0) colorClass = 'amber';
+    if (item.key === 'rewritten' && Number(raw) > 0) colorClass = 'amber';
+    if (val === '—') colorClass = 'muted';
+    return `<div class="metric-item">
+      <div class="metric-value ${colorClass}">${val}</div>
+      <div class="metric-name">${item.label}</div>
+    </div>`;
+  }).join('');
+  panel.style.display = 'block';
+}
+
+document.getElementById('noteText').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); addNote(); }
+});
+
+renderNotes();
+
+buildTabs();
+loadState().then(() => {
+  if (typeof BRIEF_DATA !== 'undefined') {
+    renderDayNav();
+    renderHot();
+    renderBrief();
+    renderNotes();
+    renderMetrics();
+    document.getElementById('lastRun').textContent = 'Data: ' + (currentDay()._date || 'today');
+    document.getElementById('copyBtn').style.display = 'inline-block';
+  } else {
+    renderEmpty();
+  }
+});
+</script>
+</body>
+</html>
+
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
