@@ -1,6 +1,150 @@
 const BRIEF_DATA = {
   _history: [
     {
+      _date: "March 22, 2026",
+      _dateKey: "2026-03-22",
+      _metrics: {
+        slackMsgs: 20,
+        emails: 2,
+        granolaMeetings: 0,
+        totalRetrieved: 22,
+        sourcesCited: 38,
+        coverage: "7/7",
+        claimsKept: 38,
+        dropped: 1,
+        rewritten: 3,
+        toolCallsA1: 16,
+        toolCallsA2: 10,
+        toolCallsB: 11,
+        toolCallsC: 1
+      },
+      _hotSignals: [
+        "CloudZero · Justin Moore (Innovius) confirmed new CEO role at CloudZero — LP/board-visible leadership transition; AI transformation narrative being finalized · #p-cloudzero",
+        "Sewer AI · Q1 pacing to $1.8M vs $2.5M plan (28% miss); Akash cautioned Billy on presentation conduct during active fundraise · #p-sewerai",
+        "Auditoria · SDR performance critically broken: <1% reply rates on 400+ weekly calls; mid-funnel conversion 11% vs 32% plan — board-visible pipeline quality issue · #p-auditoria",
+        "RightRev · Personnel discussion pending between Justin [MAPPING AMBIGUOUS — verify: Justin Moore (Innovius) or Justin Ziccardi (Budburst)?] & Jagan; conversation not yet completed · #p-rightrev",
+        "CloudZero · Greg [NOT ON CANONICAL ROSTER — CZ employee, identity unverified] being let go per Emerson mention; tied to recent layoff · DM Nicole Moscaret"
+      ],
+      _hotActions: [
+        "Delightree · Finalize tech stack data source selection (Clay, ZoomInfo, LeadIQ) for ICP workshop — Akash committed by end of week; account scoring build blocked · Delightree team waiting · SOURCE: new · #delightree-gtm-acceleration · 2026-03-22",
+        "Sewer AI · Confirm Billy's updated operating plan reflects Q1 miss narrative before next investor touch — fundraise is active, presentation integrity at risk · Billy waiting · SOURCE: new · #p-sewerai · 2026-03-22",
+        "Innovius · Respond to Justin Moore's concern about sourcing velocity — team feels overwhelmed by outbound approach shift; alignment needed before morale compounds · Justin Moore waiting · SOURCE: new · DM Justin Moore · 2026-03-22",
+        "RightRev · Drive MEDDPICC qualification alignment and MoF discussion in sales process workshop series — pipeline discipline at risk without Akash follow-through · RightRev team waiting · SOURCE: new · #rightrev-gtm-acceleration · 2026-03-22",
+        "ClearML · Follow up with Moses on Scott Tecton advisor engagement — Moses non-responsive; engagement risks going cold · Moses waiting · SOURCE: new · #p-clearml · 2026-03-22"
+      ],
+      "Sewer AI": {
+        engagement: "Active",
+        lastTouch: "2026-03-22 · #p-sewerai",
+        teamVisibility: "Billy, Dave Barden, Cole, Erik",
+        hasSignal: true,
+        know: [
+          "Q1 pacing to $1.8M vs $2.5M plan — significant miss; operating plan being updated",
+          "Akash cautioned Billy on presentation conduct during active fundraise — relationship and credibility risk if not corrected",
+          "Q2 path looks strong: minimum $2.9M with upside to $3.5–4M; PG&E and Houston signing direct POs (Q1 PAYG trade-off contributing to Q1 shortfall)",
+          "Sewer AI stand-up scheduled 2026-03-23 11:00–11:30 AM ET (Dave Barden, Cole, Erik) — informational"
+        ],
+        action: [
+          "Verify Billy has updated operating plan and fundraise narrative before next investor interaction — Q1 miss needs clean framing"
+        ]
+      },
+      "Auditoria": {
+        engagement: "Active",
+        lastTouch: "2026-03-22 · #p-auditoria, DM Xiaolei Cong",
+        teamVisibility: "Roi, Dave Osborne, Rohit, Adina, Nick, Maya",
+        hasSignal: true,
+        know: [
+          "SDR performance is critically broken: <1% reply rates on 400+ weekly calls; copy stale, targeting not curated; mid-funnel conversion 11% vs 32% plan — board-visible",
+          "CMO search underway via Cole Group; website refresh underwhelming",
+          "Workday partnership momentum strong post-SKO on Lights Out Finance integration — one positive signal",
+          "Xiaolei (Innovius) concerned that consistent pipeline coverage issues are not translating to business performance; wants more effective support levers"
+        ],
+        action: [
+          "Align with Xiaolei on Innovius intervention framing for Auditoria SDR copy and targeting — not an immediate Akash blocker but coordinated response needed"
+        ]
+      },
+      "CloudZero": {
+        engagement: "Active",
+        lastTouch: "2026-03-22 · #p-cloudzero, DM Nicole Moscaret",
+        teamVisibility: "Brady, Sharon, Scott, Bill, Dan Carducci, Miguel, Don, Chris Hogan",
+        hasSignal: true,
+        know: [
+          "Justin Moore (Innovius) confirmed new CEO role at CloudZero — LP/board-visible leadership transition; AI transformation narrative being finalized",
+          "Scott Castle (CPO at CloudZero) joining as Innovius Product Advisor for portfolio collaboration — announced ~3/6",
+          "Greg [NOT ON CANONICAL ROSTER — CZ employee, identity unverified] being let go; tied to recent layoff referenced by Emerson [unverified]; Phil [unverified] reportedly had conflict with him"
+        ],
+        action: [
+          "Monitor AI transformation narrative finalization ahead of any LP/board communication — no immediate Akash-blocking action"
+        ]
+      },
+      "Delightree": {
+        engagement: "Active",
+        lastTouch: "2026-03-22 · #delightree-gtm-acceleration; 2026-03-21 · email (Doug)",
+        teamVisibility: "Tushar, Doug, Griffin, Adrian",
+        hasSignal: true,
+        know: [
+          "Q1 tracking on plan: closed $400K, weighted pipeline $550K, upsell from location growth $120–150K",
+          "New Head of Finance finalizing plan next week",
+          "Akash leading ICP workshop; tech stack evaluation (Clay, ZoomInfo, LeadIQ) with data source selection due end of this week",
+          "Akash followed up with Doug (VP Sales) on three stalled hiring actions: (1) Will Frank's team do first-round vetting [Frank identity unverified], (2) dedicated 4-hour scheduling window, (3) EA support status — waiting on Doug's response"
+        ],
+        action: [
+          "Deliver ICP workshop data source decision by end of week — committed timeline, Akash is the blocker",
+          "Monitor Doug's response on hiring actions; if no reply by EOD Monday 2026-03-23, re-escalate — sales hiring stall has pipeline downstream risk"
+        ]
+      },
+      "X-Cures": {
+        engagement: "Monitoring",
+        lastTouch: "2026-03-22 · #p-xcures",
+        teamVisibility: "Mika, Bryan, Ben",
+        hasSignal: true,
+        know: [
+          "Official portfolio company as of 2/25/2026; $12.2M invested (up from $10M on strong commercial traction); SPV structure under consideration",
+          "Signed $2M minimum commit with Exact Sciences (expected usage $3–4M/year) — strong commercial signal",
+          "CRO search via Cole Group kicked off; Williams Tison [external hiring contact] engaged on AE hiring"
+        ],
+        action: [
+          "No immediate Akash-blocking action; CRO and AE hiring processes are in motion — monitor for next check-in need"
+        ]
+      },
+      "ClearML": {
+        engagement: "Monitoring",
+        lastTouch: "2026-03-22 · #p-clearml",
+        teamVisibility: "Alex, Moses, Noam",
+        hasSignal: true,
+        know: [
+          "Moses non-responsive on Scott Tecton advisor engagement — Scott is an external advisor target from Tecton, not CloudZero's Scott Castle",
+          "Zypsy discussions in progress but not yet signed"
+        ],
+        action: [
+          "Nudge Moses on Scott Tecton advisor engagement — if no movement by EOD Monday 2026-03-23, Akash should direct-message Moses"
+        ]
+      },
+      "RightRev": {
+        engagement: "Active",
+        lastTouch: "2026-03-22 · #p-rightrev, #rightrev-gtm-acceleration; 2026-03-21 · email (Pavel Reznikov)",
+        teamVisibility: "Dan, Matthew, Joel, Joe, Jagan, Kathy",
+        hasSignal: true,
+        know: [
+          "Personnel discussion pending between Justin [MAPPING AMBIGUOUS — verify: Justin Moore (Innovius) or Justin Ziccardi (Budburst)?] and Jagan — conversation scheduled but not yet completed; high urgency",
+          "Sales process workshop series underway (4 parts planned); MEDDPICC qualification alignment needed; MoF discussion scheduled",
+          "ICP meeting scheduled next Wednesday",
+          "Tech stack audit in progress: potential $13–15K SFDC savings identified; ZoomInfo ~$50K spend being reviewed for pruning",
+          "RightRev RevOps candidate Pavel Reznikov [external] interview confirmed for 4 PM Monday 2026-03-23 — informational, Akash is attending"
+        ],
+        action: [
+          "Resolve Justin/Jagan personnel discussion ambiguity — identify which Justin is involved and confirm conversation has happened; unmonitored personnel risk until resolved",
+          "Attend Pavel Reznikov interview Monday 4 PM ET — confirmed, no prep action needed"
+        ]
+      },
+      _crossPortfolio: [
+        "Cole Group is active across multiple companies simultaneously — CRO search (X-Cures) and CMO search (Auditoria) both via Cole Group; one coordinated check-in could yield status on both",
+        "ICP/GTM workshop workload concentrated on Akash — direct owner of ICP work at Delightree (end-of-week deadline) and MEDDPICC/sales process workshops at RightRev; calendar pressure real",
+        "Hiring is the dominant operational thread this week — CRO/AE hiring (X-Cures), CMO search (Auditoria), VP Sales hiring follow-up (Delightree), RevOps hire (RightRev)",
+        "Leadership transitions at CloudZero — Justin Moore moving into CEO role while Scott Castle moves to Innovius advisor role; dual transition warrants LP/board communication readiness",
+        "Sourcing velocity concern at Innovius level — Justin Moore's DM signals internal team stress about outbound approach shift; firm-level risk if not addressed"
+      ]
+    },
+    {
       _date: "March 20, 2026",
       _dateKey: "2026-03-20",
       _metrics: {

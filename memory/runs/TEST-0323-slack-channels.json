@@ -1,0 +1,71 @@
+{
+  "source": "slack_channels",
+  "retrieved_at": "2026-03-23T13:00:00Z",
+  "tool_calls_made": 14,
+  "signals": [
+    {
+      "company": "RightRev",
+      "channel_or_dm": "p-rightrev",
+      "signal": "Dan (RightRev) flagged that the MEDDPICC workshop series is stalling — sales team not completing pre-work before sessions; asks whether Akash can add a pre-work checkpoint.",
+      "signal_type": "action_item",
+      "urgency": "high",
+      "waiting_on_akash": true,
+      "source_ts": "2026-03-23T09:14:00Z"
+    },
+    {
+      "company": "Delightree",
+      "channel_or_dm": "delightree-gtm-acceleration",
+      "signal": "Doug (VP Sales, Delightree) responded to Akash's hiring follow-up: Will Frank's team will do first-round vetting; dedicated scheduling window confirmed for this week; EA support still pending from Tushar.",
+      "signal_type": "account_context",
+      "urgency": "medium",
+      "waiting_on_akash": false,
+      "source_ts": "2026-03-23T10:30:00Z"
+    },
+    {
+      "company": "Sewer AI",
+      "channel_or_dm": "p-sewerai",
+      "signal": "Billy posted updated operating plan to #p-sewerai; Q1 miss narrative framed as PAYG-to-direct trade-off. Akash has not yet confirmed the narrative is investor-ready.",
+      "signal_type": "action_item",
+      "urgency": "high",
+      "waiting_on_akash": true,
+      "source_ts": "2026-03-23T08:45:00Z"
+    },
+    {
+      "company": "Auditoria",
+      "channel_or_dm": "p-auditoria",
+      "signal": "Roi (Auditoria CEO) posted that the Cole Group CMO shortlist is down to 2 candidates; interviews scheduled for this week.",
+      "signal_type": "account_context",
+      "urgency": "medium",
+      "waiting_on_akash": false,
+      "source_ts": "2026-03-23T11:00:00Z"
+    },
+    {
+      "company": "CloudZero",
+      "channel_or_dm": "p-cloudzero",
+      "signal": "Brady (CloudZero) shared that Q1 ARR came in at 102% of plan. Justin Moore (Innovius, new CloudZero CEO) acknowledged in thread.",
+      "signal_type": "account_context",
+      "urgency": "low",
+      "waiting_on_akash": false,
+      "source_ts": "2026-03-23T09:50:00Z"
+    },
+    {
+      "company": "ClearML",
+      "channel_or_dm": "p-clearml",
+      "signal": "Alex (ClearML) confirmed Moses responded to Akash — Scott Tecton advisor call scheduled for Thursday 3/26.",
+      "signal_type": "account_context",
+      "urgency": "low",
+      "waiting_on_akash": false,
+      "source_ts": "2026-03-23T12:00:00Z"
+    },
+    {
+      "company": "Innovius",
+      "channel_or_dm": "innovius-team",
+      "signal": "Justin Moore (Innovius) posted that he is fully transitioned into the CloudZero CEO role as of today; asks Innovius team to update any external-facing materials that reference his previous role.",
+      "signal_type": "action_item",
+      "urgency": "medium",
+      "waiting_on_akash": false,
+      "source_ts": "2026-03-23T08:00:00Z"
+    }
+  ],
+  "total_signals": 7
+}

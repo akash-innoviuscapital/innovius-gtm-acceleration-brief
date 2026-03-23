@@ -61,7 +61,7 @@ Produce a daily portfolio intelligence brief that surfaces:
 - Precision over completeness — a false Hot Signal wastes Akash's political capital
 
 ## Memory
-Before each run, query `/root/innovius-brief/memory/memory.db` for:
+Before each run, query `/home/prometheus/innovius-brief/memory/memory.db` for:
 - Unchecked carry-over actions and notes from prior runs
 - Last-known state per company
 - Run quality history
@@ -69,19 +69,21 @@ Before each run, query `/root/innovius-brief/memory/memory.db` for:
 After each run, write the new brief output and updated action state back to the database.
 
 ## Timezone
-Akash operates in **Pacific Time (PT)**. All scheduling and time references use PT.
+Akash operates in **Eastern Time (ET)**. All scheduling and time references use ET.
 
 ## File Structure
 ```
-/root/innovius-brief/
+/home/prometheus/innovius-brief/
 ├── CLAUDE.md                          ← this file (auto-loaded every session)
 ├── run-brief.sh                       ← heartbeat trigger script
+├── run-smoke-test.sh                  ← 6-hour health check trigger
 ├── .env                               ← secrets (never commit)
 ├── tasks/
-│   └── daily-brief.md                 ← orchestrator task prompt
+│   ├── daily-brief.md                 ← orchestrator task prompt
+│   └── smoke-test.md                  ← retriever health check task
 ├── agents/
-│   ├── retrieval-slack-channels.md    ← Agent A1
-│   ├── retrieval-slack-search.md      ← Agent A2
+│   ├── retrieval-slack-channels.md    ← Slack Channel Retriever
+│   ├── retrieval-slack-search.md      ← Slack DM Retriever
 │   ├── retrieval-gmail.md             ← Agent B
 │   ├── retrieval-granola.md           ← Agent C
 │   ├── synthesizer.md                 ← Synthesizer

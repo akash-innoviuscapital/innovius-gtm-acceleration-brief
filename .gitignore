@@ -2,3 +2,5 @@
 node_modules/
 *.token
 token.json
+memory/memory.db
+memory/run.log
