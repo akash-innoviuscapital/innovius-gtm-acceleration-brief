@@ -1,0 +1,13 @@
+## Auditoria — Interpretive Context
+
+**Core Diagnosis:** Underperformance is a CEO and organizational execution issue, not PMF. Rohit (CEO) exhibits patterns of slow decision-making, inconsistent engagement in key initiatives, weak follow-through, and reluctance to make necessary talent changes. These constraints ripple across the organization—persistent delays in marketing, website, product rollout, hiring, CS leadership, and pipeline generation. Cultural posture reflects low urgency, weak ownership, finger-pointing, and defensiveness.
+
+**Sales & CRO Dynamics:** Dave (CRO) has materially improved sales talent and operational efficiency, but bookings remain structurally constrained by Rohit's broader leadership and operating-discipline failures. Sales execution is not the limiting factor.
+
+**Financial Reality & Interpretation:** Auditoria is on track to miss Q1 FY27 Plan (1.6M target) after missing all four quarters in the prior year. Q1 bookings projected at 400–1M range. This is not a surprise—it is a direct symptom of the execution gaps above, not a separate market or product problem. The miss confirms that Rohit-driven constraints are the binding constraint on growth, not sales motion or product fit.
+
+**Signal Interpretation Rules:** When reading Auditoria signals, map them to execution discipline and Rohit's engagement level first. Cultural defensiveness or delays are data about leadership capacity, not product-market signals. Dave's reporting on sales should be read through the lens of his constrained sales funnel—improvements in efficiency mask bookings ceilings set by upstream execution gaps.
+
+<!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
+Org restructure underway: Partnerships and SDRs move under Dave Osborne this week; Dave cleared for CS conversation (addressing Alice/Head of CS performance). Dave remains overextended but now has authority and green light on both fronts. Q1 pipeline at 38% (far behind plan); AE self-gen at single digits vs 20-30% benchmark. Rohit's response: aggressive targets—$2M/mo from Workday (20 opps at $100K ea), 30% self-gen from AEs, 5% SDR conversion yield, $10M incremental in 90 days. GTM fundamentals under pressure: mid-funnel conversion 11% vs 32% target, new business pacing 40–45 vs 90/month, SDR quality crisis (sub-1% reply rates). Execution pace remains the core blocker, not strategy. Workday partnership momentum strong post-SKO; Oracle/Fusion targeting escalated to Nick Ezzo. Xiaolei reports renewed team energy and progress on organizational changes. Roi (RevOps) executing Q1 pipeline reviews. Watch: communication gap on org changes (Rohit told Dave but not Nick); mid-funnel conversion and execution velocity remain critical risks.
+<!-- END-AUTO-MEMORY -->

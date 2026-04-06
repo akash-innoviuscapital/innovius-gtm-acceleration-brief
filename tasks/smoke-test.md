@@ -43,7 +43,7 @@ Run all three tests. Do NOT abort if one fails — collect all results first.
 
 The Slack MCP is read-only (OAuth scopes do not include chat:write). Post using a direct Bash curl call with SLACK_BOT_TOKEN instead.
 
-Channel ID: C0AN3GW1SVC
+Channel ID: $PROMETHEUS_CHANNEL
 
 Build the message text, then post it with:
 
@@ -51,7 +51,7 @@ Build the message text, then post it with:
 curl -s -X POST https://slack.com/api/chat.postMessage \
   -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
   -H "Content-Type: application/json" \
-  -d "{\"channel\":\"C0AN3GW1SVC\",\"text\":\"<message>\"}"
+  -d "{\"channel\":\"$PROMETHEUS_CHANNEL\",\"text\":\"<message>\"}"
 ```
 
 Format the message text as follows (plain text):

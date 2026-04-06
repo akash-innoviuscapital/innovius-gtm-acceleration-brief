@@ -2,5 +2,23 @@
 node_modules/
 *.token
 token.json
+
+# Database
 memory/memory.db
+
+# Runtime state
+memory/last-run-id.txt
+memory/run-quality-log.json
+
+# Log files
 memory/run.log
+memory/*.log
+memory/server.log
+
+# Raw pipeline run data (emails, Slack, Granola transcripts — sensitive)
+memory/runs/
+
+# Raw ingest data
+memory/cloudzero-ingest/email-raw.json
+memory/cloudzero-ingest/slack-channels-raw.json
+memory/cloudzero-ingest/slack-members-raw.json

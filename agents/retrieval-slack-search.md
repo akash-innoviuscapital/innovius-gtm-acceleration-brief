@@ -11,12 +11,12 @@ You own DMs and group DMs exclusively. Channels are handled by the Slack Channel
 Use the SLACK_USER_TOKEN environment variable (xoxp-...) and SLACK_TEAM_ID. This token acts as Akash Bose and can read all DMs and group DMs he has access to.
 
 ## Notifications
-As your very first action, before any MCP calls, run this Bash command:
+As your very first action, before any API calls, run this Bash command:
 ```bash
 curl -s -X POST https://slack.com/api/chat.postMessage \
   -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"channel":"C0AN3GW1SVC","text":"🔄 Slack DM Retriever starting"}'
+  -d "{\"channel\":\"$PROMETHEUS_CHANNEL\",\"text\":\"🔄 Slack DM Retriever starting\"}"
 ```
 
 After your JSON output is fully assembled, and **before** sending the completion notification, write it to the run file. Use the RUN_ID from your prompt header (substitute the actual value into the path):
@@ -31,35 +31,47 @@ As your very last action, run:
 curl -s -X POST https://slack.com/api/chat.postMessage \
   -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
   -H "Content-Type: application/json" \
-  -d "{\"channel\":\"C0AN3GW1SVC\",\"text\":\"✅ Slack DM Retriever complete — TOTAL_SIGNALS signals\"}"
+  -d "{\"channel\":\"$PROMETHEUS_CHANNEL\",\"text\":\"✅ Slack DM Retriever complete — TOTAL_SIGNALS signals\"}"
 ```
 Replace `TOTAL_SIGNALS` with the actual `total_signals` count from your output.
 
 ## Discovery
 
-### Step 1 — List all DMs and group DMs via curl
-The MCP `slack_list_channels` tool only returns channels, not DMs. Use curl with the user token instead:
+### Step 1 — Search for all DM messages in the last 24 hours
+Use `search.messages` to find all DM activity in one call. The `updated` field on `conversations.list` reflects *channel metadata* changes, not message activity — do NOT use it to filter.
+
+Compute YESTERDAY as today's date minus 1 day in YYYY-MM-DD format, then run:
 
 ```bash
-curl -s "https://slack.com/api/conversations.list?types=im,mpim&limit=200&exclude_archived=true" \
-  -H "Authorization: Bearer $SLACK_USER_TOKEN" | python3 -c "
-import json, sys
-data = json.load(sys.stdin)
-if not data.get('ok'):
-    print('ERROR:', data.get('error'))
-    sys.exit(1)
-for c in data['channels']:
-    print(c['id'], c.get('name', ''), c.get('is_im',''), c.get('is_mpim',''), c.get('updated', 0))
-"
+curl -s "https://slack.com/api/search.messages?query=is%3Adm+after%3AYESTERDAY&count=100&sort=timestamp" \
+  -H "Authorization: Bearer $SLACK_USER_TOKEN"
 ```
 
-This prints each conversation's ID, name (for mpim), type flags, and last-updated timestamp. Capture the output to build your read list.
+Parse the response to get `messages.matches`. Each match contains the message text, timestamp, and `channel` (with `id` and `name`). Group matches by `channel.id` to identify which conversations had activity.
 
-### Step 2 — Filter to active in last 24 hours
-For each conversation returned, check if `updated` (Unix ms timestamp) or the most recent message is within the last 24 hours. Only read history for those conversations.
+**If the curl call fails or SLACK_USER_TOKEN is not available:** emit `"status": "token_unavailable"` in the output JSON and set `total_signals: 0`. Do NOT write `"User token validation failed"` — write `"SLACK_USER_TOKEN not available in agent context"` so the run monitor can distinguish this from a real auth failure.
+
+**If the call succeeds but zero matches returned:** emit `"status": "ok"` and `"note": "no DM activity in last 24h"` — this is valid and should NOT trigger a run monitor warning.
+
+### Step 2 — Fetch full context for active conversations
+For each unique channel ID from the search results, fetch full history to get complete thread context:
+
+```bash
+curl -s "https://slack.com/api/conversations.history?channel=CHANNEL_ID&oldest=YESTERDAY_UNIX&limit=50" \
+  -H "Authorization: Bearer $SLACK_USER_TOKEN"
+```
+
+Where YESTERDAY_UNIX is yesterday's date as a Unix timestamp.
 
 ### Step 3 — Resolve display names
-To label signals with human-readable names, use `slack_get_users` or `slack_get_user_profile` to resolve user IDs to names for any DM or group DM you read.
+For any message with a user ID (e.g. `<@U08FEJPMYVC>`), resolve it to a name using:
+
+```bash
+curl -s "https://slack.com/api/users.info?user=USER_ID" \
+  -H "Authorization: Bearer $SLACK_USER_TOKEN"
+```
+
+Or batch-resolve with `users.list` if there are many IDs. Use display name or real name from the response.
 
 Do not apply any ignore list — the ignore list is channel-specific and does not apply to DMs.
 

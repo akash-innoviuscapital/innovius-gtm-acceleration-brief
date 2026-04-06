@@ -47,31 +47,22 @@ CREATE INDEX IF NOT EXISTS idx_events_date ON events(date);
 -- Unchecked items carry forward to the next run
 -- ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS actions (
-  id              INTEGER PRIMARY KEY AUTOINCREMENT,
-  date_created    TEXT NOT NULL,       -- YYYY-MM-DD
-  date_completed  TEXT,                -- YYYY-MM-DD when checked off, NULL if open
-  company         TEXT NOT NULL,
-  content         TEXT NOT NULL,       -- the action text
-  checked         INTEGER DEFAULT 0,   -- 0 = open, 1 = complete
-  source_tag      TEXT,                -- "new · #channel · date" or "carry-over · date"
-  run_id          INTEGER REFERENCES runs(id)
+  id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+  date_created        TEXT NOT NULL,       -- YYYY-MM-DD
+  date_completed      TEXT,                -- YYYY-MM-DD when checked off, NULL if open
+  company             TEXT NOT NULL,
+  content             TEXT NOT NULL,       -- the action text
+  checked             INTEGER DEFAULT 0,   -- 0 = open, 1 = complete
+  source_tag          TEXT,                -- "new · #channel · date" or "carry-over · date"
+  run_id              INTEGER REFERENCES runs(id),
+  hot_action          INTEGER DEFAULT 0,   -- 1 if unchecked AND date_created <= now-2days (time-based, updated each run)
+  semantic_importance INTEGER DEFAULT 0    -- 1 if AI assessed as high urgency (set by action assessor agent)
 );
 
 CREATE INDEX IF NOT EXISTS idx_actions_checked ON actions(checked);
 CREATE INDEX IF NOT EXISTS idx_actions_company ON actions(company);
 
 -- ─────────────────────────────────────────────
--- NOTES — manual notes added by Akash via dashboard
--- Same checked/unchecked mechanic as actions
--- Unchecked notes surface in the next brief as context
--- ─────────────────────────────────────────────
-CREATE TABLE IF NOT EXISTS notes (
-  id          INTEGER PRIMARY KEY AUTOINCREMENT,
-  date        TEXT NOT NULL,           -- YYYY-MM-DD
-  company     TEXT,                    -- optional — firm-level notes can be NULL
-  content     TEXT NOT NULL,
-  checked     INTEGER DEFAULT 0        -- 0 = active context, 1 = resolved
-);
 
 -- ─────────────────────────────────────────────
 -- COMPANY_STATE — last-known state per company
@@ -118,6 +109,9 @@ CREATE TABLE IF NOT EXISTS run_quality (
   granola_calls             INTEGER DEFAULT 0,
   granola_signals           INTEGER DEFAULT 0,
   granola_status            TEXT DEFAULT 'ok',
+  cloudzero_calls           INTEGER DEFAULT 0,
+  cloudzero_signals         INTEGER DEFAULT 0,
+  cloudzero_status          TEXT DEFAULT 'ok',
   hot_signals               INTEGER DEFAULT 0,
   hot_actions               INTEGER DEFAULT 0,
   carry_over_total          INTEGER DEFAULT 0,
