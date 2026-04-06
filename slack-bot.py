@@ -11,7 +11,10 @@ import sqlite3
 import subprocess
 import logging
 import datetime
-from datetime import date
+import time
+import urllib.request
+import urllib.parse
+from datetime import date, timezone
 
 logging.basicConfig(
     level=logging.INFO,
@@ -42,6 +45,100 @@ ACTION_KEYWORDS = [
 
 
 _brief_cache = {'date': None, 'context': ''}
+
+# High-signal channel names to preload (resolved to IDs at first fetch)
+LIVE_CHANNEL_NAMES = [
+    "prometheus",
+    "p-cloudzero", "p-delightree", "p-rightrev", "p-clearml",
+    "p-sewerai", "p-auditoria", "p-xcures",
+    "delightree-gtm-acceleration", "rightrev-gtm-acceleration",
+    "innovius-gtm-acceleration",
+]
+_channel_id_map = {}  # name → id, populated at first fetch
+_slack_cache = {'ts': 0, 'text': ''}
+SLACK_CACHE_TTL = 300  # re-fetch at most every 5 minutes
+
+
+def load_live_slack(hours_back: int = 24) -> str:
+    """Fetch recent messages from high-signal channels using user token (has search:read).
+    Cached for SLACK_CACHE_TTL seconds so rapid questions don't hammer the API."""
+    now = time.time()
+    if now - _slack_cache['ts'] < SLACK_CACHE_TTL and _slack_cache['text']:
+        return _slack_cache['text']
+
+    user_token = os.environ.get("SLACK_USER_TOKEN", "")
+    if not user_token:
+        return ""
+
+    oldest = str(int(now - hours_back * 3600))
+    parts = []
+
+    def slack_api(method, params):
+        url = f"https://slack.com/api/{method}?" + urllib.parse.urlencode(params)
+        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {user_token}"})
+        try:
+            with urllib.request.urlopen(req, timeout=8) as r:
+                return json.loads(r.read())
+        except Exception:
+            return {}
+
+    # Resolve channel names to IDs once
+    if not _channel_id_map:
+        cursor = None
+        while True:
+            params = {"limit": 200, "exclude_archived": "true", "types": "public_channel,private_channel"}
+            if cursor:
+                params["cursor"] = cursor
+            data = slack_api("conversations.list", params)
+            for ch in data.get("channels", []):
+                if ch.get("name") in LIVE_CHANNEL_NAMES:
+                    _channel_id_map[ch["name"]] = ch["id"]
+            cursor = data.get("response_metadata", {}).get("next_cursor")
+            if not cursor:
+                break
+
+    for channel_name in LIVE_CHANNEL_NAMES:
+        channel_id = _channel_id_map.get(channel_name)
+        if not channel_id:
+            continue
+        data = slack_api("conversations.history", {
+            "channel": channel_id,
+            "oldest": oldest,
+            "limit": 20,
+        })
+        messages = data.get("messages", [])
+        if not messages:
+            continue
+
+        # Resolve user IDs to names in bulk
+        user_ids = {m.get("user") for m in messages if m.get("user")}
+        user_names = {}
+        for uid in user_ids:
+            udata = slack_api("users.info", {"user": uid})
+            profile = udata.get("user", {}).get("profile", {})
+            user_names[uid] = profile.get("display_name") or profile.get("real_name") or uid
+
+        lines = []
+        for m in reversed(messages):  # oldest first
+            if m.get("subtype"):  # skip joins/leaves/etc
+                continue
+            ts = datetime.datetime.fromtimestamp(float(m.get("ts", 0)), tz=timezone.utc)
+            ts_str = ts.strftime("%m/%d %H:%M UTC")
+            user = user_names.get(m.get("user", ""), "unknown")
+            text = re.sub(r"<@[A-Z0-9]+>", "", m.get("text", "")).strip()
+            if text:
+                lines.append(f"  [{ts_str}] {user}: {text[:200]}")
+
+        if lines:
+            parts.append(f"\n#{channel_name} (last {hours_back}h):")
+            parts.extend(lines)
+
+    result = "\n".join(parts)
+    _slack_cache['ts'] = now
+    _slack_cache['text'] = result
+    log.info(f"Live Slack context loaded: {len(result)} chars across {len(parts)} channels")
+    return result
+
 
 def load_brief_context() -> str:
     """Load today's brief snapshot and open actions. Cached per calendar day."""
@@ -214,7 +311,10 @@ def run_claude(user_text, source_context, history=None):
 
     brief_block = f"\n\n## Preloaded Brief Context\n{brief_context}" if brief_context else ""
 
-    prompt = f"""{agent_prompt}{brief_block}{history_block}
+    live_slack = load_live_slack()
+    slack_block = f"\n\n## Live Slack Activity (last 24h)\n{live_slack}" if live_slack else ""
+
+    prompt = f"""{agent_prompt}{brief_block}{slack_block}{history_block}
 
 ---
 
