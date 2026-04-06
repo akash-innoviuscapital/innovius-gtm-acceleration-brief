@@ -46,6 +46,70 @@ set +a
 
 cd "$PROJECT_DIR"
 
+# ── Database health check ────────────────────
+echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] Checking database health..." >> "$LOG_FILE"
+DB_STATUS=$(python3 << 'PYEOF'
+import sqlite3, sys, os, shutil
+from datetime import datetime
+
+db = "/home/prometheus/innovius-brief/memory/memory.db"
+schema = "/home/prometheus/innovius-brief/memory/schema.sql"
+
+# Missing — initialize from schema
+if not os.path.exists(db):
+    try:
+        conn = sqlite3.connect(db)
+        with open(schema) as f:
+            conn.executescript(f.read())
+        conn.close()
+        print("INITIALIZED")
+    except Exception as e:
+        print(f"INIT_FAILED: {e}")
+    sys.exit(0)
+
+# Try to connect and run integrity check
+try:
+    conn = sqlite3.connect(db, timeout=5)
+    result = conn.execute("PRAGMA integrity_check").fetchone()
+    conn.close()
+    if result and result[0] == "ok":
+        print("OK")
+    else:
+        # Corrupted — back up and reinitialize
+        backup = db + f".corrupt.{datetime.now().strftime('%Y%m%dT%H%M%S')}"
+        shutil.copy2(db, backup)
+        os.remove(db)
+        conn = sqlite3.connect(db)
+        with open(schema) as f:
+            conn.executescript(f.read())
+        conn.close()
+        print(f"REINITIALIZED_AFTER_CORRUPTION: backup at {backup}")
+except sqlite3.OperationalError as e:
+    if "locked" in str(e).lower():
+        print(f"LOCKED: {e}")
+    else:
+        print(f"ERROR: {e}")
+except Exception as e:
+    print(f"ERROR: {e}")
+PYEOF
+)
+
+echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] DB status: $DB_STATUS" >> "$LOG_FILE"
+
+if echo "$DB_STATUS" | grep -q "^LOCKED"; then
+  slack_post "🚨 Brief aborted — memory.db is locked (another process may be writing). Check the server. DB status: $DB_STATUS"
+  echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] ABORTED — DB locked." >> "$LOG_FILE"
+  exit 1
+elif echo "$DB_STATUS" | grep -q "^ERROR\|^INIT_FAILED"; then
+  slack_post "🚨 Brief aborted — memory.db error: $DB_STATUS"
+  echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] ABORTED — DB error." >> "$LOG_FILE"
+  exit 1
+elif echo "$DB_STATUS" | grep -q "^REINITIALIZED_AFTER_CORRUPTION"; then
+  slack_post "⚠️ memory.db was corrupted — reinitialized from schema. Carry-overs and history lost. $DB_STATUS"
+elif echo "$DB_STATUS" | grep -q "^INITIALIZED"; then
+  slack_post "ℹ️ memory.db was missing — initialized from schema."
+fi
+
 # ── Pre-flight health check ──────────────────
 echo "[$(date -u +%Y-%m-%dT%H:%M:%SZ)] Running pre-flight check..." >> "$LOG_FILE"
 slack_post "🔍 Pre-flight starting..."
