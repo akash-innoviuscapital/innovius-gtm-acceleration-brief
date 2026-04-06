@@ -46,29 +46,84 @@ ACTION_KEYWORDS = [
 
 _brief_cache = {'date': None, 'context': ''}
 
-# High-signal channel names to preload (resolved to IDs at first fetch)
-LIVE_CHANNEL_NAMES = [
-    "prometheus",
-    "p-cloudzero", "p-delightree", "p-rightrev", "p-clearml",
-    "p-sewerai", "p-auditoria", "p-xcures",
-    "delightree-gtm-acceleration", "rightrev-gtm-acceleration",
-    "innovius-gtm-acceleration",
-]
-_channel_id_map = {}  # name → id, populated at first fetch
-_slack_cache = {'ts': 0, 'text': ''}
-SLACK_CACHE_TTL = 300  # re-fetch at most every 5 minutes
+# Company → relevant channel names
+COMPANY_CHANNELS = {
+    'cloudzero': ['p-cloudzero'],
+    'delightree': ['p-delightree', 'delightree-gtm-acceleration'],
+    'rightrev':   ['p-rightrev', 'rightrev-gtm-acceleration'],
+    'clearml':    ['p-clearml'],
+    'sewer-ai':   ['p-sewerai'],
+    'auditoria':  ['p-auditoria'],
+    'xcures':     ['p-xcures'],
+    'innovius':   ['innovius-gtm-acceleration'],
+}
+
+# Keywords that identify which company a question is about
+COMPANY_KEYWORDS = {
+    'cloudzero': ['cloudzero', 'brady', 'matt katz', 'sharon', 'eric weiss', 'erik p', 'brenna', 'miguel', 'dan carducci'],
+    'delightree': ['delightree', 'tushar', 'doug', 'adrian', 'griffin', 'erin'],
+    'rightrev':   ['rightrev', 'right rev', 'jagan', 'joel', 'matthew', 'carolyn', 'alissa', 'natalie', 'kathy'],
+    'clearml':    ['clearml', 'clear ml', 'moses', 'noam'],
+    'sewer-ai':   ['sewer ai', 'sewerai', 'billy', 'turley', 'logan', 'cole', 'turley'],
+    'auditoria':  ['auditoria', 'rohit', 'roi ', 'adina', 'maya', 'osborne'],
+    'xcures':     ['xcures', 'x-cures', 'x cures', 'mika', 'bryan', 'xcures'],
+    'innovius':   ['innovius', 'xiaolei', 'stu ', 'nicole', 'ethan', 'marci', 'koby', 'jasmine'],
+}
+
+# Keywords that mean "right now" — bypass cache entirely
+FRESHNESS_KEYWORDS = ['just now', 'just sent', 'just got', 'right now', 'just messaged',
+                      'just posted', 'just happened', 'just came in', 'just received']
+
+# Meeting keywords — trigger Granola preload
+MEETING_KEYWORDS = ['meeting', 'call', 'discuss', 'transcript', 'talked', 'spoke',
+                    'granola', 'catchup', 'catch-up', 'we met', 'on a call', 'had a call']
+
+_channel_id_map = {}   # channel name → id, populated once
+_slack_cache   = {}    # frozenset(channel_names) → {'ts': float, 'text': str}
+SLACK_CACHE_TTL = 60   # seconds
 
 
-def load_live_slack(hours_back: int = 24) -> str:
-    """Fetch recent messages from high-signal channels using user token (has search:read).
-    Cached for SLACK_CACHE_TTL seconds so rapid questions don't hammer the API."""
-    now = time.time()
-    if now - _slack_cache['ts'] < SLACK_CACHE_TTL and _slack_cache['text']:
-        return _slack_cache['text']
+def _detect_channels(question: str) -> list:
+    """Return the minimal set of channel names relevant to this question."""
+    lower = question.lower()
+    channels = ['prometheus']
+    for company, keywords in COMPANY_KEYWORDS.items():
+        if any(k in lower for k in keywords):
+            channels.extend(COMPANY_CHANNELS.get(company, []))
+    return list(dict.fromkeys(channels))  # dedupe, preserve order
 
+
+def _resolve_channel_ids(slack_api_fn):
+    """Populate _channel_id_map by listing all joined channels once."""
+    cursor = None
+    while True:
+        params = {"limit": 200, "exclude_archived": "true", "types": "public_channel,private_channel"}
+        if cursor:
+            params["cursor"] = cursor
+        data = slack_api_fn("conversations.list", params)
+        for ch in data.get("channels", []):
+            _channel_id_map[ch["name"]] = ch["id"]
+        cursor = data.get("response_metadata", {}).get("next_cursor")
+        if not cursor:
+            break
+
+
+def load_live_slack(question: str, hours_back: int = 24) -> str:
+    """Fetch recent messages only from channels relevant to the question.
+    Cached 60s per channel-set; bypassed entirely for 'just now' type queries."""
     user_token = os.environ.get("SLACK_USER_TOKEN", "")
     if not user_token:
         return ""
+
+    now = time.time()
+    bypass_cache = any(k in question.lower() for k in FRESHNESS_KEYWORDS)
+    channel_names = _detect_channels(question)
+    cache_key = frozenset(channel_names)
+
+    if not bypass_cache:
+        cached = _slack_cache.get(cache_key)
+        if cached and now - cached['ts'] < SLACK_CACHE_TTL:
+            return cached['text']
 
     oldest = str(int(now - hours_back * 3600))
     parts = []
@@ -82,35 +137,18 @@ def load_live_slack(hours_back: int = 24) -> str:
         except Exception:
             return {}
 
-    # Resolve channel names to IDs once
     if not _channel_id_map:
-        cursor = None
-        while True:
-            params = {"limit": 200, "exclude_archived": "true", "types": "public_channel,private_channel"}
-            if cursor:
-                params["cursor"] = cursor
-            data = slack_api("conversations.list", params)
-            for ch in data.get("channels", []):
-                if ch.get("name") in LIVE_CHANNEL_NAMES:
-                    _channel_id_map[ch["name"]] = ch["id"]
-            cursor = data.get("response_metadata", {}).get("next_cursor")
-            if not cursor:
-                break
+        _resolve_channel_ids(slack_api)
 
-    for channel_name in LIVE_CHANNEL_NAMES:
+    for channel_name in channel_names:
         channel_id = _channel_id_map.get(channel_name)
         if not channel_id:
             continue
-        data = slack_api("conversations.history", {
-            "channel": channel_id,
-            "oldest": oldest,
-            "limit": 20,
-        })
+        data = slack_api("conversations.history", {"channel": channel_id, "oldest": oldest, "limit": 20})
         messages = data.get("messages", [])
         if not messages:
             continue
 
-        # Resolve user IDs to names in bulk
         user_ids = {m.get("user") for m in messages if m.get("user")}
         user_names = {}
         for uid in user_ids:
@@ -119,25 +157,48 @@ def load_live_slack(hours_back: int = 24) -> str:
             user_names[uid] = profile.get("display_name") or profile.get("real_name") or uid
 
         lines = []
-        for m in reversed(messages):  # oldest first
-            if m.get("subtype"):  # skip joins/leaves/etc
+        for m in reversed(messages):
+            if m.get("subtype"):
                 continue
             ts = datetime.datetime.fromtimestamp(float(m.get("ts", 0)), tz=timezone.utc)
-            ts_str = ts.strftime("%m/%d %H:%M UTC")
             user = user_names.get(m.get("user", ""), "unknown")
             text = re.sub(r"<@[A-Z0-9]+>", "", m.get("text", "")).strip()
             if text:
-                lines.append(f"  [{ts_str}] {user}: {text[:200]}")
+                lines.append(f"  [{ts.strftime('%m/%d %H:%M UTC')}] {user}: {text[:200]}")
 
         if lines:
             parts.append(f"\n#{channel_name} (last {hours_back}h):")
             parts.extend(lines)
 
     result = "\n".join(parts)
-    _slack_cache['ts'] = now
-    _slack_cache['text'] = result
-    log.info(f"Live Slack context loaded: {len(result)} chars across {len(parts)} channels")
+    _slack_cache[cache_key] = {'ts': now, 'text': result}
+    log.info(f"Live Slack: fetched {len(channel_names)} channels ({'bypass' if bypass_cache else '60s cache'})")
     return result
+
+
+def load_granola_context(question: str) -> str:
+    """Fetch recent Granola meetings when question is about meetings or calls."""
+    if not any(k in question.lower() for k in MEETING_KEYWORDS):
+        return ""
+    if not os.environ.get("GRANOLA_AUTH_TOKEN"):
+        return ""
+
+    prompt = """Use granola MCP tools to list the 8 most recent meetings from the last 7 days.
+For each: date, participants, 1-2 sentence summary of key topics discussed.
+Return plain text only — no preamble, no markdown headers."""
+
+    try:
+        result = subprocess.run(
+            ["claude", "--dangerously-skip-permissions", "--model", "claude-haiku-4-5-20251001", "-p", prompt],
+            capture_output=True, text=True, timeout=45, cwd=PROJECT_DIR, stdin=subprocess.DEVNULL,
+        )
+        text = result.stdout.strip()
+        if text:
+            log.info(f"Granola context loaded: {len(text)} chars")
+        return text
+    except Exception as e:
+        log.warning(f"Granola preload failed: {e}")
+        return ""
 
 
 def load_brief_context() -> str:
@@ -311,10 +372,13 @@ def run_claude(user_text, source_context, history=None):
 
     brief_block = f"\n\n## Preloaded Brief Context\n{brief_context}" if brief_context else ""
 
-    live_slack = load_live_slack()
+    live_slack = load_live_slack(user_text)
     slack_block = f"\n\n## Live Slack Activity (last 24h)\n{live_slack}" if live_slack else ""
 
-    prompt = f"""{agent_prompt}{brief_block}{slack_block}{history_block}
+    granola = load_granola_context(user_text)
+    granola_block = f"\n\n## Recent Granola Meetings\n{granola}" if granola else ""
+
+    prompt = f"""{agent_prompt}{brief_block}{slack_block}{granola_block}{history_block}
 
 ---
 
