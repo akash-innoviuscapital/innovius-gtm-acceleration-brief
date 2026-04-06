@@ -17,6 +17,7 @@ import subprocess
 import json
 import tempfile
 import os
+import urllib.request
 from datetime import datetime, timedelta, date
 from pathlib import Path
 
@@ -39,6 +40,24 @@ COMPANIES = {
 
 AUTO_MEMORY_START = "<!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->"
 AUTO_MEMORY_END   = "<!-- END-AUTO-MEMORY -->"
+
+PROMETHEUS_CHANNEL = "C0AN3GW1SVC"
+
+
+def slack_post(msg: str) -> None:
+    token = os.environ.get("SLACK_BOT_TOKEN", "")
+    if not token:
+        return
+    try:
+        data = json.dumps({"channel": PROMETHEUS_CHANNEL, "text": msg}).encode()
+        req = urllib.request.Request(
+            "https://slack.com/api/chat.postMessage", data=data,
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(req, timeout=10) as r:
+            r.read()
+    except Exception as e:
+        log(f"Slack post failed: {e}")
 
 
 def log(msg: str) -> None:
@@ -225,12 +244,6 @@ def prepend_history_entry(history_path: Path, entry: str) -> None:
 
 def process_company(conn: sqlite3.Connection, company: str, slug: str, today: str, week_start: str) -> None:
     data = query_company_data(conn, company)
-    total_rows = len(data["events"]) + len(data["actions"])
-
-    if total_rows < MIN_ROWS:
-        log(f"  {company}: SKIP — {total_rows} row(s) below threshold ({MIN_ROWS})")
-        return
-
     log(f"  {company}: {len(data['events'])} events + {len(data['actions'])} completed actions")
     data_str = format_data_for_prompt(company, data)
 
@@ -262,18 +275,38 @@ def main() -> None:
     week_start = (today_dt - timedelta(days=today_dt.weekday())).isoformat()
 
     log(f"=== Company memory agent starting — {today} (week of {week_start}) ===")
+    slack_post(f"🧠 Weekly memory agent starting — week of {week_start}")
+
+    processed, skipped, errors = [], [], []
 
     conn = sqlite3.connect(str(DB_PATH))
     try:
         for company, slug in COMPANIES.items():
             try:
-                process_company(conn, company, slug, today, week_start)
+                data = query_company_data(conn, company)
+                total_rows = len(data["events"]) + len(data["actions"])
+                if total_rows < MIN_ROWS:
+                    log(f"  {company}: SKIP — {total_rows} row(s) below threshold ({MIN_ROWS})")
+                    skipped.append(f"{company} ({total_rows} rows)")
+                else:
+                    process_company(conn, company, slug, today, week_start)
+                    processed.append(company)
             except Exception as e:
                 log(f"  {company}: ERROR — {e}")
+                errors.append(f"{company}: {e}")
     finally:
         conn.close()
 
     log("=== Company memory agent complete ===")
+
+    lines = [f"✅ Weekly memory agent complete — {today}"]
+    if processed:
+        lines.append(f"Updated ({len(processed)}): {', '.join(processed)}")
+    if skipped:
+        lines.append(f"Skipped (low data): {', '.join(skipped)}")
+    if errors:
+        lines.append(f"⚠️ Errors ({len(errors)}): {', '.join(errors)}")
+    slack_post("\n".join(lines))
 
 
 if __name__ == "__main__":
