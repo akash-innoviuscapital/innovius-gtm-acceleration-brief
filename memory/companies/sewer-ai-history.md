@@ -1,3 +1,10 @@
+## 2026-04-12 — Week of 2026-04-06
+- [2026-04-07] Billy shared account context questions via Slack (low-confidence signal; peer exploring SAI market fit)
+- [2026-04-10] Granted Billy write access to Delightree Revenue Operations MOC
+- [2026-04-10] Surfaced VP of CS candidates to Billy per his request to Akash for referrals
+
+---
+
 ## 2026-04-05 — Week of 2026-03-30
 - Project Shawshank semiweekly sync continues with Justin and Stu; Shea partnership engagement ongoing
 - Billy kicked off VP of CS search; Akash surfaced VP candidates and granted Billy write access to Delightree Revenue Operations MOC

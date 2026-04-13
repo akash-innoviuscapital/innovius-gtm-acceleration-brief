@@ -43,6 +43,26 @@ ACTION_KEYWORDS = [
     "write to", "tell", "notify", "update the channel", "slack"
 ]
 
+# Keywords that trigger calendar invite handling
+CALENDAR_KEYWORDS = [
+    "calendar invite", "calendar event", "send an invite", "send invite",
+    "create an invite", "create invite", "schedule a meeting", "set up a meeting",
+    "book a meeting", "add to calendar", "block time", "create a meeting",
+    "send a meeting invite", "meeting invite",
+]
+
+# Google Calendar token paths
+GCAL_TOKEN_PATH = os.path.expanduser("~/.gmail-mcp/calendar-token.json")
+GCAL_KEYS_PATH  = os.path.expanduser("~/.gmail-mcp/gcp-oauth.keys.json")
+
+# Known email map for Innovius team — used when resolving attendees
+KNOWN_EMAILS = {
+    "akash bose":  "akash@innoviuscapital.com",
+    "akash":       "akash@innoviuscapital.com",
+    "ali mehdi":   "ali@innoviuscapital.com",
+    "ali":         "ali@innoviuscapital.com",
+}
+
 
 _brief_cache = {'date': None, 'context': ''}
 
@@ -199,6 +219,224 @@ Return plain text only — no preamble, no markdown headers."""
     except Exception as e:
         log.warning(f"Granola preload failed: {e}")
         return ""
+
+
+def fetch_conversation_context(channel_id: str, limit: int = 30) -> str:
+    """Fetch recent messages from ANY Slack conversation using Akash's user token.
+    Works regardless of whether the bot is a member — user token has access if Akash does."""
+    user_token = os.environ.get("SLACK_USER_TOKEN", "")
+    if not user_token or not channel_id:
+        return ""
+
+    def slack_api(method, params):
+        url = f"https://slack.com/api/{method}?" + urllib.parse.urlencode(params)
+        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {user_token}"})
+        try:
+            with urllib.request.urlopen(req, timeout=8) as r:
+                return json.loads(r.read())
+        except Exception:
+            return {}
+
+    data = slack_api("conversations.history", {"channel": channel_id, "limit": limit})
+    if not data.get("ok"):
+        log.warning(f"fetch_conversation_context: conversations.history failed for {channel_id}: {data.get('error')}")
+        return ""
+
+    messages = data.get("messages", [])
+    if not messages:
+        return ""
+
+    # Resolve user IDs to real names
+    user_ids = {m.get("user") for m in messages if m.get("user")}
+    user_names = {}
+    for uid in user_ids:
+        udata = slack_api("users.info", {"user": uid})
+        profile = udata.get("user", {}).get("profile", {})
+        user_names[uid] = profile.get("display_name") or profile.get("real_name") or uid
+
+    lines = []
+    for m in reversed(messages):
+        if m.get("subtype"):
+            continue
+        ts = datetime.datetime.fromtimestamp(float(m.get("ts", 0)), tz=timezone.utc)
+        user = user_names.get(m.get("user", ""), "unknown")
+        text = m.get("text", "").strip()
+        if text:
+            lines.append(f"[{ts.strftime('%m/%d %H:%M ET')}] {user}: {text[:300]}")
+
+    log.info(f"fetch_conversation_context: {len(lines)} messages from {channel_id}")
+    return "\n".join(lines)
+
+
+def _gcal_access_token() -> str:
+    """Return a valid Google Calendar access token, refreshing if expired."""
+    try:
+        with open(GCAL_TOKEN_PATH) as f:
+            token_data = json.load(f)
+
+        expiry_ms = token_data.get("expiry_date", 0)
+        if expiry_ms and expiry_ms > int(time.time() * 1000) + 60_000:
+            return token_data["access_token"]
+
+        # Token expired — refresh it
+        with open(GCAL_KEYS_PATH) as f:
+            keys = json.load(f)
+        installed = keys.get("installed") or keys.get("web") or {}
+
+        body = urllib.parse.urlencode({
+            "client_id":     installed["client_id"],
+            "client_secret": installed["client_secret"],
+            "refresh_token": token_data["refresh_token"],
+            "grant_type":    "refresh_token",
+        }).encode()
+        req = urllib.request.Request(
+            "https://oauth2.googleapis.com/token", data=body, method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=10) as r:
+            new_tok = json.loads(r.read())
+
+        token_data["access_token"] = new_tok["access_token"]
+        token_data["expiry_date"] = int((time.time() + new_tok.get("expires_in", 3600)) * 1000)
+        with open(GCAL_TOKEN_PATH, "w") as f:
+            json.dump(token_data, f)
+
+        log.info("Calendar token refreshed")
+        return token_data["access_token"]
+    except Exception as e:
+        log.error(f"Calendar token error: {e}")
+        return ""
+
+
+def create_calendar_event(title: str, start_iso: str, end_iso: str,
+                           attendee_emails: list, description: str = "") -> str:
+    """Create a Google Calendar event. Returns 'ok:<htmlLink>' or 'error:<msg>'."""
+    access_token = _gcal_access_token()
+    if not access_token:
+        return "error: could not get Calendar access token — run OAuth setup"
+
+    event_body = json.dumps({
+        "summary":     title,
+        "description": description,
+        "start": {"dateTime": start_iso, "timeZone": "America/New_York"},
+        "end":   {"dateTime": end_iso,   "timeZone": "America/New_York"},
+        "attendees":   [{"email": e} for e in attendee_emails],
+        "sendUpdates": "all",
+    }).encode()
+
+    req = urllib.request.Request(
+        "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+        data=event_body,
+        headers={"Authorization": f"Bearer {access_token}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            result = json.loads(r.read())
+        return f"ok:{result.get('htmlLink', '')}"
+    except urllib.error.HTTPError as e:
+        err = e.read().decode()
+        log.error(f"Calendar API {e.code}: {err[:300]}")
+        return f"error: {e.code} — {err[:200]}"
+    except Exception as e:
+        log.error(f"Calendar create error: {e}")
+        return f"error: {e}"
+
+
+def handle_calendar_request(user_text: str, conversation_context: str, say) -> bool:
+    """Detect calendar intent, extract event details via Claude, create the event.
+    Returns True if this was a calendar request (handled or failed), False otherwise."""
+    lower = user_text.lower()
+    if not any(k in lower for k in CALENDAR_KEYWORDS):
+        return False
+
+    if not os.path.exists(GCAL_TOKEN_PATH):
+        say("_Calendar not connected. Run: `python3 /home/prometheus/innovius-brief/setup-gcal-oauth.py` on the VPS to authorize._")
+        return True
+
+    today_str = datetime.date.today().isoformat()
+    known_emails_str = "\n".join(f"  {name}: {email}" for name, email in KNOWN_EMAILS.items())
+
+    extract_prompt = f"""Extract calendar event details from this Slack conversation and request.
+
+Conversation context (chronological, newest last):
+{conversation_context or '(no prior context — only the request below is available)'}
+
+User request: {user_text}
+
+Today is {today_str} (ET). Return ONLY a JSON object, no other text:
+{{
+  "title": "meeting title",
+  "date": "YYYY-MM-DD",
+  "start_time": "HH:MM",
+  "end_time": "HH:MM",
+  "attendee_names": ["Full Name 1", "Full Name 2"],
+  "attendee_emails": ["email@example.com"],
+  "description": ""
+}}
+
+Rules:
+- Infer date from day name (e.g. "Thursday" = next Thursday from today)
+- Times are ET, 24-hour format. Default duration 30 min if end_time unknown.
+- Always include akash@innoviuscapital.com in attendee_emails.
+- Known emails (use these):
+{known_emails_str}
+- For anyone not in the known list, include their name in attendee_names but omit from attendee_emails.
+- If date or start_time cannot be determined, set to null."""
+
+    try:
+        result = subprocess.run(
+            ["claude", "--dangerously-skip-permissions", "--model", "claude-haiku-4-5-20251001",
+             "-p", extract_prompt],
+            capture_output=True, text=True, timeout=30, cwd=PROJECT_DIR, stdin=subprocess.DEVNULL,
+        )
+        raw = result.stdout.strip()
+        json_match = re.search(r'\{.*\}', raw, re.DOTALL)
+        if not json_match:
+            say("_Couldn't parse event details. Try: '@Prometheus calendar invite Thursday 2pm with Ali — GTM sync'_")
+            return True
+
+        details = json.loads(json_match.group())
+
+        if not details.get("date") or not details.get("start_time"):
+            say("_I need a date and time. Try: 'Thursday at 2pm for 30 minutes'_")
+            return True
+
+        date_str  = details["date"]
+        start_str = details["start_time"]
+        end_str   = details.get("end_time")
+        title     = details.get("title") or "Meeting"
+        emails    = details.get("attendee_emails") or ["akash@innoviuscapital.com"]
+        names     = details.get("attendee_names") or []
+        desc      = details.get("description") or ""
+
+        start_iso = f"{date_str}T{start_str}:00"
+        if end_str:
+            end_iso = f"{date_str}T{end_str}:00"
+        else:
+            start_dt = datetime.datetime.fromisoformat(start_iso)
+            end_iso  = (start_dt + datetime.timedelta(minutes=30)).strftime("%Y-%m-%dT%H:%M:%S")
+
+        attendee_display = ", ".join(names) if names else ", ".join(emails)
+        say(f"_Creating invite..._")
+
+        outcome = create_calendar_event(title, start_iso, end_iso, emails, desc)
+
+        if outcome.startswith("ok:"):
+            link = outcome[3:]
+            link_text = f"\n<{link}|Open in Calendar>" if link else ""
+            say(f"✅ *{title}*\n🗓 {date_str} at {start_str} ET\n👥 {attendee_display}{link_text}")
+        else:
+            say(f"⚠️ Couldn't create the event: {outcome}")
+
+        return True
+
+    except json.JSONDecodeError:
+        say("_Couldn't parse event details. Be more specific about time and participants._")
+        return True
+    except Exception as e:
+        log.error(f"handle_calendar_request error: {e}")
+        say(f"_Calendar error: {e}_")
+        return True
 
 
 def load_brief_context() -> str:
@@ -358,7 +596,7 @@ def pick_model(text):
     return "claude-haiku-4-5-20251001"
 
 
-def run_claude(user_text, source_context, history=None):
+def run_claude(user_text, source_context, history=None, conversation_context=None):
     model = pick_model(user_text)
     agent_prompt = load_agent_prompt()
     brief_context = load_brief_context()
@@ -378,7 +616,10 @@ def run_claude(user_text, source_context, history=None):
     granola = load_granola_context(user_text)
     granola_block = f"\n\n## Recent Granola Meetings\n{granola}" if granola else ""
 
-    prompt = f"""{agent_prompt}{brief_block}{slack_block}{granola_block}{history_block}
+    # Slack thread/DM context fetched via user token — most relevant for this specific request
+    conv_block = f"\n\n## Current Conversation Context (this thread/DM, newest last)\n{conversation_context}" if conversation_context else ""
+
+    prompt = f"""{agent_prompt}{brief_block}{slack_block}{granola_block}{conv_block}{history_block}
 
 ---
 
@@ -414,35 +655,50 @@ Akash says: {user_text}"""
 
 @app.event("message")
 def handle_dm(event, say):
-    """Handle direct messages to the bot."""
-    log.info(f"message event: channel_type={event.get('channel_type')} subtype={event.get('subtype')} bot_id={event.get('bot_id')} text={repr(event.get('text','')[:50])}")
+    """Handle direct messages and group DMs (mpim) to the bot."""
+    channel_type = event.get("channel_type")
+    log.info(f"message event: channel_type={channel_type} subtype={event.get('subtype')} bot_id={event.get('bot_id')} text={repr(event.get('text','')[:50])}")
 
-    # Only respond to DMs
-    if event.get("channel_type") != "im":
-        log.info("Ignoring: not a DM")
+    # Handle 1:1 DMs (im) and group DMs where bot is mentioned (mpim)
+    if channel_type not in ("im", "mpim"):
+        log.info("Ignoring: not a DM or group DM")
         return
     # Ignore bot messages and edits/deletes
     if event.get("bot_id") or event.get("subtype"):
         log.info("Ignoring: bot message or subtype")
         return
 
-    user_text = event.get("text", "").strip()
+    raw_text = event.get("text", "").strip()
+    # Strip any @mention of the bot so it doesn't appear in the request
+    user_text = re.sub(r"<@[A-Z0-9]+>", "", raw_text).strip()
     if not user_text:
         return
 
-    log.info(f"Processing DM: {repr(user_text[:80])}")
+    # For group DMs, only respond if the bot was explicitly mentioned
+    if channel_type == "mpim" and f"<@" not in raw_text:
+        log.info("Ignoring mpim message: bot not mentioned")
+        return
+
+    log.info(f"Processing {'group DM' if channel_type == 'mpim' else 'DM'}: {repr(user_text[:80])}")
     say("_On it..._")
 
     source_context = (
-        "Direct message from Akash. You are responding privately — "
-        "no sensitivity filter needed on this reply. "
+        f"{'Group DM' if channel_type == 'mpim' else 'Direct message'} from Akash. "
+        "You are responding privately — no sensitivity filter needed on this reply. "
         "However, if you take an action that posts to a public Slack channel, "
         "apply the sensitivity filter to that channel post."
     )
 
     channel_id = event.get("channel")
+    # Always fetch conversation context via user token so bot has full thread history
+    conv_context = fetch_conversation_context(channel_id)
+
+    # Handle calendar requests before passing to general Claude
+    if handle_calendar_request(user_text, conv_context, say):
+        return
+
     history = conversation_history.get(channel_id, [])
-    response = run_claude(user_text, source_context, history)
+    response = run_claude(user_text, source_context, history, conversation_context=conv_context)
     log.info(f"Claude response length: {len(response)} chars")
 
     # Update history
@@ -465,7 +721,8 @@ def handle_mention(event, say):
         say("_Yes? Ask me something._")
         return
 
-    channel = event.get("channel", "a channel")
+    channel_id = event.get("channel")
+    channel = channel_id or "a channel"
 
     say("_On it..._")
 
@@ -476,8 +733,15 @@ def handle_mention(event, say):
         "or in any subsequent channel posts you make as part of this action."
     )
 
+    # Fetch conversation context via Akash's user token — works even if bot wasn't in this DM before
+    conv_context = fetch_conversation_context(channel_id)
+
+    # Handle calendar requests before passing to general Claude
+    if handle_calendar_request(user_text, conv_context, say):
+        return
+
     history = conversation_history.get(channel, [])
-    response = run_claude(user_text, source_context, history)
+    response = run_claude(user_text, source_context, history, conversation_context=conv_context)
 
     history.append(("Akash", user_text))
     history.append(("Prometheus", response))

@@ -17,13 +17,13 @@
 **Signal Interpretation Rules:** When reading CloudZero signals, start by mapping issues to transformation lag rather than pure execution failure. Flat bookings should be interpreted primarily through the middle-of-funnel product/value mismatch, not just sales weakness. Positive engineering velocity and strategic partnerships are real strengths, but they should not be mistaken for proof that the commercial engine is fixed. Treat leadership stability, product modernization, and mid-funnel conversion as the three key indicators of whether the turnaround is working. External strategic interest — including Snowflake/Observe and Anthropic-related pathways — adds upside, but only becomes truly valuable if CloudZero can close the gap between product evolution and buyer demand.
 
 <!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
-Justin (CEO) committed to year-long tenure. Engineering leadership stretched: Scott (CPO) concerned about Eric Weiss's (SVP Eng Platform) technical depth; Bill (SVP Eng Application) outperforming. Staffing bottleneck: Dan Carducci connection flagged by Sharon (Head of People) as critical for hiring/onboarding acceleration.
+AI pricing crisis driving GTM transformation: percentage-of-spend model rejected by AI-native prospects; Scott/Matt deploying concession trade matrices and pricing playbooks. Justin's FAM/services proposal ($25K floor) under GTM testing before field rollout.
 
-Revenue-critical quarter: sales pacing behind target. Commercial funnel declining with significant middle-stage drop; AEs underperforming on meeting volume. AI pricing crisis emerging—AI-native prospects resisting percentage-of-spend model; need API/inference call-based pricing framework.
+Sales funnel under pressure (pacing behind, significant middle-stage drop) in revenue-critical quarter, though internal ADR competition (Umesh Rao) energizing broader org. Brady tracking competitive threat: ScaleOps GPU growth displacing Cast.ai.
 
-CS team attrition risk: three high-performer resignations during manager absence; team frustrated with new collaborative methods; AE-to-CS friction persists.
+Engineering leadership depth gaps (Eric Weiss technical depth concern) being addressed via Dan Carducci → Scott PMM role connection. CS team rebuilding after three high-performer resignations; Matt Katz driving pricing/playbook/Confluence modernization.
 
-Internal sales competition (Umesh Rao leading ADR team) energizing broader sales, SE, and CS teams with opportunity to compete.
+Product momentum: Azure Resource Connector live (AWS/Azure parity closed), AI Hub Webinar 138 registrations, new customer stories (SumoLogic, DraftKings).
 
-Strategic tailwinds: Snowflake partnership introducing CloudZero to LSEG for FinOps use cases. Xiaolei positioning CZ as AI transformation leader for board/external conversations.
+Critical action: Nubank (top customer) GM meeting Apr 14 requires burn-rate reduction dialogue—may necessitate pricing changes or service downgrades. Sharon launching VP+ pulse survey (leadership confidence, team collaboration, autonomy). ELT meeting upcoming (deal review, decision topics, Brazil expansion).
 <!-- END-AUTO-MEMORY -->

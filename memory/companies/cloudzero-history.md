@@ -1,3 +1,13 @@
+## 2026-04-12 — Week of 2026-04-06
+- Scott integrated Matt Katz feedback into pricing playbooks: T20-T22 FAM tier concession trades, AE routing matrix, and floor analysis with ROI calculator review
+- Azure Resource Connector launched (CloudNine delivery), enabling resource property/tag visibility and faster incident response—closes Azure/AWS parity gap
+- AI Hub Webinar at 138 registrations; final push to exceed 150+ target pre-event
+- Sharon launching pulse survey (VP+ alignment on leadership confidence, collaboration, autonomy) as "exceptional people thrive" KR signal
+- Brady reports: ScaleOps GPU growth accelerating, displacing Cast.ai in large enterprise; Finout VP of sales exited
+- Completed: GTM review of Justin's FAM pricing proposal ($25K floor/ROI gap), confirmed Matt Katz matrix alignment before field deployment, Dan Carducci–Scott introduction for VP PMM role, 30-after-30 list finalized
+
+---
+
 ## 2026-04-05 — Week of 2026-03-30
 - Umesh Rao announced internal sales competition with ADR Team currently leading; Sales, SEs, and CS teams still competing for standing
 - Weekly SLT status review covered action items and priorities across leadership team

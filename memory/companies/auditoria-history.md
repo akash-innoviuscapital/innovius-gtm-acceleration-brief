@@ -1,3 +1,13 @@
+## 2026-04-12 — Week of 2026-04-06
+- **Marketing effectiveness audit:** Akash/Xiaolei identified critical gap—events consuming 60% of budget but generating only 7% of pipeline. Marketing Brainstorm (Apr 7-8) with Rohit, Nick, leadership revealed event saturation and LinkedIn underutilization; calibration call scheduled with Rohit.
+- **Workday partnership locked:** $5M revenue target, 20 SQOs/month (~$100K each) from Fins customer base. Vince recommends 2-party plays (Auditoria + SI); Dave Osborne (CRO) driving US/Canada/UK engagement.
+- **ABM formalization:** Nick Ezzo finalizing account coverage and key decision maker identification per target; playbooks required for one-to-one, one-to-few, one-to-many segments.
+- **Vendilux onboarding:** Proposal in hand; can sign by month-end for May event enablement (Gartner CFO conference).
+- **Sutter deal:** Pacing to $1.1M EOQ; Roi/Dave coordinating pipeline review; CRO call requested for Equals feed.
+- **Infrastructure:** Claude Ingest set up for Workday consolidation; Data Consolidation V0 complete; akash@auditoria alias initiated.
+
+---
+
 ## 2026-04-05 — Week of 2026-03-30
 - Rohit set aggressive Q2-Q3 revenue targets: $2M/mo from Workday channel (20 new opps at $100K each), $10M incremental pipeline in 90 days; Q1 attainment at 38% with AE generation at single digits vs 20-30% benchmark
 - Org restructure executed: Partnerships & SDRs moved under Dave Osborne; Dave scheduled CS conversation with Alice (Head of CS) regarding capability gaps

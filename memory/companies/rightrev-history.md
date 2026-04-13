@@ -1,3 +1,12 @@
+## 2026-04-12 — Week of 2026-04-06
+- **Pipeline quality crisis**: Marketing pipeline ($450k) converts to zero bookings; cold outbound rising, warm leads falling, ASP declining YoY.
+- **Org structure conflict**: Dan (CFO) hired Mitch Larson as RevOps without informing Joel (CMO), who worried Mitch would be "overpowered." Dan committed to realigning reporting structure.
+- **Mitch Larson references completed**: Erik Stromness confirmed; Robert Gammon finalizing. Offer pending signature; start date targeting Monday 4/13.
+- **Strategic gaps**: RCB market sizing validation needed (~445 ICP accounts; RightRev = 10% share) before essentials scales. Dashboard rollout pushed past 5/1.
+- **Board meeting 4/8; CRO incoming May 1**: Joel managing interim RevOps leadership through transition.
+
+---
+
 ## 2026-04-05 — Week of 2026-03-30
 - Mitch Larson hiring — reference checks in final stage: Erik Stromness confirmed Fri Apr 3 (2 PM MT), Robert Gammon (Beckway) scheduling complete.
 - CRO search: Nirvano Brans (True Search) assessed by Akash Apr 1; candidate sent thank-you expressing philosophy alignment and excitement. Offer mechanics discussion pending (RevOps reporting, CFO Dan involvement).

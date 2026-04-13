@@ -1,3 +1,13 @@
+## 2026-04-12 — Week of 2026-04-06
+- **RevOps overhaul**: Eric Svetcov committed to full partnership on tech stack rebuild (willing to start from scratch); Akash delivering tech audit assessment next week.
+- **SPV allocation**: LP demand strong; additional slots secured; deadline April 12 (submitted to Justin).
+- **Sales pipeline**: Dave Scaglione finalized revised stage definitions; contract phase redesign proposed via CS workshop series (currently 30-45+ days).
+- **Resource bottleneck**: Dave overextended (10:1 ratio on technical calls); proposed SME cohort model (Dave/tech, Josh Marker/legal).
+- **AI tools adoption**: Team experimenting company-wide; CISO approval barrier for PHI/API access.
+- **Chief of Staff exploration**: Mika interest probed; Maggie Wu's profile floated.
+
+---
+
 ## 2026-04-05 — Week of 2026-03-30
 - Cole Group CRO search: 112 candidates reviewed, 9 in process, 3 finalists including Jeff Grandy (VP Sales, Cadence) advancing to workshops next week
 - Mika presenting to Innovius partners 2026-03-31, targeting $12.5M SPV close approximately two weeks post-call

@@ -1,3 +1,14 @@
+## 2026-04-12 — Week of 2026-04-06
+
+- Rohith Manoj (Data Platform PM candidate) declined offer after negotiation ($160K base + $32K MBO); visa complications and competitive positioning cited as blockers. Role critical for GTM accelerator capacity and Fund II credibility.
+- Ali Mehdi (GTM Engineer) hire closed; onboarding starts April 20 with calibration kickoff completed April 8.
+- FullFunnel retainer agreement signed ($4,750/month, 25 hrs/month, rolling 60-day terms); David Mercurio executing.
+- May 7 Carta dinner registration critically low at 8 attendees; team outreaching to VC network this week for attendance lift.
+- Affinity CRM renewal notice received (due June 3, 2026); CSM requesting alignment conversation by June 29.
+- Summer internship recruiting launched via NYU/Columbia network (MS CS, MLE, Data Science candidates); Ali Mehdi confirmed network participation.
+
+---
+
 ## 2026-04-05 — Week of 2026-03-30
 - Ali ($200K OTE GTM Engineer candidate): panel interviews scheduled this week with Stu, Xiaolei, Nicole; challenge round issued and in-person interviews Monday/Tuesday
 - FullFunnel retainer agreement signed: $4,750/month, 25 hours/month on rolling 60-day terms (30% discount negotiated); David Mercurio confirmed

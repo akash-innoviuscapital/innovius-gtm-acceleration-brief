@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTM Acceleration | Innovius Capital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #1A3320;
+      --green-mid:  #243D2A;
+      --green-card: #1F3D27;
+      --lime:       #A3F09A;
+      --lime-dim:   rgba(163,240,154,0.18);
+      --cream:      #F4F4F1;
+      --white:      #FFFFFF;
+      --dark:       #1A1A1A;
+      --coral:      #FF6B47;
+      --border-l:   rgba(26,51,32,0.1);
+      --border-d:   rgba(163,240,154,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 58px;
+      background: rgba(26,51,32,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-d);
+    }
+    .nav-left { display: flex; align-items: center; gap: 20px; }
+    .nav-wordmark {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 800; font-size: 0.95rem;
+      color: var(--white); letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .nav-wordmark span { color: var(--lime); }
+    .nav-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.18); }
+    .nav-sub {
+      font-size: 0.72rem; font-weight: 500;
+      color: rgba(255,255,255,0.45); letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .nav-right { display: flex; align-items: center; gap: 6px; }
+    .nav-link {
+      font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.5);
+      text-decoration: none; padding: 6px 14px; border-radius: 20px;
+      letter-spacing: 0.02em; transition: all 0.18s;
+    }
+    .nav-link:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav-cta {
+      font-size: 0.78rem; font-weight: 600; background: var(--lime); color: var(--dark);
+      text-decoration: none; padding: 7px 18px; border-radius: 20px;
+      letter-spacing: 0.02em; transition: all 0.18s;
+    }
+    .nav-cta:hover { background: #bdf8b4; }
+
+    .hero {
+      min-height: 100vh; background: var(--green);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 130px 48px 96px; position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(163,240,154,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(163,240,154,0.04) 0%, transparent 60%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--lime-dim); border: 1px solid var(--border-d);
+      border-radius: 20px; padding: 5px 14px; margin-bottom: 36px; width: fit-content;
+      animation: fadeUp 0.5s ease both;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--lime);
+      animation: blink 2.2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+    .hero-badge-text {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--lime);
+    }
+    .hero h1 {
+      font-family: 'Urbanist', sans-serif; font-weight: 900;
+      font-size: clamp(3.2rem, 7vw, 6.2rem); color: var(--white);
+      line-height: 1.04; max-width: 860px; margin-bottom: 28px;
+      animation: fadeUp 0.5s 0.08s ease both;
+    }
+    .hero h1 em { font-style: normal; color: var(--lime); }
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.2rem); color: rgba(255,255,255,0.58);
+      max-width: 520px; line-height: 1.7; margin-bottom: 64px;
+      animation: fadeUp 0.5s 0.16s ease both;
+    }
+    .hero-stats { display: flex; gap: 56px; flex-wrap: wrap; animation: fadeUp 0.5s 0.24s ease both; }
+    .stat-block { display: flex; flex-direction: column; gap: 5px; }
+    .stat-val {
+      font-family: 'Urbanist', sans-serif; font-weight: 800;
+      font-size: 2.1rem; color: var(--lime); line-height: 1;
+    }
+    .stat-lbl { font-size: 0.72rem; font-weight: 500; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; }
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 48px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.25); text-transform: uppercase;
+    }
+    .hero-scroll-line { width: 36px; height: 1px; background: rgba(255,255,255,0.18); }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+    .section-eyebrow {
+      display: inline-block; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 4px 13px; border-radius: 14px; margin-bottom: 18px;
+    }
+    .ey-dark  { background: var(--lime-dim); color: var(--lime); }
+    .ey-light { background: rgba(26,51,32,0.09); color: var(--green); }
+    .section-h {
+      font-family: 'Urbanist', sans-serif; font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; margin-bottom: 12px;
+    }
+    .section-p { font-size: 1rem; line-height: 1.65; max-width: 540px; margin-bottom: 52px; }
+
+    .team { background: var(--cream); padding: 96px 48px; }
+    .team .section-h { color: var(--green); }
+    .team .section-p { color: rgba(26,26,26,0.55); }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .team-card {
+      background: var(--white); border-radius: 18px; padding: 32px;
+      border: 1.5px solid var(--border-l); transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .team-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(26,51,32,0.1); }
+    .team-avatar {
+      width: 52px; height: 52px; border-radius: 50%; background: var(--green);
+      margin-bottom: 20px; display: flex; align-items: center; justify-content: center;
+      font-family: 'Urbanist', sans-serif; font-weight: 800; font-size: 1rem; color: var(--lime);
+    }
+    .team-name { font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--green); margin-bottom: 6px; }
+    .team-role {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
+      background: var(--green); color: var(--lime); padding: 3px 10px; border-radius: 10px; margin-bottom: 16px;
+    }
+    .team-bio { font-size: 0.88rem; color: rgba(26,26,26,0.6); line-height: 1.65; margin-bottom: 18px; }
+    .team-links { display: flex; gap: 10px; }
+    .team-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(26,51,32,0.07); color: var(--green);
+      text-decoration: none; transition: all 0.18s;
+    }
+    .team-link:hover { background: var(--green); color: var(--lime); }
+    .team-link svg { width: 15px; height: 15px; fill: currentColor; }
+
+    .tier-nav {
+      position: sticky; top: 58px; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border-l);
+      display: flex; padding: 0 48px; overflow-x: auto;
+    }
+    .tier-nav::-webkit-scrollbar { display: none; }
+    .tn-item {
+      font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 0.8rem;
+      letter-spacing: 0.07em; text-transform: uppercase; color: rgba(26,26,26,0.35);
+      text-decoration: none; padding: 17px 24px; border-bottom: 2.5px solid transparent;
+      white-space: nowrap; transition: all 0.18s;
+    }
+    .tn-item:hover { color: var(--green); border-bottom-color: var(--lime); }
+    .tn-item.active { color: var(--green); border-bottom-color: var(--green); }
+
+    .tier-sec { padding: 96px 48px; }
+    .tier-sec.on-white { background: var(--white); }
+    .tier-sec.on-cream  { background: var(--cream); }
+    .tier-sec.on-dark   { background: var(--green); }
+    .tier-sec.on-dark .section-h { color: var(--white); }
+    .tier-sec.on-dark .section-p { color: rgba(255,255,255,0.48); }
+
+    .card-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; }
+
+    .fc { perspective: 1100px; height: 190px; cursor: pointer; }
+    .fc-inner {
+      position: relative; width: 100%; height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.52s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fc.flipped .fc-inner { transform: rotateY(180deg); }
+    .fc-front, .fc-back {
+      position: absolute; inset: 0; backface-visibility: hidden;
+      border-radius: 14px; padding: 20px; display: flex; flex-direction: column;
+    }
+    .fc-back { transform: rotateY(180deg); }
+
+    .fc.a .fc-front { background: var(--white); border: 1.5px solid var(--border-l); transition: border-color 0.18s; }
+    .fc.a:hover .fc-front { border-color: rgba(26,51,32,0.22); }
+    .fc.a .fc-back  { background: var(--green); }
+
+    .fc.d .fc-front { background: var(--green-card); border: 1.5px solid var(--border-d); }
+    .fc.d:hover .fc-front { border-color: rgba(163,240,154,0.35); }
+    .fc.d .fc-back  { background: var(--lime); }
+
+    .fc.e .fc-front { background: var(--white); border: 1.5px solid var(--border-l); transition: border-color 0.18s; }
+    .fc.e:hover .fc-front { border-color: rgba(26,51,32,0.22); }
+    .fc.e .fc-back  { background: var(--green); }
+
+    .fc-badge {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 8px; width: fit-content; margin-bottom: 12px;
+    }
+    .fc.a .fc-badge { background: rgba(163,240,154,0.18); color: var(--green); }
+    .fc.d .fc-badge { background: rgba(163,240,154,0.12); color: var(--lime); }
+    .fc.e .fc-badge { background: rgba(26,51,32,0.08); color: var(--green); }
+
+    .fc-title { font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 0.88rem; line-height: 1.3; margin-bottom: 7px; }
+    .fc.a .fc-title, .fc.e .fc-title { color: var(--green); }
+    .fc.d .fc-title { color: var(--white); }
+
+    .fc-desc { font-size: 0.75rem; line-height: 1.5; flex: 1; }
+    .fc.a .fc-desc, .fc.e .fc-desc { color: rgba(26,26,26,0.5); }
+    .fc.d .fc-desc { color: rgba(255,255,255,0.48); }
+
+    .fc-hint { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.04em; }
+    .fc.a .fc-hint, .fc.e .fc-hint { color: rgba(26,51,32,0.28); }
+    .fc.d .fc-hint { color: rgba(255,255,255,0.22); }
+
+    .fc-back-title { font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 0.82rem; margin-bottom: 10px; }
+    .fc.a .fc-back-title, .fc.e .fc-back-title { color: var(--lime); }
+    .fc.d .fc-back-title { color: var(--green); }
+
+    .fc-back-text { font-size: 0.76rem; line-height: 1.6; flex: 1; }
+    .fc.a .fc-back-text, .fc.e .fc-back-text { color: rgba(255,255,255,0.78); }
+    .fc.d .fc-back-text { color: rgba(26,26,26,0.78); }
+
+    .fc-close { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.04em; }
+    .fc.a .fc-close, .fc.e .fc-close { color: rgba(255,255,255,0.28); }
+    .fc.d .fc-close { color: rgba(26,26,26,0.3); }
+
+    .prop-tag {
+      display: inline-flex; align-items: center;
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--coral); border: 1px solid rgba(255,107,71,0.35);
+      padding: 1px 6px; border-radius: 6px; margin-left: 6px; vertical-align: middle;
+    }
+
+    .cta-sec {
+      background: var(--green); padding: 100px 48px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-sec::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(163,240,154,0.07) 0%, transparent 70%);
+    }
+    .cta-eyebrow { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+    .cta-h {
+      font-family: 'Urbanist', sans-serif; font-weight: 900;
+      font-size: clamp(2.6rem, 5vw, 4.2rem); color: var(--white); line-height: 1.08; margin-bottom: 18px;
+    }
+    .cta-h em { font-style: normal; color: var(--lime); }
+    .cta-sub { font-size: 1rem; color: rgba(255,255,255,0.45); margin-bottom: 48px; line-height: 1.6; }
+    .cta-btn {
+      display: inline-block; background: var(--lime); color: var(--dark);
+      font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 1rem;
+      letter-spacing: 0.02em; padding: 17px 48px; border-radius: 50px;
+      text-decoration: none; transition: all 0.22s;
+    }
+    .cta-btn:hover { background: #bdf8b4; transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.22); }
+
+    @media (max-width: 1280px) { .card-grid { grid-template-columns: repeat(4,1fr); } }
+    @media (max-width: 960px) {
+      nav, .hero, .team, .tier-sec, .cta-sec { padding-left: 28px; padding-right: 28px; }
+      .tier-nav { padding: 0 28px; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .card-grid { grid-template-columns: repeat(3,1fr); }
+      .hero-stats { gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: repeat(2,1fr); }
+      .fc { height: 210px; }
+      nav { padding: 0 20px; }
+      .nav-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <div class="nav-wordmark">Innovius <span>Capital</span></div>
+    <div class="nav-divider"></div>
+    <div class="nav-sub">GTM Acceleration</div>
+  </div>
+  <div class="nav-right">
+    <a href="#advise" class="nav-link">Advise</a>
+    <a href="#deploy" class="nav-link">Deploy</a>
+    <a href="#embed"  class="nav-link">Embed</a>
+    <a href="#contact" class="nav-cta">Contact GTM Acceleration</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    <span class="hero-badge-text">GTM Acceleration Team</span>
+  </div>
+  <h1>Advice is cheap.<br><em>Execution isn't.</em></h1>
+  <p class="hero-sub">The GTM Acceleration team doesn't consult. We build the engine alongside you — from a single diagnostic to a full function embed.</p>
+  <div class="hero-stats">
+    <div class="stat-block"><span class="stat-val">50%</span><span class="stat-lbl">Reduction in deal cycle time</span></div>
+    <div class="stat-block"><span class="stat-val">100%+</span><span class="stat-lbl">NDR achieved across portfolio</span></div>
+    <div class="stat-block"><span class="stat-val">+28%</span><span class="stat-lbl">Increase in close rate</span></div>
+    <div class="stat-block"><span class="stat-val">~100%</span><span class="stat-lbl">ARR growth accelerated</span></div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div>SCROLL</div>
+</section>
+
+<section class="team" id="team">
+  <div class="section-eyebrow ey-light">The Operators</div>
+  <h2 class="section-h">We don't send decks.<br>We show up.</h2>
+  <p class="section-p">Three operators with complementary depth across GTM engineering, demand generation, and revenue strategy. Deployable across any engagement.</p>
+  <div class="team-grid" id="team-grid"></div>
+</section>
+
+<div class="tier-nav" id="tier-nav">
+  <a href="#advise" class="tn-item">01 · Advise</a>
+  <a href="#deploy" class="tn-item">02 · Deploy</a>
+  <a href="#embed"  class="tn-item">03 · Embed</a>
+</div>
+
+<section class="tier-sec on-white" id="advise">
+  <div class="section-eyebrow ey-light">Tier 01</div>
+  <h2 class="section-h" style="color:var(--green)">Advise</h2>
+  <p class="section-p" style="color:rgba(26,26,26,0.55)">No commitment. No cost. Access operators who've seen your problem before — and can help you think through it clearly.</p>
+  <div class="card-grid" id="advise-grid"></div>
+</section>
+
+<section class="tier-sec on-dark" id="deploy">
+  <div class="section-eyebrow ey-dark">Tier 02</div>
+  <h2 class="section-h">Deploy</h2>
+  <p class="section-p">Project-scoped. Outcome-driven. We come in with a clear deliverable and don't leave until it's built.</p>
+  <div class="card-grid" id="deploy-grid"></div>
+</section>
+
+<section class="tier-sec on-cream" id="embed">
+  <div class="section-eyebrow ey-light">Tier 03</div>
+  <h2 class="section-h" style="color:var(--green)">Embed</h2>
+  <p class="section-p" style="color:rgba(26,26,26,0.55)">3–5 months. We step in as interim leaders, build the function, and hand it off to someone who can own it permanently.</p>
+  <div class="card-grid" id="embed-grid"></div>
+</section>
+
+<section class="cta-sec" id="contact">
+  <p class="cta-eyebrow">Ready to accelerate?</p>
+  <h2 class="cta-h">Stop optimizing around<br>the problem. <em>Fix it.</em></h2>
+  <p class="cta-sub">One conversation is enough to know if this is the right engagement.</p>
+  <a href="mailto:akash@innoviuscapital.com" class="cta-btn">Contact GTM Acceleration →</a>
+</section>
+
+<script>
+const team = [
+  { initials:'AB', name:'Akash Bose', role:'Operating Partner, GTM Acceleration',
+    bio:'Akash leads the GTM Acceleration team at Innovius Capital. He has spent his career building and scaling revenue engines across enterprise SaaS — from pipeline architecture and org design to AI transformation and interim sales leadership. He embeds directly inside portfolio companies at critical inflection points, turning GTM problems into durable growth.',
+    linkedin:'https://www.linkedin.com/in/boseakash/', email:'akash@innoviuscapital.com', phone:'7654096550' },
+  { initials:'AM', name:'Ali Mehdi', role:'GTM Engineer',
+    bio:'Ali builds the systems, automation, and AI-native infrastructure that power modern revenue teams. He specializes in end-to-end go-to-market engineering — from tooling deployment to production-level AI applications that give revenue teams a measurable, compounding edge.',
+    linkedin:'https://www.linkedin.com/in/ali-mehdi-5979b650/', email:'ali@innoviuscapital.com', phone:'15185265849' },
+  { initials:'TBH', name:'Coming Soon', role:'Head of Demand Generation',
+    bio:'We\'re adding a demand generation leader to the team. This role will lead full-funnel demand programs across the Innovius portfolio — ICP definition, channel strategy, and pipeline infrastructure that scales.' }
+];
+
+const advise = [
+  { t:'Hiring Support', f:'Draft JDs, build MOC, source recruiters, support interviews', b:'The wrong hire at a critical role sets you back six months. We help you define the role correctly, build the scorecard, and run a tight process — from JD to offer.' },
+  { t:'Compensation Benchmarking', f:'Pressure-test OTE, base, and equity against current market', b:'Underpay and you lose the candidate. Overpay and you break the comp band. We benchmark against live SaaS market data across function and stage.' },
+  { t:'Revenue Systems & Tech Stack Audit', f:'Map your revenue stack — gaps, redundancy, and quick wins', b:'Most revenue stacks are 60% redundant and 40% underutilized. We map what you have, flag what you don\'t need, and surface the gaps blocking pipeline velocity.' },
+  { t:'Revenue Org Structure Design', f:'Assess structure, reporting lines, and span of control', b:'Org design is the most underrated GTM lever. We assess whether your structure matches your stage and motion — and show you exactly where it doesn\'t.' },
+  { t:'Board Narrative Prep', f:'Sharpen your GTM story for board-level conversations', b:'Boards don\'t need more data. They need a clear narrative. We help you frame GTM performance in the language that builds confidence and unlocks the next round.' },
+  { t:'Functional Office Hours', f:'Ad hoc or recurring sessions with GTM Acceleration members — CRO, RevOps, demand gen, and more', b:'Access the right operator for the right problem. Office hours are unstructured by design — bring your hardest GTM challenge and get direct, experienced perspective from the team member best positioned to help.' },
+  { t:'Brand & Market Presence Check', f:'Assess how your company shows up in market', b:'Your brand is working or it isn\'t before anyone talks to sales. We assess positioning, messaging, and market visibility — and tell you what to fix first.' },
+  { t:'Orchestrate Partner Ecosystem', f:'Activate talent partners, advisors, and software partners as needed', b:'The best outcomes come from the right people in the room at the right time. We identify who you need — recruiter, advisor, or software partner — and coordinate the engagement so you don\'t have to.' },
+  { t:'Portfolio Best Practices', f:'Cross-portfolio knowledge transfer — applied directly to you', b:'Seven portfolio companies. Every playbook, mistake, and breakthrough is captured. We distill what\'s working across the portfolio and bring it directly to your team.' },
+  { t:'CXO Communities', f:'Facilitated peer sessions across portfolio leaders', b:'The best ideas come from peers who\'ve lived the same problem. We facilitate structured communities for CROs, CMOs, and RevOps leaders across the Innovius portfolio.' }
+];
+
+const deploy = [
+  { t:'AI Transformation', f:'Install core AI systems, train teams, build a lasting cadence', b:'This isn\'t a workshop. We install Anthropic\'s core AI infrastructure, train your team to use it in production, and build a cadence that makes AI-native behavior the default — not the exception.' },
+  { t:'Pricing Strategy Readiness', f:'Full pricing architecture — packaging, ICP alignment, discount posture', b:'Pricing is the highest-leverage GTM decision most companies get wrong. We redesign your packaging, align it to ICP, and build the guardrails that protect margin at scale.' },
+  { t:'Account & Lead Scoring + Outbound Automation', prop:true, f:'Deploy scoring models with automated outbound workflows', b:'Manual prioritization is a pipeline tax. We deploy account and lead scoring connected to automated outbound workflows — so your team focuses on the deals most likely to close.' },
+  { t:'Brand Growth Tracker', prop:true, f:'Relevance and authority across 5 pillars vs. competitors over time', b:'Brand is measurable. Our proprietary tracker monitors your relevance and authority across five dimensions — compared to competitors — so you see momentum building before it shows up in pipeline.' },
+  { t:'Chasm Index', prop:true, f:'Innovius proprietary GTM health assessment with structured output', b:'Most companies don\'t know where their GTM is broken until it\'s too late. The Chasm Index is our structured diagnostic — a complete picture of GTM health, ranked by impact, with a clear action plan.' },
+  { t:'Tooling Deployment', f:'Clay, Unify, and equivalents — configured and operationalized', b:'The right tool deployed wrong doesn\'t move the number. We don\'t just install — we configure, integrate, and train your team until the tool is actually driving output.' },
+  { t:'Partner Motion Tracking', prop:true, f:'Build visibility and tracking for channel and partner pipeline', b:'Partner revenue is invisible until it isn\'t. We build the tracking infrastructure that makes channel pipeline visible, measurable, and attributable in real time.' },
+  { t:'Hiring Sprint', f:'End-to-end hiring execution — process, evaluation, close support', b:'A broken hiring process is a growth tax. We run the full loop — process design, candidate scoring, debrief facilitation, and close support — until the right seat is filled.' },
+  { t:'Pipeline Velocity Program', f:'Structured sprint to diagnose and fix mid-funnel drop-off', b:'Most pipeline problems aren\'t at the top of the funnel. We diagnose exactly where deals are stalling, identify the fix, and run a 4–6 week sprint to move velocity.' },
+  { t:'Revenue Cadence Design', f:'Build the operating rhythm — pipeline reviews, forecast, QBRs', b:'Revenue predictability starts with the right operating rhythm. We design and implement the full cadence — pipeline reviews, forecast calls, QBRs — so your revenue engine runs on its own.' }
+];
+
+const embed = [
+  { t:'Build RevOps Function', f:'Process → Instrumentation → Operations', b:'RevOps isn\'t a hire. It\'s a system. We build it from the ground up — defining process, instrumenting it in your stack, and operationalizing it until it runs without us.' },
+  { t:'Build Demand Generation Function', f:'Process → Experiment → Core Programs', b:'Demand generation built right compounds. We design the motion, run early experiments to find what works, and build the core programs that produce predictable pipeline at scale.' },
+  { t:'Build AI / GTM Engineering Function', f:'AI-native systems design and deployment at the function level', b:'The next GTM advantage is engineering. We build the AI and systems infrastructure that automates pipeline, enriches data, and gives your revenue team an unfair edge.' },
+  { t:'GTM Function Build', f:'Build any GTM function from scratch — scoped to your motion', b:'Missing a critical function? We step in, define the mandate, hire the team, build the playbook, and hand it off to a leader who can own it long-term.' },
+  { t:'GTM Motion Redesign', f:'Restructure the full go-to-market from ICP through close', b:'When the motion is broken, adding headcount makes it worse. We redesign the full GTM — ICP, channels, coverage model, and sales process — then embed to make sure it sticks.' },
+  { t:'Adoption Tracking & Customer Health', f:'Build retention and expansion infrastructure end-to-end', b:'Churn is a lagging indicator. We build the health scoring, adoption tracking, and early warning systems that let you intervene before it shows up in your NRR.' },
+  { t:'ICP Design & Activation', f:'Define and operationalize your ideal customer profile', b:'Vague ICP is the root cause of most pipeline problems. We define it precisely, validate it against your win/loss data, and operationalize it across marketing, sales, and CS.' },
+  { t:'Market Sizing & Strategy', f:'Map the market, size the opportunity, sequence the entry', b:'The right market strategy at the right stage is the difference between 70% and 100% growth. We map the landscape, size each segment, and build the sequencing logic to enter in the right order.' },
+  { t:'Interim Sales Leadership', f:'Run the revenue floor while you hire or restructure', b:'A leadership gap in sales is expensive by the day. We step in as interim sales leader — running the team, maintaining accountability, and keeping pipeline moving until the permanent leader is in seat.' },
+  { t:'Channel & Partnerships Build', f:'Build the full partner function — tiers, enablement, pipeline', b:'Partner revenue doesn\'t happen by accident. We build the full channel motion — from partner tiers and enablement to co-sell workflows and pipeline ownership — with the infrastructure to scale it.' }
+];
+
+function renderTeam() {
+  const el = document.getElementById('team-grid');
+  const liSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`;
+  const emSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`;
+  const phSVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>`;
+  team.forEach(m => {
+    const links = m.linkedin ? `
+      <div class="team-links">
+        <a class="team-link" href="${m.linkedin}" target="_blank" title="LinkedIn">${liSVG}</a>
+        <a class="team-link" href="mailto:${m.email}" title="Email">${emSVG}</a>
+        <a class="team-link" href="tel:+${m.phone}" title="Call">${phSVG}</a>
+      </div>` : '';
+    el.insertAdjacentHTML('beforeend',`
+      <div class="team-card">
+        <div class="team-avatar">${m.initials}</div>
+        <div class="team-name">${m.name}</div>
+        <div class="team-role">${m.role}</div>
+        <p class="team-bio">${m.bio}</p>
+        ${links}
+      </div>`);
+  });
+}
+
+function renderCards(cards, gridId, cls) {
+  const el = document.getElementById(gridId);
+  const label = cls==='a'?'Advise':cls==='d'?'Deploy':'Embed';
+  cards.forEach(c => {
+    const prop = c.prop ? '<span class="prop-tag">Proprietary</span>' : '';
+    el.insertAdjacentHTML('beforeend',`
+      <div class="fc ${cls}" onclick="this.classList.toggle('flipped')">
+        <div class="fc-inner">
+          <div class="fc-front">
+            <div class="fc-badge">${label}</div>
+            <div class="fc-title">${c.t}${prop}</div>
+            <div class="fc-desc">${c.f}</div>
+            <div class="fc-hint">Tap to learn more ↗</div>
+          </div>
+          <div class="fc-back">
+            <div class="fc-back-title">${c.t}</div>
+            <div class="fc-back-text">${c.b}</div>
+            <div class="fc-close">Tap to close ↙</div>
+          </div>
+        </div>
+      </div>`);
+  });
+}
+
+renderTeam();
+renderCards(advise,'advise-grid','a');
+renderCards(deploy,'deploy-grid','d');
+renderCards(embed, 'embed-grid', 'e');
+
+const navLinks = document.querySelectorAll('.tn-item');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const a = document.querySelector(`.tn-item[href="#${entry.target.id}"]`);
+      if (a) a.classList.add('active');
+    }
+  });
+}, { threshold: 0.25 });
+["advise","deploy","embed"].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) io.observe(el);
+});
+</script>
+</body>
+</html>

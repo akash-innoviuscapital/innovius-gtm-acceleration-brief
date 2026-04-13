@@ -9,7 +9,11 @@
 **Signal Interpretation Rules:** Interpret GTM accelerator bandwidth as a leading indicator of firm-wide scalability. Strong external positioning around GTM should be discounted unless matched by evidence the accelerator can scale beyond founder-led heroics. Fund II momentum and GTM platform maturity are linked.
 
 <!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
-**GTM hiring is fragile and aging.** Ali (GTM Engineer, $200K OTE) in panel interviews this week (Stu, Xiaolei, Nicole); Max Kardon (Confluent, $190K OTE) stuck in recruiter lag; Zach Friedland declined but exploring Data Platform path. **FullFunnel retainer signed** ($4.75k/mo, 25 hrs/mo, rolling 60-day terms—Akash negotiated from $6.825), operational capacity gap addressed. Tool integration remains bottleneck: Fathom screen-recording valuable for diligence; Affinity integration (auto notes-sync) critical for deal workflow. Granola adoption working; resolution pending.
+**GTM hiring shows progress with critical gaps.** Ali Mehdi hired (starts Apr 20); Zach Friedland declined GTM path, exploring Data Platform. **Rohith Manoj declined Data Platform Lead PM offer** ($160K base/$32K MBO/$1% profit share)—directly constraining GTM accelerator scaling and Fund II thesis credibility. Data Platform PM role requires external search restart.
 
-**Portfolio actions accelerating:** Fund II (Rohith references due), CloudZero (Dan Carducci → Sharon introduction pending), RightRev (Nirvano flagged), Budburst GTM partnership review underway. **LP engagement sustained:** Beyond the Chasm speaker confirmed (Bruno Estrella, Clay, June 24). Nikhil transition completed; GTM hiring profile signals team rebalancing. Q1 financials due 04/30.
+**Operational capacity gains offset by emerging tool friction.** FullFunnel retainer signed ($4.75k/mo, 25 hrs/mo) closes bandwidth gap. Affinity renewal due July 29 (alignment deadline June 29). OneDrive sync failures emerging as file collaboration blocker. Tool integration (Fathom, Affinity co-authoring) remains structural tension.
+
+**Portfolio momentum mixed.** May 7 dinner underperforming (8 registrations, VC outreach active). CloudZero/Fund II progressing. Summer internship recruiting launched (NYU/Columbia networks: MS CS/MLE/Data Science).
+
+**External validation:** Justin positive on Prometheus ("created something truly awesome")—signals strategic interest in Akash's generalized product build frameworks.
 <!-- END-AUTO-MEMORY -->

@@ -1140,11 +1140,11 @@ function extractChips(html) {
 }
 
 function extractSource(text) {
-  const idx = text.search(/\s*·?\s*\[?\s*SOURCE:/i);
+  const idx = text.search(/\s*·?\s*[(\[]?\s*SOURCE:/i);
   if (idx === -1) return { main: text, source: null };
   return {
-    main: text.slice(0, idx).trim(),
-    source: text.slice(idx).replace(/^\s*·?\s*/, '').trim()
+    main: text.slice(0, idx).replace(/\s*[(\[]\s*$/, '').trim(),
+    source: text.slice(idx).replace(/^\s*[·(\[]*\s*/, '').trim()
   };
 }
 
@@ -1434,9 +1434,9 @@ function dbActionDisplayText(content) {
   t = t.replace(/^\[[A-Za-z0-9 -]+\s*[·.]\s*/, '');
   // Remove trailing · SOURCE: ... and closing ]
   t = t.replace(/\s*[·.]\s*SOURCE:.*?\]?\s*$/i, '');
-  t = t.replace(/\s*\[?SOURCE:.*$/i, '');
-  // Strip any remaining trailing ]
-  t = t.replace(/\]$/, '').trim();
+  t = t.replace(/\s*[(\[]?SOURCE:.*$/i, '');
+  // Strip any remaining trailing ] ( [ left behind by source prefix
+  t = t.replace(/[\](\[]\s*$/, '').trim();
   return t || content;
 }
 

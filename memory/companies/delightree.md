@@ -13,17 +13,11 @@
 <!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
 **Rolling Memory — Delightree**
 
-Delightree is executing a multi-week infrastructure and GTM transformation driven by strong Q1 momentum ($645K closed in 2 days; run rate tracking 5.5M annually). Doug (Head of Sales) drives vendor evaluation and deal closure; Griffin (RevOps) owns data infrastructure; Tushar (CEO) and Xiaolei manage GTM alignment.
+Delightree sustains multi-week infrastructure and GTM transformation driven by Q1 momentum ($645K closed; 5.5M run rate targeting). Tushar (CEO), Doug (Sales), Griffin (RevOps), and Xiaolei coordinate vendor integration and sales process redesign; Akash orchestrates end-to-end sequencing.
 
-**Active workstreams:** (1) Eight data packs in phased rollout (packs 3, 5 live; 1a, 1b, 2, 6, 7, 8 target this week); lead source attribution now stamped. (2) Sales process SDR/ADR account-based selling redesign (Apr 3 review completed; follow-up session with Doug, Tushar, Xiaolei pending). (3) Vendor stack consolidation: Equals BI operational ($157K → ~$140K savings), Sybill ($16K/22 seats, decision pending), Frandata franchise data (~$90K, under review). HubSpot renewal finalized.
+**Active workstreams:** (1) Eight data packs phased (packs 3, 5 live; pack 8 pending YTD pacing axis fix; packs 1a, 1b, 2, 6, 7 rolling). Sales process refresh completed with TOFU/MOFU/BOFU stage mapping for Equals BI; awaiting Griffin execution bandwidth. (2) Head of Marketing search active: Claire (Akash's network) and Jono Andrews in final rounds; interview panel locked (Recruiter Screen → Tushar Focus Round → Resume walkthrough → Challenge/Presentation → Team). (3) Vendor decisions progressing: Sybill ($16K/22 seats, migration waived) ready for signatures; Frandata FDD scraping complete, validation underway; Equals consolidation targeting $140K savings.
 
-**Current friction:** Vendor decisions (Sybill go/no-go, Frandata execution, Equals data completion) require daily sequencing. Head of Marketing (Jono Andrews via Revelone) hire pending this week.
+**Current blocker:** Bookings target definition (new vs. expansion breakdown; quarterization) halts revenue execution. Griffin capacity constrained; execution time-blocking critical.
 
-**Sustained pattern:** High-touch vendor integration is the gating factor for sales infrastructure velocity. Q1 momentum creates investment urgency but enables trade-off decisions. Akash orchestrating across all workstreams.
-
----
-
-**Word count: 182/200**
-
-This preserves the multi-week transformation arc from prior weeks, carries forward Q1 momentum and sustained patterns (high-touch coordination), drops stale timeline references, and identifies the current decision points and friction. The synthesizer will see Akash orchestrating a tightly coupled system where vendor go/no-go decisions directly gate sales infrastructure progress.
+**Pattern:** Vendor go/no-go and data infrastructure decisions gate sales infrastructure velocity. High-touch cross-functional coordination (RevOps, Sales, GTM, Finance) is load-bearing.
 <!-- END-AUTO-MEMORY -->
