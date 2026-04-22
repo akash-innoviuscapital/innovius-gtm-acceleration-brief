@@ -1,3 +1,12 @@
+## 2026-04-19 — Week of 2026-04-13
+- **PM Data Platform hire**: Garv offered $120K base + $20-25K bonus + ~$20K/year profit share (May 4 decision deadline); owns Athena 2.0 backend overhaul; Rohith Manoj declined
+- **Demand Gen candidate**: Alex (ex-Clue, 5+ years ABM) completed interview; Marina Oliveira rescheduled to early week (4/21 8:15am PT proposed); 10-day process includes Justin, investor panel ×2, challenge round
+- **AI Platform Engineering**: Sherpa Talent pipeline active — Ishaan Mody call 4/22, Edwin Dang facing competing offers (expedited timeline), plus two additional candidates in progress
+- **Data Science**: Raunak Sood (USC intern) approved; back-to-back calls with Xiaolei/Ethan Mon/Tue; Saumya offer signed; May 4 start target
+- **Fund II momentum**: 128–150M soft commits, 176 active LPs (200M–1B potential); 150M first-close target by end May (75% of goal); X-Cures SPV at 12.25–13.25M
+
+---
+
 ## 2026-04-12 — Week of 2026-04-06
 
 - Rohith Manoj (Data Platform PM candidate) declined offer after negotiation ($160K base + $32K MBO); visa complications and competitive positioning cited as blockers. Role critical for GTM accelerator capacity and Fund II credibility.

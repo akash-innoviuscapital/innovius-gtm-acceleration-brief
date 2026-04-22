@@ -1,6 +1,868 @@
 const BRIEF_DATA = {
   "_history": [
     {
+      "_date": "April 21, 2026",
+      "_dateKey": "2026-04-21",
+      "_metrics": {
+        "slackMsgs": 2,
+        "slackChannelSignals": 1,
+        "slackDmSignals": 1,
+        "emails": 10,
+        "granolaMeetings": 4,
+        "cloudzeroSignals": 9,
+        "totalRetrieved": 25,
+        "sourcesCited": 36,
+        "coverage": "7/7",
+        "claimsKept": 36,
+        "dropped": 1,
+        "rewritten": 2,
+        "hotSignals": 4,
+        "hotActions": 5,
+        "mappingCorrections": 1,
+        "mappingAmbiguities": 0,
+        "sourceTagsAdded": 0,
+        "hotActionsReordered": "yes",
+        "falseNegativesRecovered": 0,
+        "toolCallsA1": 24,
+        "toolCallsA2": 2,
+        "toolCallsB": 12,
+        "toolCallsC": 5,
+        "toolCallsD": 3,
+        "carryOversOpen": 12,
+        "oldestCarryOverDays": 11
+      },
+      "_hotSignals": [
+        "[CloudZero \u00b7 Security incident: unauthorized account creation on customer domains (73 orgs affected, Jan 29\u2013Apr 20 exposure window) \u2014 fix deployed, log analysis underway \u00b7 SOURCE: cloudzero-ingest / team-elt \u00b7 2026-04-21]",
+        "[CloudZero \u00b7 Won ARR cohort compression: 2026 cohort $3.8M vs $6.4M prior year; deal size down 44% ($142K\u2192$80K); pipeline yield dropped 71% (12.9%\u21923.7%) \u2014 confirms middle-funnel value-translation problem \u00b7 SOURCE: cloudzero-ingest / team-elt \u00b7 2026-04-20]",
+        "[CloudZero \u00b7 Nubank margin neutrality at impasse: primary lever (reduce ingest 7\u21923 days) rejected by Thomas; three decision paths remain (absorb, trade price for service, escalate to cancellation clock) \u2014 board-visible risk \u00b7 SOURCE: cloudzero-ingest / team-elt \u00b7 2026-04-20]",
+        "[Auditoria \u00b7 Q1 FY27 pipeline coverage: 6.8x coverage needed at 15% win rate to hit $1.6M target \u2014 structural miss risk consistent with interpretive context on Rohit execution constraints \u00b7 SOURCE: Gmail / Equals dashboard \u00b7 2026-04-20]"
+      ],
+      "_hotActions": [
+        "[Cross-Portfolio \u00b7 Lock announcement dates for ClearML, Delightree, X-Cures \u2014 6-week pre-summer window closing; Fund II credibility depends on it \u00b7 Akash is coordinating blocker \u00b7 SOURCE: carry-over \u00b7 2026-04-16 \u00b7 Day 5]",
+        "[X-Cures \u00b7 Send Eric Svetcov tech audit assessment with proposals \u2014 now Day 11, credibility at risk with technical partner \u00b7 Eric Svetcov waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-10 \u00b7 Day 11]",
+        "[Delightree \u00b7 Deliver account scoring phases 1-2 \u2014 due Apr 22-24, gates territory planning, 90-day call migration, and sales build \u00b7 Tushar/Doug waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-20 \u00b7 Day 1]",
+        "[CloudZero \u00b7 Activate Dragoneer warm path for Brady's $500K Roblox deal \u2014 stuck at procurement, Brady waiting on investor intro to CFO Naveen Chopra \u00b7 Brady waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-20 \u00b7 Day 1]",
+        "[ClearML \u00b7 Review Post BoD Meeting Feedback doc shared by Justin (Apr 19) \u2014 capture RevOps decisions from kickoff \u00b7 Justin waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-20 \u00b7 Day 1]"
+      ],
+      "Sewer AI": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via #p-sewerai",
+        "teamVisibility": "(none in today's signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sewer AI is a scaling execution story \u2014 conversion and post-sale infrastructure are the binding constraints, not demand. Q1 softness ($1.8M vs $2.5M) is revenue-shape change (PG&E/Houston shifting PAYG\u2192subscription), not commercial weakness. Q2 projects $2.9M\u2013$4M.",
+          "[Memory] No signals for 8+ days. Last meaningful touch was investor framing work (Luminate/JMI meetings Apr 14) and Billy's VP CS search. Advisory posture stable but going dark."
+        ],
+        "action": []
+      },
+      "Auditoria": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-16 via Gmail/Pipeline Review thread",
+        "teamVisibility": "Nick Ezzo (Head of Marketing \u2014 Apex Assembly context)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Underperformance maps to CEO execution constraints (Rohit), not PMF. Dave (CRO) has improved sales talent but bookings structurally capped upstream. Cultural posture: low urgency, weak ownership. Q1 FY27 miss probable.",
+          "[Memory] Workday partnership accelerating (Rob's email sequence driving rep meetings); mid-funnel conversion gap persists (11% vs 32% target); Vendilux signing deadline this month. Head of Marketing recruitment ongoing.",
+          "[Signal] Apex Assembly attendees (Nick Ezzo, Mike Lynch) generated open pipeline opportunities \u2014 available in Salesforce. (SOURCE: Slack / auditoria-salesteam \u00b7 2026-04-21)",
+          "[Signal] Equals SQO Weekly Pulse and New & Expansion Forecast dashboards delivered \u2014 Q1 FY27 $1.6M target, 15% win rate, 6.8x coverage needed. (SOURCE: Gmail \u00b7 2026-04-20)"
+        ],
+        "action": []
+      },
+      "CloudZero": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-20 via Slack DM (Brady), #p-cloudzero, cloudzero-ingest",
+        "teamVisibility": "Brady (SVP Sales), Scott (CPO), Justin Moore (interim CEO), Beth (demand gen candidate)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CloudZero is mid-turnaround: leadership, product, and positioning all in motion simultaneously. Middle-funnel conversion is the binding constraint \u2014 product/value proposition not yet matching buyer expectations. Commercial underperformance is a product-market-value translation problem, not just sales execution.",
+          "[Memory] Q2 Moat Sprint targeting 89 accounts ($3M cohort ARR) for L3+ deepening. FAM services proposal and pricing transformation executing. Three departures in CS; Matt Katz rebuilding. CloudZero ingest STALE Day 11+ \u2014 brief quality degraded for this company.",
+          "[Signal] Security incident (Apr 20): anyone could create fake/real user accounts on customer domains with no validation \u2014 73 orgs affected over ~3 month window. Fix deployed; exploitation log review underway. Engineering process changes required. (SOURCE: cloudzero-ingest / team-elt \u00b7 2026-04-21)",
+          "[Signal] Nubank margin neutrality: primary cost lever rejected by Thomas. Three decision paths pending mandate \u2014 CloudZero leadership (Justin/interim team) must decide: absorb, trade price for service, or escalate to cancellation clock. (SOURCE: cloudzero-ingest / team-elt \u00b7 2026-04-20)",
+          "[Signal] Won ARR cohort analysis confirms deal-size compression and pipeline yield collapse \u2014 2026 cohort at $3.8M vs $6.4M. (SOURCE: cloudzero-ingest / team-elt \u00b7 2026-04-20)",
+          "[Signal] Beth (ex-Snyk, demand gen, 85-115M quarterly pipeline, 28% conversion) introduced to Scott (CPO) \u2014 meeting notes from Apr 20. (SOURCE: Gmail / Granola notes \u00b7 2026-04-20)",
+          "[Signal] Commvault CIO postponed (go-private bid); Mathworks backfill pushes to Q2. (SOURCE: cloudzero-ingest / team-elt \u00b7 2026-04-20)",
+          "[Signal] Every Meeting Deck rolled out on GTM Update call; team reviewing speaker notes. (SOURCE: cloudzero-ingest / gtm-sales \u00b7 2026-04-20)",
+          "[Signal] New AI cost governance sales assets deployed (CFO, Engineering, FinOps personas). (SOURCE: cloudzero-ingest / gtm-sales \u00b7 2026-04-20)",
+          "[Signal] Brady on redeye from Vegas \u2014 prioritize Wed/Thu for meetings. (SOURCE: cloudzero-ingest / gtm-sales \u00b7 2026-04-20)"
+        ],
+        "action": []
+      },
+      "Delightree": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-20 via #p-delightree",
+        "teamVisibility": "Tushar (CEO), Ignacio Ramirez (SwitchPR)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Real commercial traction ($4.6M ARR vs $3.5M plan in 2025) but growth outpacing GTM leadership maturity. Doug (Head of Sales) showing signs of being over his skis \u2014 weak responsiveness, inability to attract strong candidates. Expansion motion structurally absent.",
+          "[Memory] GTM transformation executing ($645K closed, 5.5M run rate). HoM final rounds advancing (Jono, Claire, Joel, Clark). Two AE Manager roles live. Griffin capacity constrained on RevOps.",
+          "[Signal] Ignacio (SwitchPR) sent scope of work for PR campaign \u2014 AI product launch and Series A announcement. Tushar engaged. (SOURCE: Gmail \u00b7 2026-04-20)"
+        ],
+        "action": []
+      },
+      "X-Cures": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Gmail/Dave Scaglione Lucidchart invite",
+        "teamVisibility": "(none in today's signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] No interpretive context card recorded. Sales infrastructure operationalized: territory tool live, pipeline definitions approved, CRO search advancing.",
+          "[Memory] Eric Svetcov tech audit assessment overdue Day 11 \u2014 credibility risk escalating. CRM decision pending from Bryan (HubSpot expired Apr 10). SPV at $12.25-13.25M targeting $15M; needs $1.75-2.75M more. Announcement date still unset."
+        ],
+        "action": []
+      },
+      "ClearML": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-16 via Granola/ClearML BoD Q1, #p-clearml",
+        "teamVisibility": "Alex Newman (prospective fractional RevOps), Justin Moore (shared BoD feedback doc)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CEO-led execution and strategic clarity problem. Moses slow to respond, dismissive. Former Head of SA described severe indecision. Board-facing perception diverges from operating reality. Stability relies on external anchors (HP, Dell).",
+          "[Memory] Q1 confirmed 50-70% miss ($700K new ARR). Board flagged product positioning risk (ML platform \u2192 \"AI velocity generator\"). Alex Paquette (CRO) bandwidth-constrained. RevOps kickoff held Apr 20 \u2014 Akash advising on bookings vs ARR reporting.",
+          "[Signal] ClearML RevOps kickoff (Apr 20): critical infrastructure identified \u2014 deal/company-level data mapping, ARR tracking strategy, source attribution. Multiple process changes needed before scaling. (SOURCE: Granola \u00b7 2026-04-20)",
+          "[Signal] Alex Newman (prospective fractional RevOps) shifting from full-time ClearML role to fractional across multiple companies; requested 15-min call next week to discuss outreach strategy. Akash responded positively. (SOURCE: Gmail \u00b7 2026-04-20)"
+        ],
+        "action": []
+      },
+      "RightRev": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-16 via Gmail/Order Form Request, Group DM with Jagan/Dan/Joel/Jamaica",
+        "teamVisibility": "Joel Capperella (CMO), Danny Hodge (Sweep.io), Mitch Larson (RevOps)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Major operating-system and leadership-alignment problem beneath strong external brand. Jagan (CEO) is a product visionary, not operational leader. Dan (CFO) filling informal COO/GTM role but lacks GTM judgment. VP Sales too green; CRO search underway. GTM motion narrow and Salesforce-dependent.",
+          "[Memory] Mitch Larson started RevOps Apr 13. Dan's May 1 dashboard rollout will expose $450K marketing pipeline conversion shortfall. Joel blocking Salesforce's 20K Essentials package due to readiness concerns. GTM enablement calls lapsed \u2014 reschedule pending.",
+          "[Signal] Sweep.io order form signed and ready \u2014 vendor requesting Mitch Larson contact to intro onboarding (Benjamin Zeitz) on Apr 21. Joel Capperella (CMO) is signer. (SOURCE: Gmail \u00b7 2026-04-21)"
+        ],
+        "action": []
+      },
+      "Innovius": {
+        "engagement": "Unknown",
+        "lastTouch": "",
+        "teamVisibility": "",
+        "hasSignal": false,
+        "know": [],
+        "action": []
+      }
+    },
+    {
+      "_date": "April 20, 2026",
+      "_dateKey": "2026-04-20",
+      "_metrics": {
+        "slackMsgs": 11,
+        "slackChannelSignals": 4,
+        "slackDmSignals": 7,
+        "emails": 5,
+        "granolaMeetings": 0,
+        "cloudzeroSignals": 2,
+        "totalRetrieved": 18,
+        "sourcesCited": 29,
+        "coverage": "7/7",
+        "claimsKept": 29,
+        "dropped": 1,
+        "rewritten": 2,
+        "hotSignals": 4,
+        "hotActions": 5,
+        "mappingCorrections": 0,
+        "mappingAmbiguities": 0,
+        "sourceTagsAdded": 0,
+        "hotActionsReordered": "yes",
+        "falseNegativesRecovered": 3,
+        "toolCallsA1": 40,
+        "toolCallsA2": 8,
+        "toolCallsB": 10,
+        "toolCallsC": 1,
+        "toolCallsD": 3,
+        "carryOversOpen": 12,
+        "oldestCarryOverDays": 10
+      },
+      "_hotSignals": [
+        "[Cross-Portfolio \u00b7 Announcement date crunch: ClearML, Delightree, and X-Cures all lack locked dates with 6-week pre-summer window closing \u2014 directly impacts Fund II LP narrative credibility \u00b7 SOURCE: carry-over \u00b7 2026-04-16 \u00b7 Day 4]",
+        "[CloudZero \u00b7 Q2 Moat Sprint plan submitted: 89 shallow-but-healthy accounts ($3M cohort ARR) targeted for L3+ deepening; combined ~$4.7M ARR impact with CRITICAL band zero-out and A-T1/T2 exposure -30% \u2014 approval needed this week before FAMs lock Q2 \u00b7 SOURCE: cloudzero-ingest \u00b7 2026-04-19]",
+        "[CloudZero \u00b7 Brady seeking Innovius investor connections to unblock $500K Roblox deal stuck at procurement \u2014 two warm paths identified (Justin Moore/Dragoneer to CFO Naveen Chopra; Josh Stein/DFJ to VP Finance Hans Gunawan) \u00b7 SOURCE: Slack DM + cloudzero-ingest \u00b7 2026-04-20]",
+        "[Innovius \u00b7 YTD 2026 sourcing acceleration: 291 contacted / 90 engaged / 89 first meetings / 63 data rooms / 9 ICs vs 2025 YTD 569/137/81/40/5 \u2014 materially better conversion efficiency; Thematic + mass outbound via Marci and Koby driving volume \u00b7 SOURCE: Group DM Xiaolei/Ethan/Akash \u00b7 2026-04-19]"
+      ],
+      "_hotActions": [
+        "[Cross-Portfolio \u00b7 Lock announcement dates for ClearML, Delightree, X-Cures \u2014 6-week pre-summer window closing; Fund II credibility depends on it \u00b7 Akash is coordinating blocker \u00b7 SOURCE: carry-over \u00b7 2026-04-16 \u00b7 Day 4, existing_id: 173]",
+        "[X-Cures \u00b7 Send Eric Svetcov tech audit assessment with proposals \u2014 credibility at risk, now Day 10 \u00b7 Eric Svetcov waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-10 \u00b7 Day 10, existing_id: 129]",
+        "[CloudZero \u00b7 Activate Dragoneer warm path for Brady's Roblox deal \u2014 $500K stuck at procurement, Brady waiting on investor intro to CFO Naveen Chopra \u00b7 Brady is waiting \u00b7 SOURCE: new \u00b7 Slack DM \u00b7 2026-04-20]",
+        "[Innovius \u00b7 Call Edwin Dang Monday after 12pm ET \u2014 competing offers moving quickly, expedited interview process \u00b7 Edwin Dang waiting \u00b7 SOURCE: new \u00b7 Gmail \u00b7 2026-04-19]",
+        "[Delightree \u00b7 Complete datapacks 1-6 for Equals \u2014 aging significantly, now Day 14 \u00b7 Equals/Delightree team waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-06 \u00b7 Day 14, existing_id: 104]"
+      ],
+      "Sewer AI": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via #p-sewerai",
+        "teamVisibility": "(none in today's signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sewer AI is a scaling execution story, not a demand problem. Core challenge is middle-funnel conversion and post-sale CS leadership maturity. Q1 miss ($1.8M vs $2.5M) driven by PG&E/Houston contract structure shift from PAYG to subscription \u2014 revenue-shape change, not weakness. Q2 projected $2.9M-$4M.",
+          "[Memory] Investor framing for LP materials nears completion; Insight Partners PDF with MTD bookings under evaluation for broader distribution. Justin signaled accelerated close activity (\"knock down a million plus at SAI in next couple weeks\"). VP of CS search active with Akash surfacing candidates.",
+          "[Signal] No new signals today. Last touch 7 days ago."
+        ],
+        "action": []
+      },
+      "Auditoria": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-16 via Gmail/Pipeline Review thread",
+        "teamVisibility": "(none in today's signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit's slow decision-making, weak follow-through, and cultural low-urgency posture are the binding constraints. Dave (CRO) has improved sales talent and efficiency, but bookings are structurally capped upstream.",
+          "[Memory] Workday partnership accelerating \u2014 Rob's email sequence driving real Workday rep meetings. Q1 close at risk: targeting $1.1-1.2M contingent on Sutter/KPMG deal, ~2 weeks remaining. Mid-funnel conversion gap (11% vs 32% target) persists.",
+          "[Signal] No new signals today. Last touch 4 days ago."
+        ],
+        "action": []
+      },
+      "CloudZero": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-20 via Slack DM (Brady), #p-cloudzero, cloudzero-ingest",
+        "teamVisibility": "Brady (SVP Sales), Justin Moore (interim CEO)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CloudZero is mid-transformation \u2014 leadership, product, and market positioning all being reworked simultaneously. Bookings flat ~$2M net new QoQ; binding constraint is middle-funnel product/value mismatch, not top-of-funnel. Organization has bought into the reset. Strategic partnership signals (Snowflake/Observe, Anthropic) add upside.",
+          "[Memory] 90 major commitments delivered in 30 days; Azure/AWS parity closed. FAM hiring advancing (HM screens completed, top 5 narrowing). CS team rebuilding after three departures. CloudZero ingest has been stale since Day 7+ (last push Apr 10) \u2014 brief quality degraded for this company.",
+          "[Signal] Justin shared in #p-cloudzero: strong Claude adoption metrics across all employees in 6 weeks post-retreat \u2014 pace highlight.",
+          "[Signal] Q2 Moat Sprint plan: 89 shallow-but-healthy accounts ($3M cohort ARR) targeted for L3+ deepening. Non-negotiable guardrails: CRITICAL band to zero, A-T1/T2 exposure -30%. Combined ~$4.7M ARR impact. Approval needed this week before FAMs lock Q2. (Elevated to Hot Signal.)"
+        ],
+        "action": []
+      },
+      "Delightree": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-20 via #p-delightree, delightree-revops-search",
+        "teamVisibility": "Tushar (CEO \u2014 via #p-delightree acknowledgment)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Real commercial traction ($4.6M ARR, outperformed 2025 plan) but growth outpacing GTM leadership maturity. Doug (Head of Sales) is a growing concern \u2014 weak responsiveness, insufficient strategic rigor. Expansion motion gap is structural.",
+          "[Memory] GTM transformation executing ($645K closed, 5.5M run rate). Account scoring phases 1-2 due Apr 22-24 (Akash) gates territory planning, 90-day call migration, and sales build. Head of Marketing final rounds advancing (Jono, Claire, Joel, Clark). Interim first-line sales leader Zach Greenberg decision pending.",
+          "[Signal] Tushar in #p-delightree: \"You are crushing it. A one man army. Super impressive.\" \u2014 strong relationship signal confirming Akash's GTM value delivery.",
+          "[Signal] Activity in delightree-revops-search channel \u2014 someone asking \"how can I help with next steps?\" (context: likely RevOps search candidate engagement)."
+        ],
+        "action": []
+      },
+      "X-Cures": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Gmail/Dave Scaglione Lucidchart invite",
+        "teamVisibility": "(none in today's signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] No interpretive context card beyond auto-memory. Sales infrastructure operationalized; CRO search advancing.",
+          "[Memory] Eric Svetcov tech audit assessment now Day 10 overdue \u2014 credibility risk escalating. CRM decision pending from Bryan (Head of Sales \u2014 X-Cures). SPV at $12.25-13.25M targeting $15M; needs $1.75-2.75M more. Investment announcement requires date lock and 6-week lead time.",
+          "[Signal] No new signals today. Last touch 7 days ago."
+        ],
+        "action": []
+      },
+      "ClearML": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-16 via Granola/ClearML BoD Q1, #p-clearml",
+        "teamVisibility": "Justin Moore (via Gmail \u2014 shared post-BoD feedback doc)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CEO-led execution and strategic clarity problem. Moses is slow, dismissive, and nonresponsive. Board-facing presentations should be discounted unless matched by internal execution urgency. External anchors (HP, Dell) disproportionately drive stability.",
+          "[Memory] Q1 confirmed 50-70% miss with $700K new ARR. Board flagged product positioning risk (ML platform to \"AI velocity generator\" pivot). Alex Paquette (CRO) severely bandwidth-constrained; hiring pace vs quality tension.",
+          "[Signal] Justin Moore shared ClearML Post BoD Meeting Feedback document (dated 041706) \u2014 requires Akash review.",
+          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] Sybill prep notification shows ClearML RevOps kickoff scheduled this morning (8:30-9:15am ET, April 20) \u2014 Akash should verify outcome and capture any RevOps decisions or action items from that meeting. SOURCE: Gmail \u00b7 2026-04-20."
+        ],
+        "action": []
+      },
+      "RightRev": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-16 via Gmail/Order Form Request, Group DM with Jagan/Dan/Joel/Jamaica",
+        "teamVisibility": "(none in today's signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Major operating-system and leadership-alignment problem beneath strong market perception. Jagan is a product visionary, not operational leader. Dan (CFO) filling GTM vacuum but lacking strong GTM judgment. Current VP Sales too green; CRO search underway for May 1 start.",
+          "[Memory] Mitch Larson (RevOps) started 4/13; reporting-structure tension (Dan claiming CFO oversight; Joel unaware) unresolved. Essentials pricing decision blocks GTM trajectory \u2014 Joel blocking Salesforce's $20K package push. Dan's May 1 dashboard rollout will expose $450K marketing pipeline conversion shortfall. Procurement in motion: Sweep.io and Sybill order forms through Kathy Grimes during Dan's absence (through Apr 22).",
+          "[Signal] No new signals today. Last touch 4 days ago."
+        ],
+        "action": []
+      },
+      "Innovius": {
+        "engagement": "Unknown",
+        "lastTouch": "",
+        "teamVisibility": "",
+        "hasSignal": false,
+        "know": [],
+        "action": []
+      }
+    },
+    {
+      "_date": "April 17, 2026",
+      "_dateKey": "2026-04-17",
+      "_metrics": {
+        "slackMsgs": 14,
+        "slackChannelSignals": 12,
+        "slackDmSignals": 2,
+        "emails": 5,
+        "granolaMeetings": 9,
+        "cloudzeroSignals": 0,
+        "totalRetrieved": 28,
+        "sourcesCited": 38,
+        "coverage": "7/7",
+        "claimsKept": 38,
+        "dropped": 1,
+        "rewritten": 3,
+        "hotSignals": 4,
+        "hotActions": 7,
+        "mappingCorrections": 1,
+        "mappingAmbiguities": 1,
+        "sourceTagsAdded": 0,
+        "hotActionsReordered": "yes",
+        "falseNegativesRecovered": 1,
+        "toolCallsA1": 30,
+        "toolCallsA2": 4,
+        "toolCallsB": 9,
+        "toolCallsC": 6,
+        "toolCallsD": 1,
+        "carryOversOpen": 21,
+        "oldestCarryOverDays": 11
+      },
+      "_hotSignals": [
+        "[Auditoria \u00b7 Nick Ezzo (VP Marketing) publicly challenged pipeline coverage model in email thread, called 6.8x coverage \"impossible\" \u2014 Akash corrected (3x is below standard) and flagged non-collaborative attitude; pipeline call rescheduled to next week as Nick declined participation, Rohit on PTO, Dave Osborne in UK \u00b7 SOURCE: Gmail/Auditoria Pipeline Review \u00b7 2026-04-16]",
+        "[ClearML \u00b7 Q1 board results significantly below target (50-70% miss, only $700K new ARR added); board flagged product positioning dilution risk (ML platform \u2192 \"AI velocity generator\" risks losing core GPU orchestration value prop); Moses CEO development flagged again \u00b7 SOURCE: Granola/ClearML BoD 2026 Q1 \u00b7 2026-04-16]",
+        "[Cross-Portfolio \u00b7 Announcement dates still unlocked for ClearML, Delightree, X-Cures \u2014 6-week lead time required for pre-summer window; LP-visible and Fund II narrative-critical \u00b7 SOURCE: carry-over \u00b7 2026-04-15 \u00b7 Day 2]",
+        "[CloudZero \u00b7 Ingest pipeline stale Day 7 \u2014 no fresh Slack signal data since Apr 10; longest data blackout for highest-engagement portfolio company during active transformation \u00b7 SOURCE: system error + carry-over \u00b7 2026-04-15 \u00b7 Day 2]"
+      ],
+      "_hotActions": [
+        "[X-Cures \u00b7 Send Eric Svetcov tech audit assessment with proposals \u2014 committed in DM, now Day 7; credibility at risk if further delayed \u00b7 Eric Svetcov waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-10 \u00b7 Day 7]",
+        "[ClearML \u00b7 Decide on Alex Newman RevOps hire \u2014 competing offers escalating; deliverables submitted Apr 14, panel completed Apr 15; Akash is sole decision-maker \u00b7 Alex Newman waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-14 \u00b7 Day 3]",
+        "[RightRev \u00b7 Send Sweep + Sybill order forms to Kathy Grimes \u2014 Dan OOO through Apr 22; tools stall without procurement action \u00b7 Kathy Grimes waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-14 \u00b7 Day 3]",
+        "[Delightree \u00b7 Decide with Doug and Tushar on Zach as interim 3-month first-line sales leader \u2014 Brian getting booked up, window closing; Zach/Brian may commit to other accounts \u00b7 Doug, Tushar waiting \u00b7 SOURCE: new \u00b7 Granola/Akash-Tushar \u00b7 2026-04-16]",
+        "[Delightree \u00b7 Complete account scoring phases 1-2 by Apr 22-24 \u2014 Akash leading; territory planning, 90-day call migration, and sales process build all gated on this \u00b7 Griffin waiting \u00b7 SOURCE: new \u00b7 Granola/Akash-Griffin \u00b7 2026-04-16]",
+        "[Innovius \u00b7 Finalize Garv PM Data Platform offer \u2014 decision deadline May 4; $120K base + $20-25K bonus + ~$20K/year profit share; if delayed, external recruiting required \u00b7 Garv waiting \u00b7 SOURCE: new \u00b7 Granola/Akash-Garv \u00b7 2026-04-16]",
+        "[ClearML \u00b7 Connect Moses with Clarke Patterson (PMM advisor) \u2014 Stu approved, Justin confirmed fit for technical product marketing in noisy space; action item from #p-clearml \u00b7 Moses/Clarke waiting \u00b7 SOURCE: new \u00b7 #p-clearml \u00b7 2026-04-16]"
+      ],
+      "Sewer AI": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via #p-sewerai",
+        "teamVisibility": "(none in today's signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sewer AI is a scaling execution story, not a PMF problem. Q1 closed $1.8M vs $2.5M plan but Q2 shows structural momentum ($2.9M-$4M) from PG&E/Houston contract transitions. Core bottleneck is middle-funnel conversion and CS leadership maturity. Advisory engagement pattern \u2014 low direct signal frequency is normal.",
+          "[Memory] Cole's adoption dashboard rebuild remains the oldest open carry-over (Day 11, ID:93). No new direct signals in 4 days \u2014 consistent with advisory engagement cadence."
+        ],
+        "action": []
+      },
+      "Auditoria": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-16 via Gmail/Pipeline Review thread",
+        "teamVisibility": "Roi (RevOps), Nick Ezzo (VP Marketing), Dave Osborne (CRO), Rohit (CEO \u2014 on PTO)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Core constraint is CEO execution discipline, not PMF. Rohit's slow decision-making and weak follow-through ripple across org. Dave (CRO) has improved sales execution but bookings ceiling is set upstream. Marketing effectiveness crisis: events consume 60% budget, generate 7% pipeline. Mid-funnel conversion critical risk (11% vs 32% target).",
+          "[Memory] Pipeline coverage debate is a new escalation vector \u2014 Nick Ezzo's public challenge of the coverage model exposes internal cultural defensiveness previously identified as a leadership pattern. Workday partnership strategy ($5M target) and Vendilux event tool remain in-flight.",
+          "[Signal] Rob [MAPPING AMBIGUOUS \u2014 verify: Auditoria sales team member not on canonical roster] showing traction with Workday rep outreach \u2014 email sequence now in Outreach for broader team use. (Source: #auditoria-salesteam, 2026-04-16)"
+        ],
+        "action": []
+      },
+      "CloudZero": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-13 via Granola/Don-Akash standup",
+        "teamVisibility": "Don (Dir of Board)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CloudZero is mid-transformation: leadership overhaul accepted by org, AI-native repositioning real not cosmetic, engineering velocity improved. Core commercial problem is middle-funnel conversion \u2014 product/value prop not yet matching buyer expectations. Bookings flat at ~$2M net new QoQ. Strategic partnerships (Snowflake, Anthropic) add optionality but don't fix funnel.",
+          "[Memory] Ingest pipeline stale Day 7 \u2014 compounding data gap during active transformation (action age: Day 2, ID:163). FAM hiring screens completed 4/14 and 4/16; comp ceiling guidance status unclear. 90-commitments comms package drafted for Justin review. Two largest customers at risk (Coinbase, Uber). CS team rebuilding after three resignations.",
+          "[Signal] [SOURCE UNAVAILABLE: CloudZero ingest] \u2014 no fresh CloudZero-specific Slack data available."
+        ],
+        "action": []
+      },
+      "Delightree": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-16 via Granola/Akash-Tushar, Akash-Griffin, Sales Process Alignment",
+        "teamVisibility": "Tushar (CEO), Doug (Head of Sales), Griffin (RevOps), Erin (PMM Advisor), Brian Michael (Budburst)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Real commercial traction ($4.6M ARR 2025, $5.5M run rate targeting) but growth outpacing GTM leadership maturity. Doug is a growing concern \u2014 weak responsiveness, insufficient strategic rigor, operating more as senior IC. Expansion motion structurally absent. Q1 pacing below plan (~$345K) tests repeatability.",
+          "[Memory] Multi-week infrastructure transformation sustaining: data packs phased, sales process refresh completed with TOFU/MOFU/BOFU stage mapping, vendor decisions progressing (Sybill, Frandata, Equals). Cross-portfolio mentorship cluster active (Brady, Dave Osborne, Dave Barden all booking Tushar calls). Head of Marketing search in final rounds with multiple candidates.",
+          "[Signal] New sales process framework locked \u2014 5 qualified-to-win stages, split funnel for TOF visibility; asset mapping with Budburst underway; 6-week asset development roadmap established. Champion deck approval pending from Zach (at Disney). (Source: Granola/Sales Process Alignment, 2026-04-16)",
+          "[Signal] Erin (PMM Advisor) completed asset mapping, waiting for Brian Michael (Budburst) review before sharing with Delightree. (Source: DM with Erin, 2026-04-16)",
+          "[Signal] HoM search: Jono Andrews interview tomorrow with deck submission needed; marketing candidate pipeline includes Tyler Robbins and Kathy from Guild. (Source: Granola/Akash-Tushar, 2026-04-16)",
+          "[Signal] Sybill implementation config scheduled for today Apr 17. (Source: Granola/Akash-Griffin, 2026-04-16)"
+        ],
+        "action": []
+      },
+      "X-Cures": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Gmail/Dave Scaglione Lucidchart invite",
+        "teamVisibility": "(none in today's direct signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sales infrastructure delivering results (territory tool, commercial targets, account systematization). CRO search progressing (Cole Group: 112 \u2192 9 \u2192 3 qualified). SPV at 12.25-13.25M targeting 15M \u2014 commitments still needed from Emanuel, Nikhil, North Island. CRM migration decision pending from Bryan. CISO approval required for Claude AI rollout.",
+          "[Memory] Eric Svetcov tech audit assessment now Day 7 (ID:129) \u2014 Akash committed in DM, still not sent. Advisory engagement with no direct signals in 4 days is normal pattern, but the audit commitment is credibility-damaging. Announcement date needed but round not yet finished."
+        ],
+        "action": []
+      },
+      "ClearML": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-16 via Granola/ClearML BoD Q1, #p-clearml",
+        "teamVisibility": "Moses (CEO), Alex (CRO \u2014 Alex Paquette), Stu (Principal), Clarke Patterson (PMM advisor candidate)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CEO-led execution and strategic clarity problem. Moses notably slow to respond, dismissive at times. Board-facing presentations diverge from operating reality. Current stability disproportionately reliant on external anchors (HP, Dell). CRO Alex Paquette severely bandwidth-constrained.",
+          "[Memory] Moses CEO underwriting concern now validated by board: Q1 results 50-70% below target ($700K new ARR). Product positioning shift risks diluting core GPU orchestration value prop. Alex Newman RevOps hire at Day 3 with competing offers \u2014 decision cannot wait. Finance VP search to begin (Stu leading).",
+          "[Signal] Board noted partnership momentum as positive: Dell baking ClearML into cloud automation platform for SMB GPU machines (consumption-based via AWS), HPE partnership progressing, Canonical AWS marketplace. ORNL $350K+ as Slurm-as-a-Service design partner. (Source: Granola/ClearML BoD Q1, 2026-04-16)",
+          "[Signal] Board flagged hiring pace vs quality balance concern and need for structured onboarding before scaling sales team. Alex (CRO) frustration on hiring approval bottlenecks. (Source: Granola/ClearML BoD Q1, 2026-04-16)"
+        ],
+        "action": []
+      },
+      "RightRev": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-16 via Gmail/Order Form Request, Group DM with Jagan/Dan/Joel/Jamaica",
+        "teamVisibility": "Jagan (CEO), Joel (CMO), Kathy Grimes (procurement), Kevin Tiernan (Sweep.io vendor)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Operating-vacuum problem: Jagan (CEO) is product visionary, not operational leader; Dan (CFO) filling informal COO/GTM role but lacks GTM judgment. Team deeply fragmented across marketing, sales, product. GTM motion narrow and Salesforce-concentrated. CRO search progressing toward offer (May 1 start).",
+          "[Memory] Dan OOO Apr 15-22; procurement handoff to Kathy Grimes remains critical path. Essentials launch decision still blocking (Joel CMO). Reporting structure tension unresolved (Dan vs Joel on Mitch Larson). Pipeline quality deteriorating YoY \u2014 cold rising, warm falling, deal size eroding.",
+          "[Signal] Akash requested Sweep.io order form with target for Joel signature by tomorrow EOD; awaiting OF delivery today. (Source: Gmail/Order Form Request, 2026-04-16)",
+          "[Signal] Jagan requesting combined feedback from Dan on GTM messaging and value pillars framework for sales discovery \u2014 TAM/SAM documents and value pillar strategy shared. (Source: Group DM Jagan/Dan/Joel/Jamaica, 2026-04-16)"
+        ],
+        "action": []
+      },
+      "Innovius": {
+        "engagement": "Unknown",
+        "lastTouch": "2026-04-16 via Slack/#innovius-team, Gmail, Granola",
+        "teamVisibility": "Nicole (Chief of Staff), Jasmine (EA), Garv (PM candidate), Alex Barca (demand gen candidate), Marina Oliveira (demand gen candidate), Raunak Sood (intern candidate)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Innovius in scale-and-proof moment. Fund II targeting 150M first close end of May. GTM accelerator validated but bandwidth is the bottleneck. Hiring progress is a leading indicator of firm-wide scalability.",
+          "[Memory] Ali Mehdi starts Apr 20 (3 days). Saumya signed. SF and Denver travel still unbooked (Day 4, ID:139). Operational carry-overs clustering: Ramp expense digest (Day 3), Budburst invoice (Day 3), Swan setup (Day 7), NYC Office email (Day 4), Attio vs Affinity (Day 4), internship outreach (Day 4).",
+          "[Signal] Supercharging Sourcing Brainstorm Session scheduled for next Monday \u2014 pre-work email sent, @channel notification. (Source: #innovius-team, 2026-04-16)",
+          "[Signal] Alex Barca demand gen candidate: Akash had \"great conversation,\" favorite candidate so far, 100% aligned with Nicole. Justin interview scheduled for tomorrow, Stu and Xiaolei next week. Decision target: end of next week. (Source: #revelone-demand-gen, 2026-04-16)",
+          "[Signal] Marina Oliveira interview with Justin rescheduled to Tuesday 4/21 at 8:15am PT; pending Marina confirmation. (Source: Gmail, 2026-04-16)",
+          "[Signal] Raunak Sood (data science intern, USC): Nicole approved; next step back-to-back calls with Xiaolei and Ethan Mon/Tue; May 4 start aligned with SF trip. (Source: Gmail, 2026-04-16)",
+          "[Signal] Salesforce Launchpad Startup Summit Apr 22 (2-6 PM PT, Salesforce Tower SF): Nicole registered; Akash soliciting portco interest. (Source: Gmail, 2026-04-16)"
+        ],
+        "action": []
+      }
+    },
+    {
+      "_date": "April 16, 2026",
+      "_dateKey": "2026-04-16",
+      "_metrics": {
+        "slackMsgs": 5,
+        "slackChannelSignals": 1,
+        "slackDmSignals": 4,
+        "emails": 6,
+        "granolaMeetings": 5,
+        "cloudzeroSignals": 0,
+        "totalRetrieved": 16,
+        "sourcesCited": 40,
+        "coverage": "7/7",
+        "claimsKept": 40,
+        "dropped": 0,
+        "rewritten": 3,
+        "hotSignals": 3,
+        "hotActions": 7,
+        "mappingCorrections": 2,
+        "mappingAmbiguities": 1,
+        "sourceTagsAdded": 0,
+        "hotActionsReordered": "yes",
+        "falseNegativesRecovered": 2,
+        "toolCallsA1": 14,
+        "toolCallsA2": 3,
+        "toolCallsB": 11,
+        "toolCallsC": 5,
+        "toolCallsD": 0,
+        "carryOversOpen": 20,
+        "oldestCarryOverDays": 10
+      },
+      "_hotSignals": [
+        "[CloudZero \u00b7 Ingest stale Day 6 \u2014 no actionable Slack signal data from primary CloudZero channels since Apr 10 \u00b7 SOURCE: memory carry-over + cloudzero retriever failure] [PERSISTENT \u00b7 seen 6x]",
+        "[Cross-Portfolio \u00b7 Investment announcements for ClearML, Delightree, and X-Cures will miss pre-summer window without dates locked NOW; Justin Moore flagged 6-week lead time requirement \u00b7 SOURCE: Group DM (Justin Moore, Stu, Akash, Xiaolei) 2026-04-15] \u2014 LP-visible: announcement timing directly affects fundraise narrative and Fund II positioning.",
+        "[ClearML \u00b7 CEO underwriting concern mounting \u2014 Moses slow/dismissive pattern persists; Alex Newman hire decision pending on Akash while candidate has competing offers \u00b7 SOURCE: memory context card + Gmail 2026-04-14]"
+      ],
+      "_hotActions": [
+        "[Cross-Portfolio \u00b7 Lock announcement dates for ClearML, Delightree, X-Cures \u2014 Justin Moore says 6-week lead time needed; pre-summer window closing; Stu checking ClearML/Zipsy rebrand; X-Cures round not finished \u00b7 Akash is the coordinating blocker \u00b7 SOURCE: new \u00b7 Group DM 2026-04-15]",
+        "[CloudZero \u00b7 Restore CloudZero ingest via POST /innovius-brief/cloudzero-ingest from Mac \u2014 Day 6 stale, compounding data gap during active transformation \u00b7 SOURCE: carry-over \u00b7 2026-04-15 \u00b7 Day 1 + system error]",
+        "[Delightree \u00b7 Confirm Budburst joint sales process call with Doug for Thu 11:30\u201312 ET TODAY \u2014 Doug is out Friday, window closes permanently today; Doug requested this call \u00b7 SOURCE: memory carry-over \u00b7 delightree.md \u00b7 2026-04-15]",
+        "[X-Cures \u00b7 Send Eric Svetcov tech audit assessment with proposals \u2014 committed in DM, now Day 6 \u00b7 Eric waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-10 \u00b7 Day 6]",
+        "[ClearML \u00b7 Make hire/no-hire decision on Alex Newman \u2014 deliverables submitted Apr 14, panel completed Apr 15; competing offer risk \u00b7 Akash is sole decision-maker \u00b7 SOURCE: carry-over \u00b7 2026-04-14 \u00b7 Day 2 + Gmail/Alex Newman 2026-04-14]",
+        "[RightRev \u00b7 Send procurement details (Sweep + Sybill order forms) to Kathy Grimes \u2014 Dan OOO through Apr 22, Kathy named and waiting \u00b7 tools stall for a week without action \u00b7 SOURCE: carry-over \u00b7 2026-04-14 \u00b7 Day 2]",
+        "[Innovius \u00b7 Reschedule Marina Oliveira interview \u2014 she declined Friday Apr 17 slot, requested beginning of next week \u00b7 Marina waiting \u00b7 SOURCE: new \u00b7 Gmail 2026-04-15]"
+      ],
+      "Sewer AI": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via #p-sewerai",
+        "teamVisibility": "Billy (CEO), Turley (SVP RevOps)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sewer AI is a scaling execution story, not a PMF problem. Q1 closed $1.8M vs $2.5M plan but Q2 has structural momentum ($2.9-4M). Core constraint is middle-funnel conversion and CS leadership maturity. Billy's openness to external input sustains advisory leverage.",
+          "[Memory] Cole's adoption dashboard rebuild (fleet-size discrepancies impacting CSM conversations) has been open 10 days \u2014 longest active carry-over. Advisory engagement cadence is normal but last sync was Project Shawshank Apr 7."
+        ],
+        "action": []
+      },
+      "Auditoria": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Granola/Akash-Roi sync",
+        "teamVisibility": "Roi (RevOps), Dave Osborne (CRO \u2014 scheduling Delightree intro)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Underperformance is a CEO execution issue, not PMF. Dave Osborne (CRO) improving sales talent/ops but bookings structurally constrained by Rohit's leadership gaps. Q1 FY27 projected miss (400K-1M vs 1.6M target). Org restructure active \u2014 Dave Osborne now owns Partnerships and SDRs.",
+          "[Memory] Workday partnership strategy locked ($5M target, 20 SQOs/mo); Vendilux event tool signing by end April. Marketing effectiveness crisis persists (events consume 60% budget, generate 7% pipeline). Mid-funnel conversion 11% vs 32% target.",
+          "[Signal] Dave Osborne (Auditoria CRO) scheduling GTM transformation call with Tushar (Delightree CEO) \u2014 confirmed calendar invite for 11:30am PT Tuesday; cross-portfolio sales leadership mentorship signal. [SOURCE: Gmail 2026-04-16]"
+        ],
+        "action": []
+      },
+      "CloudZero": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-13 via Granola/Don-Akash standup",
+        "teamVisibility": "Don (Dir of Board)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Mid-transformation: leadership overhaul accepted by org, but bookings flat at ~$2M net new QoQ. Middle-funnel conversion is the binding constraint \u2014 product/value proposition not yet matching market expectations. Strategic partnerships (Snowflake/Observe, Anthropic) add upside but don't fix commercial engine.",
+          "[Memory] CloudZero ingest has been stale since Apr 10 (Day 6) \u2014 this is a compounding data integrity risk during the most active transformation period. FAM hiring progressing (9 candidates, HM screens completed 4/14 and scheduled 4/16); comp ceiling guidance was due before today's screen. [PERSISTENT \u00b7 seen 6x]",
+          "[Signal] 90 major commitments delivered in 30 days; comms drafted for Justin Moore (interim CEO) review and external send. [SOURCE: Granola/Don-Akash standup 2026-04-15]"
+        ],
+        "action": []
+      },
+      "Delightree": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-14 via Slack/delightree-gtm-acceleration",
+        "teamVisibility": "Tushar (CEO), Doug (Head of Sales), Griffin (RevOps), Ignacio (external GTM partner), Brady Lenahan (CloudZero \u2014 cross-portfolio intro), Dave Osborne (Auditoria \u2014 cross-portfolio intro)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Real commercial traction ($4.6M ARR vs $3.5M plan in 2025) but growth outpacing GTM leadership maturity. Doug is a growing concern (weak responsiveness, limited strategic rigor). Expansion motion gap is structural. Q1 pacing below plan (~$345K) tests repeatability.",
+          "[Memory] HoM search in final rounds: Clark completed, Claire in progress, Joel (candidate \u2014 not RightRev CMO) interview in progress, Jono Andrews also advancing. Akash and Xiaolei agreed to give Jono another chance despite character concerns \u2014 30-min call scheduled. Data packs Day 10 (ID:104) aging. Sybill ready for signatures ($16K/22 seats).",
+          "[Signal] Brady Lenahan (CloudZero SVP Sales) proposing call times with Tushar today \u2014 cross-portfolio sales leadership mentorship. [SOURCE: Gmail 2026-04-16]",
+          "[Signal] Dave Osborne (Auditoria CRO) confirmed 11:30am PT Tuesday call with Tushar to discuss GTM transformation. [SOURCE: Gmail 2026-04-16]",
+          "[Signal] Dave Barden \u26a0\ufe0f (Sewer AI board/advisor \u2014 active status unverified per CLAUDE.md) confirmed Monday call with Tushar via Calendly. [SOURCE: Gmail 2026-04-15]",
+          "[Signal] Ignacio confirmed intro to Tushar for funding announcement and new AI product launch \u2014 Akash asked to be kept posted. [SOURCE: Slack DM 2026-04-15]",
+          "[Signal] Investment announcement for Delightree will miss pre-summer window unless date locked; Stu checking rebrand timeline with Zipsy. [SOURCE: Group DM 2026-04-15]"
+        ],
+        "action": []
+      },
+      "X-Cures": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Gmail/Dave Scaglione Lucidchart invite",
+        "teamVisibility": "(none in today's direct signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sales infrastructure delivering results (territory tool, targets, systematization live). CRO search progressing (3 qualified from 112). Eric Svetcov offering full partnership on tech stack rebuild. SPV at 12.25-13.25M targeting 15M \u2014 window past original Apr 12 close.",
+          "[Memory] Eric Svetcov tech audit assessment has been outstanding Day 6 (ID:129) \u2014 Akash committed in DM. HubSpot expired Apr 10; CRM migration decision (Salesforce/Monaco/Lightfield) still pending from Bryan (Head of Sales, X-Cures). No new direct signals in 3 days \u2014 normal for advisory cadence.",
+          "[Signal] X-Cures round not yet finished; investment announcement needs date and 6-week lead time. [SOURCE: Group DM 2026-04-15]"
+        ],
+        "action": []
+      },
+      "ClearML": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-14 via Slack/clearml-revops-search",
+        "teamVisibility": "Alex Newman (RevOps candidate)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CEO-led execution problem. Moses slow/dismissive/nonresponsive; CEO underwriting assessment mounting. Former Head of SA described indecision, excessive frugality, know-it-all posture. Board-facing perception diverges sharply from operating reality.",
+          "[Memory] Alex Newman hire decision is the near-term focal point \u2014 deliverables submitted Apr 14 (spreadsheet, written answers, PDF deck), panel Apr 15. Competing offer risk noted. Alex (CRO, ClearML) severely bandwidth-constrained. Scott Castle and Clarke Patterson advisor introductions active.",
+          "[Signal] Alex Newman deliverables confirmed in Gmail \u2014 three-part submission covering system architecture, stack diagnostics, and attribution design. [SOURCE: Gmail 2026-04-14]",
+          "[Signal] ClearML has no announcement date yet; Stu reports planning rebrand with Zipsy \u2014 announcement work must start now per Justin Moore. [SOURCE: Group DM 2026-04-15]"
+        ],
+        "action": []
+      },
+      "RightRev": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-14 via Gmail/Sybill meeting prep",
+        "teamVisibility": "Kathy Grimes (procurement), Joel (CMO)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Major operating-system and leadership-alignment problem beneath strong market perception. Jagan (CEO) is a product visionary, not operational leader. Dan (CFO, RightRev) filling COO/GTM vacuum but lacks GTM judgment. Sales VP too green. Joel (CMO, RightRev) increasingly frustrated with fragmentation.",
+          "[Memory] Dan (CFO, RightRev) OOO Apr 15-22 \u2014 procurement handoff to Kathy Grimes active. CRO search progressing toward offer (May 1 start). Mitch Larson started 4/13. Reporting structure tension unresolved (Dan claims Mitch reports to CFO; Joel unaware). Essentials pricing decision still pending from Apr 14 session. Pipeline quality crisis persists (cold rising, warm falling, deal size eroding).",
+          "[Signal] Essentials (new Salesforce package at $20K) launch decision pending \u2014 Joel (CMO, RightRev) blocking due to readiness concerns vs Salesforce push. [SOURCE: Granola/RightRev execution planning 2026-04-14]"
+        ],
+        "action": []
+      },
+      "Innovius": {
+        "engagement": "Unknown",
+        "lastTouch": "",
+        "teamVisibility": "",
+        "hasSignal": false,
+        "know": [],
+        "action": []
+      }
+    },
+    {
+      "_date": "April 15, 2026",
+      "_dateKey": "2026-04-15",
+      "_metrics": {
+        "slackMsgs": 8,
+        "slackChannelSignals": 5,
+        "slackDmSignals": 3,
+        "emails": 5,
+        "granolaMeetings": 2,
+        "cloudzeroSignals": 0,
+        "totalRetrieved": 15,
+        "sourcesCited": 31,
+        "coverage": "7/7",
+        "claimsKept": 31,
+        "dropped": 2,
+        "rewritten": 4,
+        "hotSignals": 1,
+        "hotActions": 4,
+        "mappingCorrections": 0,
+        "mappingAmbiguities": 1,
+        "sourceTagsAdded": 0,
+        "hotActionsReordered": "yes",
+        "falseNegativesRecovered": 0,
+        "toolCallsA1": 30,
+        "toolCallsA2": 6,
+        "toolCallsB": 9,
+        "toolCallsC": 2,
+        "toolCallsD": 0,
+        "carryOversOpen": 20,
+        "oldestCarryOverDays": 9
+      },
+      "_hotSignals": [
+        "[CloudZero \u00b7 Ingest pipeline stale Day 5+ \u00b7 SOURCE: system monitor] \u2014 CloudZero-specific signal ingestion has been down for 5+ days. No fresh CloudZero Slack data available. Board/LP-visible risk if signals are being missed during active transformation period with Justin as interim CEO. This is a data integrity issue compounding daily \u2014 pricing strategy, customer risk (Coinbase/Uber), and FAM hiring decisions are all in flight with no Slack visibility. [VALIDATOR: kept \u2014 meets data integrity + LP-visible criteria during board-active transformation period]"
+      ],
+      "_hotActions": [
+        "[RightRev \u00b7 Send procurement details (Sweep + Sybill order forms) to Kathy Grimes \u00b7 Dan OOO today through Apr 22, Kathy waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-14 \u00b7 Day 1 + DM/Dan Miller 2026-04-15] \u2014 Tier 3: vendor tools stall for a week without today action. Kathy named and waiting; Dan explicitly handed off in group DM.",
+        "[Innovius \u00b7 Respond to Fraser Gibson (Sherpa Talent) on 3 AI platform candidates \u2014 Edwin Dang has competing offers requiring expedited timeline \u00b7 SOURCE: new \u00b7 Gmail/Fraser Gibson \u00b7 2026-04-14] \u2014 Tier 3: candidate can accept elsewhere before next window. Expedited language is explicit in the email. [VALIDATOR: promoted from #3 to #2 \u2014 \"competing offers requiring expedited\" language signals immediate evaporation risk ahead of ClearML hire decision]",
+        "[ClearML \u00b7 Review Alex Newman's challenge deliverables and make hire/no-hire recommendation \u00b7 Candidate has submitted; delay risks losing to competing offers \u00b7 SOURCE: new \u00b7 Gmail/Alex Newman \u00b7 2026-04-14] \u2014 Tier 3: candidate submitted 4/14, waiting for Akash decision. Competing offer risk. [VALIDATOR: demoted from Hot Signal \u2014 does not meet board/LP-visible threshold; correctly classified as Hot Action]",
+        "[Delightree \u00b7 Schedule joint Budburst + Delightree sales process call \u2014 Doug available Thu 11:30\u201312 ET, out Friday \u00b7 SOURCE: new \u00b7 Slack/delightree-gtm-acceleration \u00b7 2026-04-14] \u2014 Tier 4: Thu window closes permanently Friday when Doug is out; 24h clock."
+      ],
+      "Sewer AI": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via #p-sewerai",
+        "teamVisibility": "Billy (CEO), Turley (SVP RevOps)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sewer AI is a scaling execution story \u2014 $17.5M to ~$32M ARR trajectory. Core constraint is middle-funnel conversion and CS leadership maturity, not demand. Q1 closed $1.8M vs $2.5M plan, but Q2 structural momentum ($2.9M\u2013$4M) driven by PG&E/Houston contract transitions makes this a revenue-shape issue, not a demand signal.",
+          "[Memory] Cole's adoption dashboard rebuild has been an open workstream for 9 days (ID:93). No fresh signal on progress. Billy's VP of CS search remains active. Advisory engagement pattern \u2014 no direct Slack or meeting activity in last 2 days.",
+          "[Signal] No new signals today."
+        ],
+        "action": []
+      },
+      "Auditoria": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Granola/Akash-Roi sync",
+        "teamVisibility": "Roi (RevOps), Rohit (CEO), Vince Barrett (Workday)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit exhibits slow decision-making and weak follow-through. Dave Osborne (CRO) has improved sales talent but bookings are structurally constrained by Rohit's leadership gaps. Q1 FY27 projected miss (400K\u20131M vs 1.6M target) confirms this pattern.",
+          "[Memory] Workday partnership remains active (Vince Barrett reviewing). Org restructure in flight with Dave Osborne owning Partnerships/SDRs. Marketing effectiveness crisis identified (events 60% budget, 7% pipeline). No new signals in 2 days.",
+          "[Signal] No new signals today. Last touch was Akash-Roi sync on 4/13."
+        ],
+        "action": []
+      },
+      "CloudZero": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-13 via Granola/Don-Akash standup",
+        "teamVisibility": "Don (Dir of Board), Sharon (Head of People) \u2014 meetings scheduled today per Sybill prep",
+        "hasSignal": true,
+        "know": [
+          "[Context] Mid-transformation: leadership, product, pricing, and market positioning all being reworked simultaneously. Main commercial constraint is middle-funnel conversion \u2014 product/value mismatch, not top-of-funnel. AI pricing crisis (percentage-of-spend model rejected) driving GTM playbook overhaul. Two largest customers (Coinbase, Uber) at risk.",
+          "[Memory] [PERSISTENT \u00b7 seen 2x] Matt Katz concession trade matrix and pricing playbook work has appeared across multiple runs. FAM hiring pool (9 candidates, $120\u2013220K OTE) with HM screens 4/14 and 4/16 \u2014 Akash guidance on comp ceiling needed before 4/16. CS team rebuilding after 3 resignations. OKRs outstanding. Sharon launching VP+ pulse survey. Security event occurred Friday (Eric Weiss flagged).",
+          "[Signal] Sybill meeting prep flagged three meetings today: CloudZero standup with Don (10:30\u201311 AM), Delightree call with Griffin (11\u201311:30 AM), Sharon sync (11:30 AM\u201312 PM). [SOURCE UNAVAILABLE: cloudzero ingest \u2014 Day 5+ stale. No fresh CloudZero Slack signals available.]"
+        ],
+        "action": []
+      },
+      "Delightree": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-14 via Slack/delightree-gtm-acceleration",
+        "teamVisibility": "Doug (Head of Sales), Tushar (CEO), Griffin (RevOps)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Real traction ($4.6M ARR vs $3.5M plan in 2025) but growth outpacing GTM leadership maturity. Doug is a growing concern per multiple independent signals \u2014 weak responsiveness, limited strategic rigor. Expansion motion gap is structural. Q1 pacing below plan (~$345K) tests repeatability.",
+          "[Memory] Multi-week GTM transformation active. Equals data packs in progress (Day 9 carry-over on packs 1\u20136, ID:104). HoM search active \u2014 Akash's network contact Claire and Jono Andrews in final rounds; interview panel locked. Sybill ($16K/22 seats) ready for signatures. Bookings target definition remains a blocker.",
+          "[Signal] Doug requesting joint call with Budburst on Sales Process \u2014 proposed Thu 11:30\u201312 ET. Doug out Friday. Also asking Akash to locate Budburst Slack channel. Tushar interviewing Head of Marketing candidates \u2014 emphasis on demonstrated business impact and player-coach mindset. [MAPPING AMBIGUOUS: \"Joel\" cited as an HoM candidate in Granola notes \u2014 verify this is a candidate name, not Joel (RightRev CMO). Different person, flag for disambiguation before sharing externally.]"
+        ],
+        "action": []
+      },
+      "X-Cures": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Gmail/Dave Scaglione Lucidchart invite",
+        "teamVisibility": "(none in today's signals)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Oncology AI company. HubSpot expired Apr 10 (CRM path pending \u2014 Salesforce/Monaco/Lightfield decision with Bryan). SPV deadline passed Apr 12 (status unknown \u2014 needs 2\u20133 more commitments from Emanuel, Nikhil, North Island). Capital events unresolved. CISO approval required for company-wide Claude AI rollout.",
+          "[Memory] Eric Svetcov tech audit assessment has been pending for 5 days (ID:129). Mika ranked top-two portfolio CEO alongside Billy. No fresh signals in 2 days \u2014 advisory engagement pattern with low signal volume.",
+          "[Signal] No new signals today."
+        ],
+        "action": []
+      },
+      "ClearML": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-14 via Slack/clearml-revops-search",
+        "teamVisibility": "Alex Newman (RevOps candidate)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CEO-led execution and strategic clarity problem. Moses is slow to respond, dismissive, and lacks actionable conviction. Board-level presentations diverge from operating reality. CRO Alex Paquette severely bandwidth-constrained. External advisors (Scott Castle, Clarke Patterson) introduced to provide perspective.",
+          "[Memory] RevOps hiring is the near-term focal point for acceleration. Alex Newman progressed through interviews with positive signals \u2014 identified Outreach/HubSpot sync issues. CEO underwriting assessment indicates mounting pressure on leadership fit. Katie Shellenberger also progressed through interviews.",
+          "[Signal] Alex Newman submitted full challenge deliverables via email (spreadsheet with data validation, answers to 3 prompts, and PDF deck) covering partner gap, stack diagnostics, 30-day outcomes, and attribution system design. [SOURCE: Gmail/Alex Newman 2026-04-14] [VALIDATOR: demoted from Hot Signal \u2014 does not meet board/LP-visible, competitive threat, or data integrity criteria. Correctly surfaced as Hot Action.]"
+        ],
+        "action": []
+      },
+      "RightRev": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-14 via Gmail/Sybill meeting prep",
+        "teamVisibility": "Dan Miller (CFO), Kathy Grimes, Joel (CMO), Joe Marshall (Demand Gen), Mitch Larson (new hire)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Major operating-system and leadership-alignment problem beneath strong market perception. Jagan (CEO) disengaged from operations; Dan Miller (CFO) filling informal COO/GTM role but lacks GTM judgment and is now OOO through Apr 22. GTM motion narrow and Salesforce-concentrated. Pipeline quality deteriorating YoY.",
+          "[Memory] RevOps SOW signed, Mitch Larson started 4/13. CRO search progressing toward May 1 start. Reporting structure tension between Dan and Joel unresolved. Essentials pricing decision pending from Apr 14 session. Pipeline dashboards due 5/1.",
+          "[Signal] Dan Miller (CFO) OOO through Apr 22 \u2014 handed procurement to Kathy Grimes for Sweep and Sybill order forms. Akash confirmed procurement details: Legal name (RightRev Inc.), Main contact (Mitch Larson), Economic buyer (Dan Miller CFO), SFDC. Missing: company address, billing contact email (Dan indicated finance@rightrev.com). [SOURCE: DM/Dan Miller + Group DM 2026-04-15] [VALIDATOR: demoted from Hot Signal \u2014 CFO OOO for a week is operational context elevating Hot Action urgency, not independently board/LP-visible. The real signal is the Hot Action: Kathy is waiting.] Joe Marshall (Demand Gen) requesting ZoomInfo domain additions for innoviuscapital.com and budburst.io \u2014 Akash and Justin@budburst.io licenses. [SOURCE: Gmail/Joseph Marshall 2026-04-14] [waiting_on_akash: false \u2014 RightRev team action] Gloria (demand gen candidate via RevelOne) interviewed \u2014 Joel not 100% sold on fit despite strong answers. [SOURCE: Slack/revelone-demand-gen 2026-04-15]"
+        ],
+        "action": []
+      },
+      "Innovius": {
+        "engagement": "Unknown",
+        "lastTouch": "",
+        "teamVisibility": "Xiaolei Cong, Fraser Gibson (Sherpa Talent), Mara Larson-Richard (Salesforce), Marina Oliveira",
+        "hasSignal": true,
+        "know": [
+          "[Context] Scale-and-proof moment. Fund II ($150M first close target, end of May) is a test of whether the GTM accelerator model can institutionalize. Hiring progress is a leading indicator of scalability.",
+          "[Memory] Ali Mehdi starts Apr 20. Saumya signed. Rohith Manoj declined Data Platform Lead PM \u2014 external search needed. Marina Oliveira 10-day interview process initiated. GTM dinners underperforming. Fund II 128\u2013150M soft commits active.",
+          "[Signal] Xiaolei scheduling sourcing workshop call \u2014 checking Akash availability (12:15 PM ET range). [SOURCE: DM/Xiaolei Cong 2026-04-15] Fraser Gibson introduced 3 AI platform candidates: Ishaan Mody (awaiting calendar link), Edwin Dang (competing offers \u2014 expedited timeline), Gardahadi (Apr 29 call scheduled). [SOURCE: Gmail/Fraser Gibson 2026-04-14] Salesforce Startup Summit Apr 22 (2\u20136 PM PT) \u2014 Mara offering reserved slots for Innovius team and portfolio founders; 75% capacity, sessions include \"Is SaaS Dead?\" and \"Scaling with Humans and Agents.\" [SOURCE: Gmail/Mara Larson-Richard 2026-04-13] Marina Oliveira interview completed \u2014 relevant background for Demand Gen Marketer role. [SOURCE: Granola/Marina Oliveira 2026-04-14]"
+        ],
+        "action": []
+      }
+    },
+    {
+      "_date": "April 14, 2026",
+      "_dateKey": "2026-04-14",
+      "_metrics": {
+        "slackMsgs": 12,
+        "slackChannelSignals": 10,
+        "slackDmSignals": 2,
+        "emails": 5,
+        "granolaMeetings": 7,
+        "cloudzeroSignals": 0,
+        "totalRetrieved": 24,
+        "sourcesCited": 42,
+        "coverage": "7/7",
+        "claimsKept": 42,
+        "dropped": 0,
+        "rewritten": 1,
+        "hotSignals": 4,
+        "hotActions": 6,
+        "mappingCorrections": 0,
+        "mappingAmbiguities": 0,
+        "sourceTagsAdded": 0,
+        "hotActionsReordered": "yes",
+        "falseNegativesRecovered": 0,
+        "toolCallsA1": 43,
+        "toolCallsA2": 5,
+        "toolCallsB": 6,
+        "toolCallsC": 4,
+        "toolCallsD": 0,
+        "carryOversOpen": 25,
+        "oldestCarryOverDays": 10
+      },
+      "_hotSignals": [
+        "[Sewer AI \u00b7 LP-visible: Billy has in-person meetings with Luminate and JMI today; framing is the only remaining gap before investor conversations begin \u00b7 SOURCE: Slack/#p-sewerai 2026-04-14]",
+        "[Auditoria \u00b7 Q1 close at risk: targeting 1.1-1.2M, contingent on Sutter deal (KPMG partner channel); CFO alignment in progress, ~2 weeks left in quarter \u00b7 SOURCE: Granola/Akash-Roi sync 2026-04-13]",
+        "[CloudZero \u00b7 Two largest customers at risk: Coinbase (3-4 of 10 features working), Uber update pending from Mike; combined churn exposure material \u00b7 SOURCE: Granola/Don-Akash standup 2026-04-13]",
+        "[Innovius \u00b7 Fund II pipeline: 128-150M soft commits, 176 active LPs (200M-1B potential); targeting 150M first close by end of May \u2014 GTM dinners underperforming (10 for Car To dinner, 1 for NY/Clay dinner); requires team escalation this week \u00b7 SOURCE: Granola/Monday Morning Innovius 2026-04-13]"
+      ],
+      "_hotActions": [
+        "[Sewer AI \u00b7 Finalize investor framing for LP materials \u2014 Billy has in-person meetings with Luminate and JMI today, framing is the only remaining gap \u00b7 Billy, Justin waiting \u00b7 existing_id: 142 \u00b7 SOURCE: carry-over \u00b7 2026-04-13 \u00b7 Day 1]",
+        "[Delightree \u00b7 Get Tushar's read on Doug's trajectory before broadening conversation with Justin \u2014 decision context deteriorating daily \u00b7 Tushar waiting \u00b7 existing_id: 80 \u00b7 SOURCE: carry-over \u00b7 2026-04-04 \u00b7 Day 10]",
+        "[RightRev \u00b7 Prepare for GTM Acceleration Session at 9:30 AM ET today and Leadership Offsite at 10:30 AM on Impact of Essentials \u2014 Joel, Jagan, team waiting \u00b7 SOURCE: new \u00b7 Gmail/Sybill prep \u00b7 2026-04-14]",
+        "[ClearML \u00b7 Complete Alex Newman exercise output by tomorrow AM and confirm panel interview logistics (3:30 PM ET Apr 15) \u00b7 Alex Newman, Stu waiting \u00b7 SOURCE: new \u00b7 clearml-revops-search \u00b7 2026-04-14]",
+        "[Auditoria \u00b7 Draft message with Roi showing partner visibility gaps and AI prototype solution for Rohit approval \u2014 30-day AI upleveling plan for Vince and Brennan at stake \u00b7 Roi waiting \u00b7 SOURCE: new \u00b7 Granola/Akash-Roi sync \u00b7 2026-04-13]",
+        "[Innovius \u00b7 Respond to Fraser Gibson on recruitment position status \u2014 candidates waiting for feedback, no response yet \u00b7 Fraser Gibson waiting \u00b7 existing_id: 135 \u00b7 SOURCE: carry-over \u00b7 2026-04-13 \u00b7 Day 1]"
+      ],
+      "Sewer AI": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via #p-sewerai",
+        "teamVisibility": "Billy (CEO), Turley (SVP RevOps)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sewer AI is a scaling execution story, not a PMF problem. Q1 closed $1.8M vs $2.5M plan, but Q2 shows structural momentum ($2.9-4M) driven by PG&E and Houston contract transitions. Core constraints are middle-funnel conversion and CS leadership maturity, not demand.",
+          "[Memory] Cole dashboard rebuild and adoption data pack remain open workstreams across multiple runs. VP of CS search active with Billy. Billy granted Akash write access to Revenue Operations MOC \u2014 advisory leverage sustained.",
+          "[Signal] Akash confirmed to #p-sewerai: all data Shay needs already provided; framing is the only gap. Billy has in-person meetings with Luminate and JMI today \u2014 holding off on proactive docs to avoid raising new questions. [SOURCE: Slack/#p-sewerai 2026-04-14]"
+        ],
+        "action": []
+      },
+      "Auditoria": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Granola/Akash-Roi sync",
+        "teamVisibility": "Roi (RevOps), Rohit (CEO), Vince Barrett (Workday)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit's slow decision-making and weak follow-through are the binding constraint on growth. Dave (CRO) has materially improved sales talent but bookings remain structurally constrained upstream. Q1 pacing confirms this pattern.",
+          "[Memory] Workday partnership strategy locked ($5M annual target, 20 SQOs/month). Vendilux event intelligence tool signing by end April. Marketing effectiveness crisis persists (events: 60% budget, 7% pipeline). Mid-funnel conversion remains critical risk (11% vs 32% target).",
+          "[Signal] Competitive intelligence: HighRadius charges $1-2/invoice for AP, experimenting with outcome-based pricing. [SOURCE: Slack/auditoria-salesteam 2026-04-14]",
+          "[Signal] AE assignment misalignment on Workday channel: file data vs Salesforce records conflict; Roi confirmed file data supersedes \u2014 reconciliation needed. [SOURCE: Granola/Akash-Roi sync 2026-04-13]"
+        ],
+        "action": []
+      },
+      "CloudZero": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-13 via Granola/Don-Akash standup",
+        "teamVisibility": "Don (Dir of Board), Christa Davy (recruiter)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CloudZero is mid-transformation: leadership, product, market positioning all being reworked simultaneously. The org has bought in, but the challenge is executing fast enough. Flat bookings (~$2M net new QoQ) driven by mid-funnel product/value mismatch, not sales execution alone. AI pricing crisis (percentage-of-spend model rejected) driving GTM pivot.",
+          "[Memory] [PERSISTENT \u00b7 seen 2x] Matt Katz integrated concession trade matrix feedback across multiple runs. CS team rebuilding after three high-performer resignations. Sharon launching VP+ pulse survey. FAM/services pricing proposal ($25K floor) under GTM testing.",
+          "[Signal] Two largest customers at risk: Coinbase (3-4 of 10 features working), Uber update pending. OKRs outstanding \u2014 Brenna to remind team. Security event occurred Friday \u2014 Eric flagged. [SOURCE: Granola/Don-Akash standup 2026-04-13]",
+          "[Signal] FAM hiring search: 9 candidates ($120-220K OTE), HM screens scheduled 4/14 and 4/16; Christa (recruiter) seeking feedback before narrowing pool. [SOURCE: Gmail 2026-04-14]",
+          "[Signal] [CONTEXT: interpretive card] Nubank (top customer) GM meeting today (Apr 14) requires burn-rate reduction dialogue \u2014 may necessitate pricing changes or service downgrades. Monitor for follow-up signal. [SOURCE: CloudZero interpretive context \u2014 verify via direct channel if high stakes]"
+        ],
+        "action": []
+      },
+      "Delightree": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-13 via Slack/delightree-gtm-acceleration",
+        "teamVisibility": "Doug (Head of Sales), Griffin (RevOps), Tushar (CEO), Adrian (Head of Finance)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Real commercial traction ($4.6M ARR vs $3.5M plan in 2025) but Q1 pacing below plan (~$345K) tests repeatability. Doug is a growing concern \u2014 weak responsiveness, inability to attract strong candidates, insufficient strategic rigor. Expansion motion structurally absent.",
+          "[Memory] Eight data packs phased (3, 5 live; pack 8 pending). HoM search active with Claire and Jono Andrews in final rounds. Sybill integration ready for signatures ($16K/22 seats). Bookings target definition (new vs expansion breakdown) remains a blocker.",
+          "[Signal] Sybill X22 live with HubSpot integration, discounts applied. Kickoff meeting scheduled Wed morning \u2014 Griffin needs to be added to invite. [SOURCE: Slack/ext-delightree-sybill 2026-04-14]",
+          "[Signal] New RevOps candidate (Matthew) added to ATS and calendar for first interview; Adrian and Doug notified. [SOURCE: Slack/delightree-revops-search 2026-04-14]",
+          "[Signal] Tushar open to meeting Mike Vance (Betts candidate, remote role). [SOURCE: Slack/betts-innovius-capital-gtme 2026-04-14]"
+        ],
+        "action": []
+      },
+      "X-Cures": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-13 via Gmail/Dave Scaglione Lucidchart invite",
+        "teamVisibility": "Dave Scaglione (Dir Customer Innovation)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Sales infrastructure delivering results (territory tool, commercial targets, account systematization live). CRO search progressing (Cole Group: 112 to 9 to 3 qualified). SPV at 12.25-13.25M targeting 15M \u2014 need 2-3 more commitments.",
+          "[Memory] Eric Svetcov tech audit assessment commitment outstanding across multiple runs. CRM migration decision pending from Bryan. Dave Scaglione capacity constraint persistent (10:1 rep ratio).",
+          "[Signal] SPV update from Monday meeting: 12.25-13.25M raised, targeting 15M \u2014 need commitments from Emanuel, Nikhil, North Island. [SOURCE: Granola/Monday Innovius 2026-04-13]",
+          "[Signal] CEO assessment: Mika ranked among top two portfolio CEOs alongside Billy \u2014 fastest learners, most decisive, feedback-receptive. [SOURCE: Granola/Monday Innovius 2026-04-13]"
+        ],
+        "action": []
+      },
+      "ClearML": {
+        "engagement": "Advisory",
+        "lastTouch": "2026-04-14 via Slack/clearml-revops-search",
+        "teamVisibility": "Alex Newman (RevOps candidate)",
+        "hasSignal": true,
+        "know": [
+          "[Context] CEO-led execution and strategic clarity problem. Moses is slow, dismissive, nonresponsive \u2014 creating low urgency and weak operating cadence. Board-facing presentations may diverge from operating reality. Alex Paquette (CRO) bandwidth-constrained.",
+          "[Memory] RevOps hiring is the near-term focal point. Alex Newman demonstrated hands-on sales tech expertise; Katie Shellenberger also progressed. Scott Castle introduced to Moses for strategic engagement; Clarke Patterson on standby.",
+          "[Signal] Alex Newman panel interview tomorrow (Apr 15) at 3:30 PM ET. Readout slot needs scheduling for Wed/Thu this week. [SOURCE: Slack/clearml-revops-search 2026-04-14]"
+        ],
+        "action": []
+      },
+      "RightRev": {
+        "engagement": "Active",
+        "lastTouch": "2026-04-14 via Gmail/Sybill meeting prep",
+        "teamVisibility": "Joel (CMO), Jagan (CEO), Mitch Larson (new hire, started 4/13), Dan (CFO)",
+        "hasSignal": true,
+        "know": [
+          "[Context] Major operating-system and leadership-alignment problem beneath strong market perception. Jagan is a product visionary, not operational leader. Dan Miller (CFO) filling operational vacuum but lacks strong GTM judgment. Sales/marketing fragmentation is structural.",
+          "[Memory] RevOps SOW signed. Mitch Larson started 4/13. CRO search progressing toward offer (May 1 start). Reporting structure tension: Dan claims Mitch reports to CFO; Joel unaware \u2014 resolution pending. Pipeline quality deteriorating YoY. 5/1 dashboard deadline.",
+          "[Signal] Strategy decision point: essentials push vs process implementation approach. Akash needs to test essentials option with Dan; if rejected, pivot to process implementation. [SOURCE: DM/Joel 2026-04-14]"
+        ],
+        "action": []
+      },
+      "Innovius": {
+        "engagement": "Unknown",
+        "lastTouch": "2026-04-14 via Slack/innovius-team, Granola/Monday meeting",
+        "teamVisibility": "Justin Moore (GP), Fraser Gibson (recruiter), Ethan (Analyst), Marina Oliveira (candidate)",
+        "hasSignal": true,
+        "know": [
+          "[Signal] Saumya (data science hire) signed offer today. [SOURCE: Slack/hiring-team-data-science-ai 2026-04-14]",
+          "[Signal] Justin Moore on calls re Fund II LPA \u2014 team meeting pushed 15 min. [SOURCE: Slack/innovius-team 2026-04-14]",
+          "[Signal] Fathom Gmail migration still broken (error: 'connected by another user'); Ethan troubleshooting. [SOURCE: Gmail 2026-04-13]",
+          "[Signal] Q4 reporting finalizing today, sending tomorrow. [SOURCE: Granola/Monday Innovius 2026-04-13]"
+        ],
+        "action": []
+      }
+    },
+    {
       "_date": "April 13, 2026",
       "_dateKey": "2026-04-13",
       "_metrics": {
@@ -131,919 +993,6 @@ const BRIEF_DATA = {
         "teamVisibility": "",
         "hasSignal": false,
         "know": [],
-        "action": []
-      }
-    },
-    {
-      "_date": "April 10, 2026",
-      "_dateKey": "2026-04-10",
-      "_metrics": {
-        "slackMsgs": 14,
-        "slackChannelSignals": 6,
-        "slackDmSignals": 8,
-        "emails": 4,
-        "granolaMeetings": 6,
-        "cloudzeroSignals": 7,
-        "totalRetrieved": 31,
-        "sourcesCited": 35,
-        "coverage": "7/7",
-        "claimsKept": 35,
-        "dropped": 1,
-        "rewritten": 4,
-        "hotSignals": 3,
-        "hotActions": 3,
-        "mappingCorrections": 0,
-        "mappingAmbiguities": 5,
-        "sourceTagsAdded": 0,
-        "hotActionsReordered": "yes",
-        "falseNegativesRecovered": 2,
-        "toolCallsA1": 30,
-        "toolCallsA2": 8,
-        "toolCallsB": 9,
-        "toolCallsC": 3,
-        "toolCallsD": 3,
-        "carryOversOpen": 19,
-        "oldestCarryOverDays": 6
-      },
-      "_hotSignals": [
-        "[Innovius \u00b7 Rohith Manoj declines Data Platform (Lead PM) offer after revised comp ($160K base, $32K MBO, 10% of 1% profit sharing) \u2014 hiring pipeline for critical GTM infrastructure role now empty \u00b7 SOURCE: gmail \u00b7 2026-04-10]",
-        "[CloudZero \u00b7 ScaleOps competitive escalation \u2014 Brady reports ScaleOps eating Cast.ai's lunch in large enterprise GPU segment; Cast.ai had revenue recognition issues (fake ARR from expected future expand) \u2014 directly relevant to CloudZero's AI cost positioning \u00b7 SOURCE: #p-cloudzero \u00b7 2026-04-08]",
-        "[CloudZero \u00b7 Finout VP of Sales departed (LinkedIn post shared by Brady) \u2014 competitive landscape shifting; Finout instability may create win opportunities or signal broader market consolidation \u00b7 SOURCE: #p-cloudzero \u00b7 2026-04-08]"
-      ],
-      "_hotActions": [
-        "[Innovius \u00b7 Rohith Manoj declined \u2014 decide next steps on Data Platform hiring pipeline immediately; role is a capacity unlock for GTM accelerator scaling and directly tied to Fund II thesis credibility \u00b7 Lapses: pipeline now empty; delay compounds bandwidth bottleneck and fund narrative risk \u00b7 Waiting: Nicole/hiring team \u00b7 SOURCE: new \u00b7 gmail \u00b7 2026-04-10]",
-        "[Delightree \u00b7 Get Tushar's read on Doug's trajectory before broadening conversation with Justin \u2014 Justin's \"won't live up position\" signal is board-visible leadership risk; founder alignment required before GP-level conversation proceeds \u00b7 Lapses: aging Day 6, decision context deteriorating \u00b7 Waiting: Tushar \u00b7 SOURCE: carry-over \u00b7 2026-04-04 \u00b7 Day 6, existing_id: 80]",
-        "[Delightree \u00b7 Provide Xiaolei with marketing connections for Tushar (Head of Marketing search) \u2014 Xiaolei reconsidering Jono Andrews; Claire (Akash's network) interested but sick this week; needs clear agenda/goals before committing \u00b7 Lapses: Xiaolei actively designing interview panel and waiting on Akash's input for Round 2 placement \u00b7 Waiting: Xiaolei \u00b7 SOURCE: new \u00b7 DM with Xiaolei \u00b7 2026-04-09]"
-      ],
-      "Sewer AI": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via Granola/Project Shawshank sync",
-        "teamVisibility": "Billy (CEO), Cole (RevOps Analyst)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Sewer AI is a scaling execution story, not a PMF problem. Core constraint is shifting from top-line demand to middle-funnel conversion and post-sale scalability. VP of CS search is active and structurally important to the land-and-expand engine. Revenue shape change (PG&E/Houston shifting PAYG to subscription) makes Q1 optics ($1.8M vs $2.5M plan) weaker than commercial reality.",
-          "[Memory] Cole's adoption dashboard rebuild remains in progress (carry-over Day 4). No new signals from Sewer AI channels or meetings today \u2014 quiet period consistent with advisory engagement cadence."
-        ],
-        "action": []
-      },
-      "Auditoria": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-08 via gmail/Rohit Marketing Brainstorm follow-up",
-        "teamVisibility": "Rohit (CEO), Nick (Head of Marketing), Roi (RevOps), Dave Osborne (CRO)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit exhibits slow decision-making, inconsistent engagement, weak follow-through. Dave (CRO) improving sales talent but bookings structurally constrained by upstream execution gaps. Q1 FY27 pacing to miss $1.6M target. Org restructure underway: Partnerships and SDRs moving under Dave.",
-          "[Memory] Workday account consolidation and Claude ingest setup are persistent carry-over themes (Day 4). Marketing brainstorm with Nick Ezzo produced actionable plans but execution velocity remains the binding constraint.",
-          "[Signal] Vince Barrett confirms Data Consolidation V0 complete (30 min turnaround); awaiting 1-2 additional Workday documents. [MAPPING AMBIGUOUS \u2014 verify: Vince Barrett and Brennan Melser appear in Auditoria DM thread but are not in canonical Auditoria roster; likely vendors or contractors] (Source: Group DM with Rohit, Dave Osborne, Roi, Brennan Melser, Vince Barrett \u00b7 2026-04-10)",
-          "[Signal] Nick Ezzo has Vendilux proposal in hand; can sign by end of April for May event season (Gartner CFO conference at National Harbor). Akash recommended tool to Rohit earlier but follow-up unclear. (Source: Granola/Marketing brainstorm \u00b7 2026-04-07)",
-          "[Signal] Marketing mix review identified event saturation risk (Workday Rising plateauing) and need for diversified demand gen (SEO, ABM, sponsorships). ABM execution still in earliest stages \u2014 Nick needs to work with Rohit on account coverage and playbooks. (Source: Granola/Marketing brainstorm \u00b7 2026-04-07)",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] Akash proposed creating internal AI skill/project using Prometheus in Auditoria's team account; requested akash@auditoria email alias and to leverage Claude Code $15K credits; Brennan Melser asked to be included. (Source: Group DM with Rohit, Dave Osborne, Roi, Brennan Melser, Vince Barrett \u00b7 2026-04-10)"
-        ],
-        "action": []
-      },
-      "CloudZero": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-08 via Granola/Akash-Sharon Weekly Sync",
-        "teamVisibility": "Justin (CEO), Sharon (Head of People), Matt Katz (SVP CS), Scott (CPO), Brady (SVP Sales), Dan Carducci, Miguel (RevOps)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CloudZero is mid-transformation: leadership, operating model, product direction, and market positioning being reworked simultaneously. Organization has bought into changes. Main commercial constraint is middle-of-funnel conversion \u2014 product/value proposition gap, not sales execution. Competitive landscape shifting from traditional FinOps (Vantage, Finout) toward AI cost management (Cast AI, ScaleOps).",
-          "[Memory] [PERSISTENT \u00b7 seen 3x] Scott Castle pricing/concession framework iteration continues \u2014 Matt Katz feedback integrated into trade matrix, routing matrix, and pricing state-of-play. This multi-touch cycle signals the pricing playbook is nearing field-deployment readiness.",
-          "[Signal] Azure Resource Connector now live (CloudNine team) \u2014 closes Azure/AWS parity gap, enables resource property/tag visibility alongside cost data. (Source: #p-cloudzero \u00b7 2026-04-08)",
-          "[Signal] AI Hub Webinar at 138 registrations vs 150+ target \u2014 final push underway. (Source: #p-cloudzero \u00b7 2026-04-08)",
-          "[Signal] Sharon launching 3-question pulse survey (confidence in leadership, team collaboration, autonomy) targeting VP+ alignment on \"exceptional people thrive\" KRs \u2014 rolling out next week. (Source: #p-cloudzero \u00b7 2026-04-08)",
-          "[Signal] New customer stories added: SumoLogic and DraftKings. Internal training videos created (Ben Austin). (Source: #p-cloudzero \u00b7 2026-04-08)",
-          "[Signal] Akash has meetings today: Xiaolei/Akash sync on outbound (Google, 11am ET), Brenna check-in (11:30am), Dan/Miguel stand-up (12pm). (Source: gmail/Sybill \u00b7 2026-04-10)"
-        ],
-        "action": []
-      },
-      "Delightree": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-08 via Granola/Akash & Delightree session",
-        "teamVisibility": "Tushar (CEO), Doug (Head of Sales), Griffin (RevOps), Xiaolei, Claire (HoM candidate)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Growth outpacing GTM leadership maturity. Doug is a growing concern \u2014 weak responsiveness, inability to attract strong candidates, insufficient strategic rigor. Expansion motion gap is structural. Q1 pacing below plan (~$345K) tests repeatability of 2025 outperformance.",
-          "[Memory] Multi-week GTM infrastructure transformation continues. Data packs in phased rollout (packs 3, 5 live; 8 pending). Sales process refresh now complete (TOFU/MOFU/BOFU overhaul posted). Head of Marketing search is the active hire priority \u2014 Jono Andrews reconsidered, alternatives surfaced (Claire, Joel referral, Vikas).",
-          "[Signal] Sales process refresh overhaul completed \u2014 Akash posted detailed TOFU/MOFU/BOFU stage changes with Google Sheet link; requested Griffin and one other reviewer to provide feedback by EOD tomorrow (Apr 11). (Source: #delightree-gtm-acceleration \u00b7 2026-04-09)",
-          "[Signal] Data pack 8 pending system enablement; middle chart needs YTD pacing axis correction (not QTD). Sales process refresh requires Equals data pack mapping changes. (Source: #equals-delightree \u00b7 2026-04-09)",
-          "[Signal] Xiaolei and Akash designing interview panel for Head of Marketing: Recruiter Screen \u2192 Tushar Focus Round \u2192 Resume walkthrough \u2192 Challenge + Presentation \u2192 First team panel (Doug, Adrian, and Marketing team member) \u2192 References. [NOTE: \"Joe Marketing\" referenced in raw DM \u2014 MAPPING AMBIGUOUS: no Joe listed in canonical Delightree roster; verify identity before including in panel comms] (Source: DM with Xiaolei \u00b7 2026-04-09)"
-        ],
-        "action": []
-      },
-      "X-Cures": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via Granola/End of Funnel Workshop",
-        "teamVisibility": "Mika (CEO), Bryan (Head of Sales)",
-        "hasSignal": true,
-        "know": [
-          "[Context] X-Cures has two simultaneous capital events this week (HubSpot migration and SPV). Advisory engagement with Akash focused on RevOps build-out and sales process formalization.",
-          "[Signal] Dave Scaglione reviewed and approved revised sales pipeline stage definitions \u2014 documentation finalized to collapse stages and improve top-of-funnel visibility; new \"New Business Meeting\" stage added. Currently in DC for government meetings. (Source: Granola/Akash | Dave (Scaglione) \u00b7 2026-04-09) [MAPPING AMBIGUOUS \u2014 verify: \"Dave Scaglione\" not in canonical X-Cures roster; Granola meeting context suggests Head of Sales but canonical roster lists Bryan as Head of Sales \u2014 confirm whether Dave Scaglione is a separate role or a roster gap]",
-          "[Signal] Eric Svetcov offered full partnership on RevOps tech stack overhaul \u2014 no pushback on starting over, willing to partner on technology; will not interfere on People/Process side. (Source: DM with Eric Svetcov \u00b7 2026-04-09) [MAPPING AMBIGUOUS \u2014 verify: Eric Svetcov not in canonical X-Cures roster; DM context suggests IT/CIO-adjacent role]"
-        ],
-        "action": []
-      },
-      "ClearML": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-08 via gmail/Alex Newman interview + Granola/Akash-Stu sync",
-        "teamVisibility": "Moses (CEO), Alex (CRO), Stu, Alex Newman (RevOps candidate)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CEO-led execution and strategic clarity problem. Moses is slow, dismissive, checked-out CTO Noam. Gap between board-facing perception and operating reality. RevOps hiring remains urgent \u2014 shifted from Head to Manager to attract hands-on builder.",
-          "[Memory] Alex Newman (RevOps candidate) progressing through interview pipeline. Scott Castle advisor intro confirmed. Persistent constraint: Moses favors incremental scaling and is risk-averse on external hires.",
-          "[Signal] Alex Newman walked through implementation experience with sales tech stack (HubSpot, Outreach, Gong, Granola); flagged persistent bidirectional sync issues between Outreach/HubSpot. Team exploring newer AI-native tools (LetterDrop, Warmly, Maester) with mixed results. (Source: Granola/Akash | Alex Follow-up \u00b7 2026-04-09)",
-          "[Signal] Alex Newman confirms availability tomorrow (Apr 11) 9:30am-4pm PT for exercise work; ready to advance to next round. (Source: gmail \u00b7 2026-04-09)"
-        ],
-        "action": []
-      },
-      "RightRev": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-08 via Granola/RightRev BOD + slack/#rightrev-gtm-acceleration",
-        "teamVisibility": "Joel (CMO), Dan (CFO), Jagan (CEO), Mitch Larson (incoming hire), Brian Michael (Budburst), Jamaica (Budburst), Nicole (Innovius)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Major operating-system and leadership-alignment problem hidden beneath strong market perception. Jagan (CEO) is product visionary, not operational leader. Dan Miller (CFO) filling informal COO/GTM role but lacks strong GTM judgment. CRO search in progress (Nirvano Brans positive). GTM motion narrow and Salesforce-concentrated.",
-          "[Memory] RevOps SOW signed; Mitch Larson in final reference stage. CRO search momentum strong with Nirvano Brans. Weekly GTM staff meeting has execution friction (Joel's standing 1:1 with Jagan conflicts with Thursday slot). $16M RCB FY27 target against 75 live-migrated customers lacks ACV clarity.",
-          "[Signal] No new signals from RightRev channels or meetings today."
-        ],
-        "action": []
-      },
-      "Innovius": {
-        "engagement": "Unknown",
-        "lastTouch": "",
-        "teamVisibility": "Nicole, Fraser [MAPPING AMBIGUOUS \u2014 verify: Fraser (fraser320) not in canonical Innovius roster; appears in DM discussing Rohith Manoj hire], Marisa Oliveira (meeting Monday)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Scale-and-proof moment: Fund II ($100M committed / $250M target) is a test of whether GTM accelerator can be institutionalized. Hiring is capacity unlock, not incremental expansion.",
-          "[Memory] Rohith Manoj reference loop was in final stage (Krishna Konkimalla providing email reference). FullFunnel retainer signed. May 7 dinner series at 8 registrations, well below viable threshold.",
-          "[Signal] Rohith Manoj has declined the Data Platform (Lead PM) offer despite revised comp package. This closes the primary hiring pipeline for a critical GTM infrastructure role. (Source: gmail \u00b7 2026-04-10)",
-          "[Signal] Fraser relayed that Rohith said he'd have an answer today; seemed happy with salary increase and viewed opportunity as top choice but may have been buying time for another offer. (Source: DM with Fraser \u00b7 2026-04-09) \u2014 now resolved: declined.",
-          "[Signal] Meeting scheduled with Marisa Oliveira on Monday 4:30pm ET (Revelone demand gen channel). (Source: #revelone-demand-gen \u00b7 2026-04-09)",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] Affinity (CRM tool) renewal due July 29, 2026; CSM (Sabina Grewal) requesting alignment on renewal terms by June 29 (30-day lead time). Low urgency but worth flagging for Q2 planning. (Source: gmail \u00b7 2026-04-09)"
-        ],
-        "action": []
-      }
-    },
-    {
-      "_date": "April 9, 2026",
-      "_dateKey": "2026-04-09",
-      "_metrics": {
-        "slackMsgs": 8,
-        "slackChannelSignals": 8,
-        "slackDmSignals": 0,
-        "emails": 8,
-        "granolaMeetings": 9,
-        "cloudzeroSignals": 11,
-        "totalRetrieved": 36,
-        "sourcesCited": 30,
-        "coverage": "7/7",
-        "claimsKept": 30,
-        "dropped": 1,
-        "rewritten": 4,
-        "hotSignals": 4,
-        "hotActions": 4,
-        "mappingCorrections": 3,
-        "mappingAmbiguities": 1,
-        "sourceTagsAdded": 0,
-        "hotActionsReordered": "no",
-        "falseNegativesRecovered": 2,
-        "toolCallsA1": 31,
-        "toolCallsA2": 2,
-        "toolCallsB": 13,
-        "toolCallsC": 9,
-        "toolCallsD": 3,
-        "carryOversOpen": 18,
-        "oldestCarryOverDays": 13
-      },
-      "_hotSignals": [
-        "[X-Cures \u00b7 SPV allocation deadline Friday April 12 \u2014 LP demand strong, additional allocation secured; Partners must submit desired allocation amounts \u00b7 SOURCE: gmail/Justin Moore \u00b7 2026-04-08] \u2014 Board-visible capital decision with firm-wide implications.",
-        "[X-Cures \u00b7 HubSpot CRM expiration TOMORROW (April 10) \u2014 no resolution signal in today's data \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 Day 14] \u2014 Data integrity risk if CRM lapses; Bryan (Head of Sales) blocked on evaluation decision.",
-        "[CloudZero \u00b7 Finout VP of Sales departed \u2014 competitive talent disruption in cloud cost management space \u00b7 SOURCE: cloudzero-ingest \u00b7 2026-04-09] \u2014 Competitive intelligence; potential recruiting or competitive positioning opportunity.",
-        "[CloudZero \u00b7 ScaleOps competitive intel \u2014 ScaleOps eating Cast.ai's lunch, strong NRR/conversion, focused on large traditional enterprise (Delta Airlines), 15 sellers, got good multiple; GPU side early-stage but accelerating \u00b7 SOURCE: cloudzero-ingest \u00b7 2026-04-08] \u2014 Competitive landscape data relevant to CloudZero positioning and board narrative. [Note: speaker in raw signal unnamed; inferred as Brady (SVP Sales) based on role context.]"
-      ],
-      "_hotActions": [
-        "[X-Cures \u00b7 Submit SPV allocation sizing to Justin before Friday April 12 deadline \u00b7 LP capital allocation window closes EOW; this is a Tier 1 board/LP-visible decision \u00b7 Justin Moore waiting \u00b7 SOURCE: new \u00b7 gmail \u00b7 2026-04-08]",
-        "[X-Cures \u00b7 Resolve CRM path before April 10 HubSpot expiration TOMORROW \u2014 confirm evaluation track (Salesforce, Monaco, Lightfield) or authorize month-to-month extension \u00b7 Day 14 carry-over, lapsing in <24h \u00b7 Bryan (Head of Sales) waiting \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 existing_id: 32]",
-        "[Auditoria \u00b7 Confirm attendance for Saturday morning Zoom with Rohit to calibrate Marketing Brainstorm observations \u00b7 Rohit sending invite; founder relationship at stake if Akash no-shows \u00b7 Rohit (CEO) waiting \u00b7 SOURCE: new \u00b7 gmail \u00b7 2026-04-08]",
-        "[Innovius \u00b7 Close Rohith Manoj reference loop \u2014 Krishna Konkimalla (Amazon) providing email reference; collect and submit to complete final reference stage this week \u00b7 Nicole/hiring team waiting \u00b7 SOURCE: new \u00b7 gmail \u00b7 2026-04-08]"
-      ],
-      "Sewer AI": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via Granola/Project Shawshank sync",
-        "teamVisibility": "Billy (CEO), Cole (RevOps Analyst)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Sewer AI is a scaling execution story \u2014 the constraint is middle-funnel conversion and post-sale infrastructure maturity, not demand or PMF. CS leadership upgrade is the key structural gap; product/engineering depth is secondary but growing in importance as the company becomes more AI-forward.",
-          "[Memory] Cole's adoption dashboard rebuild has been an active workstream for multiple runs. Akash delivered CSV files last cycle to unblock; data discrepancy (fleet size vs. system-tracked) still gating CSM conversations. Q2 pipeline ($2.9M\u2013$4M) expected to compensate for Q1 softness ($1.8M vs $2.5M plan). PE-led majority round in process \u2014 execution quality and narrative control are strategically elevated."
-        ],
-        "action": []
-      },
-      "Auditoria": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-08 via gmail/Rohit Marketing Brainstorm follow-up",
-        "teamVisibility": "Rohit (CEO), Nick (Head of Marketing), Roi (RevOps), Xiaolei",
-        "hasSignal": true,
-        "know": [
-          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit exhibits slow decision-making and weak follow-through. Dave (CRO) has improved sales talent/ops but bookings are structurally constrained by upstream execution gaps. Org restructure underway \u2014 Partnerships and SDRs moving under Dave. Mid-funnel conversion (11% vs 32% target) is critical.",
-          "[Memory] Persistent pattern across runs: execution pace remains the binding constraint. Workday partnership momentum sustained post-SKO. GTM fundamentals under pressure \u2014 new business pacing 40\u201345 vs 90/month target, SDR quality crisis (sub-1% reply rates). Q1 pipeline at 38% of plan; AE self-gen at single digits vs 20\u201330% benchmark.",
-          "[Signal] Marketing Brainstorm session (April 7) produced concrete action items: matrix session on impact vs. effort, Vendilux evaluation, Workday seller marketing play, ABM playcard templates. Akash shared Granola notes with team. GTM standup scheduled today (Zoom link in #auditoria-salesteam)."
-        ],
-        "action": []
-      },
-      "CloudZero": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-08 via Granola/Akash-Sharon Weekly Sync",
-        "teamVisibility": "Justin (CEO), Sharon (Head of People), Matt Katz (SVP CS), Scott (CPO), Brady (SVP Sales)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CloudZero is mid-reset: leadership, product, and positioning all being reworked simultaneously. The organization has bought into the change. Main commercial bottleneck is middle-funnel conversion \u2014 product/value mismatch with buyer expectations. AI-native repositioning is real but not yet translating to bookings improvement (~$2M net new QoQ, flat). CS attrition risk active (3 high-performer resignations).",
-          "[Memory] Persistent pattern across runs: sales pacing behind target, AEs underperforming on meeting volume. AI pricing crisis emerging \u2014 AI-native prospects resisting percentage-of-spend model. CS team friction with new collaborative methods. Internal sales competition (Umesh Rao ADR team) providing positive energy. Snowflake partnership and Observe Inc. connection add strategic optionality.",
-          "[Signal] Concession trade matrix and routing matrix updated with Matt Katz's feedback \u2014 new FAM service tier trades (T20\u2013T22), ACV-banded tier recommendations, adjacent workstreams (floor analysis, ROI calculator gap, services tiering, onboarding). State of play document refreshed. [SOURCE: cloudzero-ingest \u00b7 2026-04-09]",
-          "[Signal] AI Hub Webinar held today (April 9) \u2014 138 registrations as of yesterday's push; final registration count TBD. [SOURCE: cloudzero-ingest \u00b7 2026-04-08]",
-          "[Signal] ScaleOps competitive intel: growth mostly CPU-driven, GPU early; eating Cast.ai's lunch; focused on large traditional enterprise (Delta Airlines deal); 15 sellers; strong NRR and conversion. Less visible to CloudZero because of enterprise focus. [SOURCE: cloudzero-ingest \u00b7 2026-04-08]",
-          "[Signal] Finout VP of Sales departed \u2014 potential competitive disruption or talent opportunity. [SOURCE: cloudzero-ingest \u00b7 2026-04-09]"
-        ],
-        "action": []
-      },
-      "Delightree": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-08 via Granola/Akash & Delightree session + Akash x Griffin sync (04-07)",
-        "teamVisibility": "Tushar (CEO), Doug (Head of Sales), Griffin (RevOps), Xiaolei",
-        "hasSignal": true,
-        "know": [
-          "[Context] Real commercial traction but GTM leadership maturity is the constraint. Doug (Head of Sales) is a growing concern \u2014 three independent signals indicate he may be over his skis (weak responsiveness, inability to attract strong candidates, limited strategic rigor). Expansion motion absent \u2014 structural gap, not temporary. Q1 pacing below plan tests whether 2025 outperformance ($4.6M vs $3.5M plan) was repeatable.",
-          "[Memory] Multi-week GTM transformation executing: eight data packs in phased rollout, sales process redesign underway, vendor stack consolidation in progress (Equals operational, Sybill decision pending, Frandata under review). Q1 momentum ($645K closed in 2 days) creates investment urgency. High-touch vendor integration remains the gating factor for sales infrastructure velocity.",
-          "[Signal] Akash-Delightree session held 4/8 \u2014 GTM and operational review. Akash-Griffin sync (4/7) covered RevOps and financial planning. [SOURCE: granola \u00b7 2026-04-08]",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] [MAPPING AMBIGUOUS \u2014 verify: Revelone partner wants to accelerate interview process and is requesting briefing docs from prior interviews \u00b7 SOURCE: slack/#revelone-demand-gen \u00b7 2026-04-09] \u2014 Likely related to Delightree HoM (Jono Andrews via Revelone) hire, but company cannot be confirmed from signal alone. Verify with Tushar/Xiaolei if Revelone is pressing on candidate pace."
-        ],
-        "action": []
-      },
-      "X-Cures": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via Granola/End of Funnel Workshop",
-        "teamVisibility": "Mika (CEO), Bryan (Head of Sales)",
-        "hasSignal": true,
-        "know": [
-          "[Context] No durable interpretive context card recorded. Sales infrastructure overhaul accelerating with concrete wins (Exact Sciences $2M+$3M verbal, LabCorp, Caris). CRO search active \u2014 3 qualified candidates from 112 evaluated. Territory assignment tool and commercial target database delivered.",
-          "[Memory] CRM migration decision has been a persistent carry-over for 14 days (HubSpot expiration April 10 \u2014 TOMORROW). Bryan driving evaluation of Salesforce/Monaco/Lightfield. Capacity constraints creating orchestration risk \u2014 Mika scheduling constrained, Bryan intermittently unavailable, CRO ramp + CRM transition + sales infrastructure occurring in parallel.",
-          "[Signal] SPV allocation deadline Friday April 12 \u2014 LP demand strong, additional allocation secured. Partners requested to submit desired allocation amounts. [SOURCE: gmail/Justin Moore \u00b7 2026-04-08]"
-        ],
-        "action": []
-      },
-      "ClearML": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-08 via gmail/Alex Newman interview + Granola/Akash-Stu sync",
-        "teamVisibility": "Moses (CEO), Alex (CRO), Stu",
-        "hasSignal": true,
-        "know": [
-          "[Context] CEO-led execution and strategic clarity problem. Moses slow to respond, dismissive. Former Head of SA flagged severe execution issues \u2014 indecision, excessive frugality, know-it-all posture, with CTO checked out. Board-facing presentation diverges from operating reality. Stability reliant on external anchors (HP, Dell).",
-          "[Memory] RevOps hiring remains urgent \u2014 shifted from Head to Manager level. Alex (CRO) severely bandwidth-constrained. Product strategy misalignment is the bottleneck preventing hiring acceleration. Kevin Venturino and Heather Robinette panel interviews also in pipeline. Scott Castle (ex-CloudZero CPO) advisor intro confirmed.",
-          "[Signal] Two RevOps candidates interviewed with Akash on April 8: Katie Shellenberger (positive thank-you, enthusiasm about scaling) and Alex Newman (interested, asked about additional preparation areas). Both are active pipeline. [SOURCE: gmail \u00b7 2026-04-08] [Note: Granola tags these meetings as RightRev \u2014 MAPPING CORRECTED: confirmed ClearML per gmail thread subjects.]"
-        ],
-        "action": []
-      },
-      "RightRev": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-08 via Granola/RightRev BOD + slack/#rightrev-gtm-acceleration",
-        "teamVisibility": "Joel (CMO), Dan (CFO), Jagan (CEO), Mitch Larson (incoming hire), Brian Michael (Budburst), Jamaica (Budburst), Nicole (Innovius)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Major operating-system and leadership-alignment problem beneath strong market perception. Jagan (CEO) is a product visionary, not operational leader. Dan (CFO) filling COO/GTM vacuum but lacks strong GTM judgment. Sales VP too green (operating as strong IC). CMO increasingly frustrated with fragmentation. GTM motion narrow and Salesforce-concentrated \u2014 structural risk.",
-          "[Memory] RevOps SOW signed by Dan; first hire references underway. Mitch Larson (second sales hire) in final reference stage. CRO search momentum strong (Nirvano Brans positive). Weekly GTM staff meeting has execution friction \u2014 Joel's standing 1:1 with Jagan conflicts with Thursday slot. Critical gap: $16M RCB FY27 target against 75 live-migrated customers lacks ACV clarity.",
-          "[Signal] RightRev Board of Directors meeting held 4/8. CRO starts May 1; Joel managing interim leadership (Mitch) until then. Pipeline building identified as big need \u2014 team seeking input on how marketing can support. [SOURCE: granola + slack/#rightrev-gtm-acceleration \u00b7 2026-04-08]",
-          "[Signal] Token-based revenue recognition metering feature discussed between Xiaolei and Jagan \u2014 Akash had input on revenue management for token-based systems; Jagan confirmed relevance to metering product roadmap. [SOURCE: gmail/Jagan Reddy \u00b7 2026-04-08]",
-          "[Signal] Marina Oliveira Demand Gen interview conducted with Nicole Moscaret (April 8). [SOURCE: granola \u00b7 2026-04-08]",
-          "[Signal] Team member suggests establishing recurring 1:1 to discuss GTM progress/outcomes. [SOURCE: slack/#rightrev-gtm-acceleration \u00b7 2026-04-08]"
-        ],
-        "action": []
-      },
-      "Innovius": {
-        "engagement": "Active (firm operations)",
-        "lastTouch": "2026-04-08 via slack/#innovius-team + gmail",
-        "teamVisibility": "Nicole, Ethan, Justin Moore",
-        "hasSignal": true,
-        "know": [
-          "[Context] Innovius is in a scale-and-proof moment. Fund II active ($100M committed against $250M target). GTM accelerator bandwidth is the binding constraint. Hiring velocity directly tracks whether the accelerator promise holds at scale.",
-          "[Memory] Ali Mehdi (GTM Engineer hire) closed \u2014 started per #innovius-team. FullFunnel retainer signed ($4.75k/mo). Rohith Manoj reference collection in final stage. Q1 financials due 04/30.",
-          "[Signal] Ali Mehdi hire closed \u2014 started (confirmed via #innovius-team). [SOURCE: slack/#innovius-team \u00b7 2026-04-09]",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] May 7 Innovius dinner series registration critically low \u2014 only 8 registered; team asked to outreach to VC contacts this week. [SOURCE: slack/#innovius-dinnerseries \u00b7 2026-04-09]"
-        ],
-        "action": []
-      }
-    },
-    {
-      "_date": "April 8, 2026",
-      "_dateKey": "2026-04-08",
-      "_metrics": {
-        "slackMsgs": 21,
-        "slackChannelSignals": 20,
-        "slackDmSignals": 1,
-        "emails": 2,
-        "granolaMeetings": 8,
-        "cloudzeroSignals": 0,
-        "totalRetrieved": 31,
-        "sourcesCited": 30,
-        "coverage": "7/7",
-        "claimsKept": 30,
-        "dropped": 1,
-        "rewritten": 5,
-        "hotSignals": 4,
-        "hotActions": 3,
-        "mappingCorrections": 0,
-        "mappingAmbiguities": 5,
-        "sourceTagsAdded": 0,
-        "hotActionsReordered": "yes",
-        "falseNegativesRecovered": 4,
-        "toolCallsA1": 70,
-        "toolCallsA2": 3,
-        "toolCallsB": 11,
-        "toolCallsC": 4,
-        "toolCallsD": 3,
-        "carryOversOpen": 13,
-        "oldestCarryOverDays": 12
-      },
-      "_hotSignals": [
-        "[X-Cures \u00b7 HubSpot CRM expiration in 2 days (April 10) with no confirmed replacement path \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 Day 12 + granola/End of Funnel Workshop \u00b7 2026-04-07]",
-        "[RightRev \u00b7 Org structure conflict: Dan (CFO) claiming RevOps hire Mitch reports to him; Joel (CMO) unaware and concerned about power dynamics \u2014 board-visible alignment risk \u00b7 SOURCE: granola/Akash|Joel \u00b7 2026-04-07]",
-        "[RightRev \u00b7 Pipeline quality deteriorating: cold outbound rising, warm leads falling, creation down YoY, ASP erosion, $450K marketing pipeline converting to zero bookings \u00b7 SOURCE: granola/Akash|Joel \u00b7 2026-04-07]",
-        "[Innovius \u00b7 Ali Mehdi signed offer letter \u2014 onboarding confirmed April 20; calibration/onboarding kickoff call today April 8 \u00b7 SOURCE: gmail \u00b7 2026-04-07]"
-      ],
-      "_hotActions": [
-        "[X-Cures \u00b7 Resolve CRM path before April 10 HubSpot expiration \u2014 confirm evaluation track (Salesforce, Monaco, Lightfield) or authorize month-to-month extension \u00b7 Bryan (Head of Sales) waiting \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 Day 12 \u00b7 existing_id: 32]",
-        "[Delightree \u00b7 Get Tushar's read on Doug's trajectory before broadening GP conversation \u2014 Justin's \"won't live up position\" signal is board-visible leadership risk \u00b7 Tushar, Justin waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-03 \u00b7 Day 4 \u00b7 existing_id: 80]",
-        "[Innovius \u00b7 Close Rohith Manoj compensation negotiation \u2014 Akash texted today; Rohith counter at $180K base/$20K bonus vs. Akash's $150K/$180K OTE; Fraser suggested $165K/$200K OTE compromise \u00b7 Rohith waiting \u00b7 SOURCE: new \u00b7 DM with Fraser Gibson \u00b7 2026-04-08]"
-      ],
-      "Sewer AI": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via Granola/Project Shawshank sync",
-        "teamVisibility": "Billy (CEO)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Sewer AI is a scaling execution story, not a PMF problem. Core constraints are shifting from demand generation to middle-funnel conversion and post-sale scalability. CS leadership upgrade is structurally important given land-and-expand model.",
-          "[Memory] Cole (RevOps Analyst) data dashboard rebuild remains in progress; Akash delivered CSV files last week to unblock. VP of CS search active with Billy. Q2 acceleration expected ($2.9M\u2013$4M vs Q1 $1.8M).",
-          "[Signal] No new signals today across any source."
-        ],
-        "action": []
-      },
-      "Auditoria": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via gmail/Roi forecast + Nick Ezzo marketing PPT",
-        "teamVisibility": "Rohit (CEO), Nick (Head of Marketing), Xiaolei, Maya",
-        "hasSignal": true,
-        "know": [
-          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit exhibits slow decision-making and weak follow-through; Dave (CRO) has improved sales talent but bookings remain structurally constrained by upstream gaps. Q1 FY27 likely to miss $1.6M target.",
-          "[Memory] Org restructure underway with partnerships and SDRs moving under Dave. Mid-funnel conversion at 11% vs 32% target. Workday partnership momentum strong post-SKO. Roi executing Q1 pipeline reviews.",
-          "[Signal] Marketing strategy brainstorm completed Apr 7 (Akash, Xiaolei, Rohit, Nick, and others including Aimee, Victoria [MAPPING AMBIGUOUS \u2014 verify: Aimee and Victoria not on canonical Auditoria roster], and Brian [MAPPING AMBIGUOUS \u2014 verify: Brian could be Innovius team or Auditoria contact], Maya): physical events saturating, LinkedIn paid ads underutilized, ABM needs tiered segmentation, Workday co-selling attach rate at 2% with potential to reach 5%. Akash recommended play card framework. [SOURCE: granola \u00b7 2026-04-07]",
-          "[Signal] SOW draft for Standard Insurance Company created; Kevin Miller to review. [SOURCE: slack/auditoria-salesteam \u00b7 2026-04-08]"
-        ],
-        "action": []
-      },
-      "CloudZero": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-07 via cloudzero-ingest + granola/Don standup",
-        "teamVisibility": "Justin (CEO), Don (Dir of Board), Scott (CPO), Brady (SVP Sales), Matt Katz (SVP CS), Sharon (Head of People)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CloudZero is mid-transformation: leadership, operating model, product direction all being reworked. Flat bookings (~$2M net new QoQ) are a middle-funnel product/value mismatch, not just sales weakness. AI pricing crisis emerging \u2014 AI-native prospects resisting percentage-of-spend model.",
-          "[Memory] CS team attrition risk (3 resignations during manager absence). Internal sales competition energizing team. Snowflake partnership introducing CZ to LSEG for FinOps use cases.",
-          "[Signal] No fresh CloudZero signals in past 24 hours \u2014 ingest last ran Apr 7 1:45 PM ET, captured Apr 6 data only. [SOURCE DEGRADED: cloudzero-ingest lag]",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] #hiring-team-data-science-ai: Review both interview docs, particularly Session 3 (Scott's session) \u2014 Justin can join or provide feedback. [MAPPING NOTE: company \"Unknown\" in raw signal; assigned to CloudZero based on Scott = CPO at CloudZero, Justin = interim CEO at CloudZero.] [SOURCE: slack/hiring-team-data-science-ai \u00b7 2026-04-08]"
-        ],
-        "action": []
-      },
-      "Delightree": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-07 via slack_channels/#delightree-gtm-acceleration",
-        "teamVisibility": "Tushar (CEO), Doug (Head of Sales), Griffin (RevOps), Xiaolei",
-        "hasSignal": true,
-        "know": [
-          "[Context] Real traction but growth outpacing GTM leadership maturity. Doug is a growing concern \u2014 three independent signals indicate he may be over his skis. Lacks territory/segmentation plan and structured thinking. Expansion motion gap is structural.",
-          "[Memory] Multi-week GTM transformation in progress: data packs phased rollout, sales process redesign, vendor stack consolidation (Equals, Sybill, Frandata). High-touch vendor integration remains gating factor for sales infrastructure velocity.",
-          "[Signal] Bookings target definition blocking execution \u2014 needs quarterization and new vs. expansion breakdown. [SOURCE: slack/delightree-gtm-acceleration \u00b7 2026-04-08]",
-          "[Signal] Franchimp FDD scraping complete, validation in progress today. [SOURCE: slack/delightree-gtm-acceleration \u00b7 2026-04-08]",
-          "[Signal] Sybill 2-year contract ready for routing to signatures (16K/year, 22 seats, waived migration). [SOURCE: slack/delightree-gtm-acceleration \u00b7 2026-04-08]",
-          "[Signal] Offer letter ready for signatures. [SOURCE: slack/delightree-gtm-acceleration \u00b7 2026-04-08]"
-        ],
-        "action": []
-      },
-      "X-Cures": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via granola/End of Funnel Workshop",
-        "teamVisibility": "Mika (CEO), Bryan (Head of Sales), Dave Scaglione [MAPPING NOTE: Dir Customer Innovation per Granola \u2014 not on canonical X-Cures roster; verify role/affiliation]",
-        "hasSignal": true,
-        "know": [
-          "[Context] No durable interpretive context card on file. Sales infrastructure overhaul accelerating with concrete wins (Exact Sciences $2M+, LabCorp, Caris). CRO search progressing (3 qualified candidates from 112 evaluated).",
-          "[Memory] CRM migration decision and HubSpot expiration (Apr 10) has been open for 12 days. Bryan driving evaluation across Salesforce/Monaco/Lightfield. Capacity constraints creating orchestration risk with Mika scheduling constrained and Bryan intermittently unavailable.",
-          "[Signal] End of Funnel Workshop completed Apr 7: Dave Scaglione pulled into unsustainable call volume (10:1 rep ratio); proposed SME cohort model (Dave tech, Josh Marker legal [MAPPING AMBIGUOUS \u2014 verify: Josh Marker not on canonical roster], Tim clinical) with one-page FAQs. Contract phase workflow redesign proposed \u2014 CS workshop series during contracting to reduce 30-45+ day close times; testing with Myriad client. [SOURCE: granola \u00b7 2026-04-07]",
-          "[Signal] Team experimenting with Claude AI tools company-wide; CISO approval required for PHI data access. Akash demonstrated Prometheus system as model; proposed Thursday build sessions. [SOURCE: granola \u00b7 2026-04-07]"
-        ],
-        "action": []
-      },
-      "ClearML": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via gmail/Alex Newman interview + granola/Akash|Stu sync",
-        "teamVisibility": "Moses (CEO), Alex (CRO), Stu",
-        "hasSignal": true,
-        "know": [
-          "[Context] CEO-led execution and strategic clarity problem. Moses is notably slow, dismissive, and nonresponsive. Vision undefined; board-facing presentations diverge from operating reality. Stability reliant on external anchors (HP, Dell).",
-          "[Memory] RevOps hiring remains urgent \u2014 shifted from Head to Manager. Alex Paquette (CRO) severely bandwidth-constrained. Scott Castle advisor intro confirmed. Moses favors incremental scaling and is risk-averse on external hires.",
-          "[Signal] No new signals today across any source."
-        ],
-        "action": []
-      },
-      "RightRev": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-07 via slack_channels/#rightrev-gtm-acceleration + granola/Akash|Joel",
-        "teamVisibility": "Joel (CMO), Dan (CFO), Mitch Larson (incoming hire), Brian Michael (Budburst), Jamaica (Budburst)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Major operating-system and leadership-alignment problem hidden beneath strong market perception. Jagan (CEO) disengaged from operations; Dan (CFO) filling vacuum with weak GTM judgment and alienating style. GTM motion narrow and Salesforce-concentrated.",
-          "[Memory] RevOps SOW signed; Mitch Larson in final reference stage. CRO search momentum strong (Nirvano Brans positive). Weekly GTM staff meeting has scheduling friction (Joel/Jagan conflict on Thursday slot).",
-          "[Signal] Mitch reviewing offer letter, expected to sign shortly; start date targeting Monday 4/13 pending laptop setup and background checks. [SOURCE: slack/betts-rightrev \u00b7 2026-04-08]",
-          "[Signal] RCB market sizing needed before essentials strategy scales \u2014 current assumption ~445 ICP accounts, RightRev at 10% share. Joel scheduling 60-90 day essentials sales velocity experiment targeting 30-day cycles. [SOURCE: granola/Akash|Joel \u00b7 2026-04-07]",
-          "[Signal] Weekly enablement asset check-in call missed this week \u2014 needs rescheduling. [SOURCE: slack/external-rightrev-innovius \u00b7 2026-04-08]"
-        ],
-        "action": []
-      },
-      "Innovius": {
-        "engagement": "Active (internal)",
-        "lastTouch": "",
-        "teamVisibility": "",
-        "hasSignal": true,
-        "know": [
-          "[Signal] Ali Mehdi signed offer letter \u2014 onboarding confirmed April 20; calibration/onboarding kickoff call today April 8. [SOURCE: gmail \u00b7 2026-04-07]",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] Rohith Manoj reference check with Omar (former PlayStation manager) completed Apr 7: strong positive \u2014 would hire again, technically solid, excellent soft skills, managed PS5 infrastructure deadlines. Minor historic concern: initially struggled with professional feedback/code review but overcame quickly. Currently in Dubai working through immigration visa issues. [SOURCE: granola \u00b7 2026-04-07]",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] Reference check follow-up: Krishna Konkimalla (Amazon reference) responded unable to take call but willing to provide email reference; Akash pursuing email references. [SOURCE: gmail \u00b7 2026-04-08]",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] PM data platform role JD needed \u2014 run through LLM, create external-facing JD, share with Zach. [SOURCE: slack/betts-innovius-capital-gtme \u00b7 2026-04-08]",
-          "[Signal] OneDrive sync issue in #innovius-team: Koby and team unable to see files saved by others in cloud; question raised about whether Innovius is migrating off OneDrive. Google Drive lacks seamless co-authoring for Excel (limits alternatives). [SOURCE: slack/innovius-team \u00b7 2026-04-08]"
-        ],
-        "action": []
-      }
-    },
-    {
-      "_date": "April 7, 2026",
-      "_dateKey": "2026-04-07",
-      "_metrics": {
-        "slackMsgs": 15,
-        "slackChannelSignals": 12,
-        "slackDmSignals": 3,
-        "emails": 6,
-        "granolaMeetings": 5,
-        "cloudzeroSignals": 3,
-        "totalRetrieved": 29,
-        "sourcesCited": 39,
-        "coverage": "7/7",
-        "claimsKept": 39,
-        "dropped": 0,
-        "rewritten": 2,
-        "hotSignals": 4,
-        "hotActions": 5,
-        "mappingCorrections": 0,
-        "mappingAmbiguities": 1,
-        "sourceTagsAdded": 0,
-        "hotActionsReordered": "yes",
-        "falseNegativesRecovered": 1,
-        "toolCallsA1": 36,
-        "toolCallsA2": 5,
-        "toolCallsB": 10,
-        "toolCallsC": 5,
-        "toolCallsD": 3,
-        "carryOversOpen": 18,
-        "oldestCarryOverDays": 11
-      },
-      "_hotSignals": [
-        "[Auditoria \u00b7 Marketing effectiveness crisis quantified \u2014 events consuming 60% budget for 7% of pipeline; SDR productivity critically low (<1% reply, ~400 calls/week generating effectively no meetings) \u00b7 SOURCE: slack_dms/Xiaolei + gmail/Nick Ezzo PPT analysis]",
-        "[ClearML \u00b7 Stu escalating CEO underwriting concern \u2014 \"Moses would likely not pass our new CEO underwriting standard\"; 90-min direct conversation with Moses upcoming \u00b7 SOURCE: slack_channels/#p-clearml]",
-        "[CloudZero \u00b7 Nubank gross margin topic submitted for Apr 14 meeting \u2014 burn rate reduction may require pricing changes or customer configuration downgrade \u00b7 SOURCE: cloudzero-ingest]",
-        "[Innovius \u00b7 Rohith Manoj visa complications \u2014 unknown return timeline creates offer risk; Fraser flagging pipeline is light with no fallback \u00b7 SOURCE: slack_dms/Fraser]"
-      ],
-      "_hotActions": [
-        "[Delightree \u00b7 Get Tushar's read on Doug's trajectory before broadening the conversation with Justin \u2014 Justin's \"won't live up position\" signal is board-visible leadership risk; founder alignment required before GP-level conversation proceeds \u00b7 Tushar, Justin waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-03 \u00b7 Day 3, existing_id: 80]",
-        "[Innovius \u00b7 Resolve Rohith Manoj offer path \u2014 complete Omar Qaddoumi reference call (scheduled today 9-10 AM ET), then conduct offer discussion at 11 AM ET; visa complications add urgency to close or pivot \u00b7 Rohith, Omar, Fraser waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-06 \u00b7 Day 1 + new \u00b7 slack_dms/Fraser \u00b7 2026-04-07, existing_id: 90]",
-        "[X-Cures \u00b7 Resolve CRM path before April 10 HubSpot expiration \u2014 3 days remaining; confirm evaluation track (Salesforce, Monaco, Lightfield) or authorize month-to-month extension \u00b7 Bryan (Head of Sales) waiting \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 Day 11, existing_id: 32]",
-        "[RightRev \u00b7 Provide Nirvano Brans CRO interview feedback to Nick Tashima (True Search) \u2014 Joel needs before offer stage \u00b7 Joel (CMO), Nick Tashima waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-01 \u00b7 Day 5, existing_id: 59]",
-        "[Innovius \u00b7 Circle back with recruiters (Fraser + Rivi + Braxton) \u2014 Day 5 open; Fraser explicitly requesting clarity on offer expectations and competitive positioning \u00b7 recruiters waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-01 \u00b7 Day 5, existing_id: 73]"
-      ],
-      "Sewer AI": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-06 via Granola/Project Shawshank sync",
-        "teamVisibility": "Billy (CEO)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Sewer AI is a scaling execution story \u2014 Q1 closed at $1.8M vs $2.5M plan but Q2 minimum $2.9M with upside to $4M driven by PG&E/Houston contract restructuring. Core risk is middle-funnel conversion and CS leadership gap, not demand.",
-          "[Memory] Cole (RevOps) adoption dashboard rebuild in progress; VP of CS search active with Akash providing candidate referrals. Project Shawshank remains an active strategic initiative.",
-          "[Signal] Stu sharing due diligence questions from a friend evaluating Sewer AI investment \u2014 FYI only, no action required. (slack_channels/#p-sewerai)"
-        ],
-        "action": []
-      },
-      "Auditoria": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-07 via gmail/Roi forecast + Nick Ezzo marketing PPT",
-        "teamVisibility": "Rohit (CEO), Dave Osborne (CRO), Roi (RevOps), Nick (Head of Marketing), Xiaolei, Vince Barrett (SVP Sales) [MAPPING AMBIGUOUS \u2014 verify: Vince Barrett listed as SVP Sales at Auditoria in gmail/partner process thread but not on canonical roster \u2014 confirm role and affiliation]",
-        "hasSignal": true,
-        "know": [
-          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit exhibits slow decision-making and weak follow-through that ripple across the organization. Dave (CRO) improving sales talent but bookings structurally constrained by upstream leadership gaps. Cultural posture: low urgency, weak ownership, defensiveness.",
-          "[Memory] Q1 pipeline at 38% of plan; AE self-gen at single digits vs 20-30% benchmark; mid-funnel conversion 11% vs 32% target. Org restructure underway \u2014 partnerships and SDRs moving under Dave. Workday partnership momentum strong post-SKO.",
-          "[Signal] Auditoria pacing to $1.1M EOQ with Sutter deal; Roi coordinating with Dave to consolidate conflicting forecast signals; Akash requested end-of-week CRO call to feed into Equals dashboard. (gmail/Roi)",
-          "[Signal] Marketing brainstorming session scheduled today (Tue Apr 7) \u2014 Nick Ezzo sent PPT analysis; Xiaolei flagging systemic issues: events = 60% budget / 7% pipeline, SDR productivity critically low. Internal decision not to raise head of marketing issue in broader conversation; Rohit texted separately. (gmail + slack_dms/Xiaolei)",
-          "[Signal] Vince Barrett (SVP Sales) recommends 2-party plays (Auditoria + SI) over 3-way partnerships; proposes direct Workday engagement (US/Canada/UK) with separate Oracle pipeline build. Follow-up in 30-45 days. (gmail)",
-          "[Signal] Xiaolei asking whether to connect Scott Castle (ex-CZ CPO, now advisor) with Auditoria PMs or Rohit/Adina. (slack_channels/#p-auditoria)",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] Workday partnership strategy targets confirmed from Apr 3 meeting: grow Workday-sourced revenue to $5M this year; target 20 new SQOs/month (~$100K each); focus on Fins customer base bottom tier (2.5% penetration of 2000+ accounts). (granola/Partner Process Discussion)"
-        ],
-        "action": []
-      },
-      "CloudZero": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-07 via cloudzero-ingest + granola/Don standup",
-        "teamVisibility": "Justin (CEO), Don (Dir of Board), Scott (CPO), Brady (SVP Sales), Matt Katz (SVP CS), Sharon (Head of People)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CloudZero is mid-reset: leadership, operating model, product direction, and market positioning all being reworked simultaneously. Main commercial constraint is middle-of-funnel conversion \u2014 product/value proposition not yet matching market expectations. AI pricing crisis emerging as AI-native prospects resist percentage-of-spend model.",
-          "[Memory] CS team attrition risk: three high-performer resignations during manager absence; AE-to-CS friction persists. Revenue-critical quarter with sales pacing behind target. Internal ADR competition (Umesh Rao) energizing broader team. Snowflake partnership active (LSEG FinOps use case).",
-          "[Signal] Coinbase data incident resolved \u2014 discrepancy from concurrent processes identified and corrected; weekend data pinned, Monday reprocessing scheduled with manual oversight. (cloudzero-ingest)",
-          "[Signal] ELT meeting upcoming: Brady covering deal review, Matt Katz presenting decision topic (slide being finalized); specific ask re: new bank meeting in Brazil next week. Sharon requesting ELT review of department data for career pathing app launch in Q2. (granola/Don standup)",
-          "[Signal] OKR check-ins outstanding from multiple team members \u2014 to be covered in ELT. (granola/Don standup)",
-          "[Signal] Awaiting customer response on 30-min call offer (internal Braze discussion). (cloudzero-ingest)"
-        ],
-        "action": []
-      },
-      "Delightree": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-07 via slack_channels/#delightree-gtm-acceleration",
-        "teamVisibility": "Tushar (CEO), Doug (Head of Sales), Griffin (RevOps), Adrian (Head of Finance), Xiaolei",
-        "hasSignal": true,
-        "know": [
-          "[Context] Real commercial traction but growth outpacing GTM leadership maturity. Doug is a growing concern \u2014 weak responsiveness, inability to attract strong candidates, insufficient strategic rigor. Expansion motion gap is structural. Adrian high-potential but underdeveloped.",
-          "[Memory] Eight data packs in phased rollout; sales process SDR/ADR redesign review completed Apr 3. Vendor stack consolidation active (Equals, Sybill, Frandata, HubSpot). Q1 momentum ($645K closed in 2 days) creates investment urgency but requires sequencing discipline.",
-          "[Signal] Sybill decision made \u2014 moving forward. Akash getting final OF and sending to Adrian for signatures; implementation and training kickoff this week. (slack_channels/#delightree-gtm-acceleration)",
-          "[Signal] Xiaolei planning intros for Tushar to portco sales leaders \u2014 Brady (CZ), Dave Osborne (Auditoria), Dave Barden (SAI) [note: Dave Barden is Sewer AI board/advisor \u2014 verify if still active before completing intro]; waiting for greenlight after XC conversation. (slack_channels/#p-delightree)",
-          "[Signal] Justin coaching on CEO prep: \"Always overly prep the people on what you hope the CEO takes away from the conversation and the challenges you feel they are facing.\" (slack_channels/#p-delightree)"
-        ],
-        "action": []
-      },
-      "X-Cures": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-06 via granola/Akash | Stu sync",
-        "teamVisibility": "Mika (CEO), Bryan (Head of Sales)",
-        "hasSignal": true,
-        "know": [
-          "[Context] No interpretive context card recorded. Sales infrastructure overhaul accelerating with concrete wins (Exact Sciences $2M min + $3M verbal, LabCorp, Caris). CRO search progressing \u2014 3 qualified candidates from 112 evaluated.",
-          "[Memory] [PERSISTENT \u00b7 seen across multiple runs] CRM migration decision (Salesforce/Monaco/Lightfield vs HubSpot) remains unresolved with HubSpot expiration in 3 days (April 10). Bryan driving decision but intermittently unavailable. Capacity constraints creating orchestration risk \u2014 Mika scheduling constrained, CRO ramp + CRM transition + sales infrastructure stabilization all concurrent."
-        ],
-        "action": []
-      },
-      "ClearML": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-06 via gmail/Alex Newman interview + granola/Akash | Stu sync",
-        "teamVisibility": "Moses (CEO), Alex (CRO), Stu, Scott Castle (advisor)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CEO-led execution and strategic clarity problem. Moses is slow, dismissive, at times nonresponsive \u2014 weak operating cadence. Board-facing presentations diverge from operating reality. Commercial stability overly reliant on HP/Dell partnerships.",
-          "[Memory] RevOps hiring urgent \u2014 shifted from Head to Manager level. Scott Castle advisor intro confirmed. Clarke Patterson (PMM/GTM advisor) follow-up pending. Moses favors incremental scaling, risk-averse on external hires.",
-          "[Signal] Stu escalating: 90-min direct conversation with Moses upcoming on CEO concerns. Assessment: \"Moses would likely not pass our new CEO underwriting standard.\" (slack_channels/#p-clearml)",
-          "[Signal] Two updates from Akash: (1) Scott Castle speaking with Moses tomorrow \u2014 will circle back on next steps; (2) Clarke Patterson on stand-by, waiting for Stu's green light for intro. Scott warned about Clarke's criticality. (slack_channels/#p-clearml)"
-        ],
-        "action": []
-      },
-      "RightRev": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-07 via slack_channels/#rightrev-gtm-acceleration",
-        "teamVisibility": "Joel (CMO), Dan (CFO), Brian Michael (Budburst), Jamaica (Budburst)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Major operating-system and leadership-alignment problem beneath strong market perception. Jagan (CEO) disengaged from operations; Dan (CFO) filling informal COO/GTM role but lacks GTM judgment. VP of Sales too green \u2014 operating as senior IC. CMO frustrated with fragmentation.",
-          "[Memory] RevOps SOW signed by Dan; CRO search momentum strong (Nirvano Brans positive interview). Mitch Larson (second sales hire) in final reference stage. Weekly GTM staff meeting has scheduling friction. $16M RCB FY27 target against 75 live-migrated customers lacks ACV clarity.",
-          "[Signal] Dan (CFO) asking for pipeline views and dashboards \u2014 plans to roll out functionally by 5/1 but exact timeline for pipeline clarity not yet discussed beyond current SF dashboards. (slack_channels/#rightrev-gtm-acceleration)",
-          "[Signal] Joel asking for summary timeline of key milestones (sales process methodology rollout) \u2014 or should he refer to GTM read-out deck. (slack_channels/#rightrev-gtm-acceleration)"
-        ],
-        "action": []
-      },
-      "Innovius": {
-        "engagement": "Unknown",
-        "lastTouch": "",
-        "teamVisibility": "Nicole, Xiaolei, Fraser (recruiter), Jasmine",
-        "hasSignal": true,
-        "know": [
-          "[Signal] FullFunnel retainer ($4,750/mo, 25 hrs/mo, rolling 60-day) signed; David Mercurio following up on execution status \u2014 still under Akash review as of Apr 6. (gmail)",
-          "[Signal] Mini half-day offsite scheduled Apr 20 (virtual); Xiaolei leading planning; prework doc to be prepared. (granola/Monday Morning)",
-          "[Signal] Nicole resurfacing calendar invite updates for team. (slack_channels/#innovius-team)",
-          "[Signal] Beth Boisvert (via Don Bulens) seeking meeting with Akash \u2014 awaiting availability confirmation. (gmail)",
-          "[Signal] Hiring-team-data-science-ai: Akash was out Thu/Fri, asked Scott Castle and Justin for feedback \u2014 checking in and addressing open comments/fixes. (slack_channels)"
-        ],
-        "action": []
-      }
-    },
-    {
-      "_date": "April 6, 2026",
-      "_dateKey": "2026-04-06",
-      "_metrics": {
-        "slackMsgs": 4,
-        "slackChannelSignals": 0,
-        "slackDmSignals": 4,
-        "emails": 4,
-        "granolaMeetings": 0,
-        "cloudzeroSignals": 9,
-        "totalRetrieved": 17,
-        "sourcesCited": 38,
-        "coverage": "7/7",
-        "claimsKept": 38,
-        "dropped": 0,
-        "rewritten": 4,
-        "hotSignals": 4,
-        "hotActions": 5,
-        "mappingCorrections": 0,
-        "mappingAmbiguities": 0,
-        "sourceTagsAdded": 0,
-        "hotActionsReordered": "yes",
-        "falseNegativesRecovered": 2,
-        "toolCallsA1": 80,
-        "toolCallsA2": 5,
-        "toolCallsB": 9,
-        "toolCallsC": 1,
-        "toolCallsD": 3,
-        "carryOversOpen": 20,
-        "oldestCarryOverDays": 10
-      },
-      "_hotSignals": [
-        "[X-Cures \u00b7 HubSpot CRM expiration in 4 days (April 10) with no confirmed replacement path \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 Day 10] \u2014 Bryan's sales operations and territory tool outputs depend on CRM continuity. If no decision made by Tuesday, recommend authorizing month-to-month HubSpot extension to prevent data loss.",
-        "[CloudZero \u00b7 Justin (CEO) proposing major services/FAM pricing restructure and minimum annual fee increase ($12K to $25K) \u00b7 SOURCE: new \u00b7 cloudzero-ingest \u00b7 2026-04-05] \u2014 Board-visible pricing architecture change. Justin also flagging missing ROI calculator as a gap in value-selling toolkit. Dan Carducci and Miguel involved in services tier design.",
-        "[CloudZero \u00b7 Nubank gross margin issue requires pre-meeting decision before April 14 Brazil trip \u00b7 SOURCE: new \u00b7 cloudzero-ingest \u00b7 2026-04-05] \u2014 Decision needed on whether to increase pricing or downgrade configuration for top-3 customer. Red-priority flag raised internally.",
-        "[Innovius \u00b7 Two competing offer-stage candidates (Ali Mehdi, Rohith Manoj) converging on Monday with Akash as direct blocker on both \u00b7 SOURCE: new \u00b7 gmail \u00b7 2026-04-05/06] \u2014 Dual hiring close creates scheduling and decision bottleneck."
-      ],
-      "_hotActions": [
-        "[X-Cures \u00b7 Resolve CRM path before April 10 HubSpot expiration: confirm evaluation track (Salesforce, Monaco, Lightfield) or authorize month-to-month extension \u00b7 lapses in 4 days \u00b7 Bryan (Head of Sales) waiting \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 Day 10, existing_id: 32]",
-        "[Innovius \u00b7 Complete Omar Qaddoumi reference call Monday 9-10 AM ET for Rohith Manoj, then conduct Rohith offer discussion at 11 AM ET \u2014 offer contingent on reference completion \u00b7 lapses Monday AM \u00b7 Rohith Manoj, Omar Qaddoumi waiting \u00b7 SOURCE: new \u00b7 gmail \u00b7 2026-04-06]",
-        "[Innovius \u00b7 Conduct Ali Mehdi challenge round readout Monday late afternoon at Industrious office (60-75 min) \u2014 offer decision depends on this session \u00b7 lapses Monday \u00b7 Ali Mehdi waiting \u00b7 SOURCE: new \u00b7 gmail \u00b7 2026-04-05]",
-        "[RightRev \u00b7 Provide Nirvano Brans CRO interview feedback to Nick Tashima (True Search) \u2014 Joel needs before offer stage \u00b7 lapses within 48h \u00b7 Joel (CMO), Nick Tashima waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-01 \u00b7 Day 4, existing_id: 59]",
-        "[Innovius \u00b7 Finalize Rohith Manoj compensation positioning: 150K base + 15-20% bonus + 1% profit share vs. expected $200K OTE market offers \u2014 needs strong profit share narrative \u00b7 lapses Monday \u00b7 Justin Moore waiting on alignment \u00b7 SOURCE: new \u00b7 slack_dms \u00b7 2026-04-05, existing_id: 76]"
-      ],
-      "Sewer AI": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-03 via Granola/Project Shawshank sync",
-        "teamVisibility": "Billy (CEO), Cole (RevOps Analyst)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Sewer AI is a scaling execution story, not a PMF problem. Core constraints are shifting from demand generation to middle-funnel conversion and post-sale scalability. VP of CS search is actively underway with Billy executing and Akash participating.",
-          "[Memory] Revenue trajectory shows Q1 at $1.8M vs $2.5M plan, but Q2 is structurally stronger ($2.9M base, $3.5-4M upside) driven by PG&E and Houston contract structure shifts from PAYG to direct purchase agreements. Cole is rebuilding adoption dashboards to resolve fleet-size data discrepancy.",
-          "[Signal] No new signals today (Sunday). Last substantive touch was Shawshank semiweekly sync on 2026-04-02."
-        ],
-        "action": []
-      },
-      "Auditoria": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-03 via gmail/Roi pipeline review + slack_channels/#p-auditoria",
-        "teamVisibility": "Rohit (CEO), Dave Osborne (CRO), Roi (RevOps), Nick (Head of Marketing), Xiaolei",
-        "hasSignal": true,
-        "know": [
-          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit exhibits slow decision-making, weak follow-through, and reluctance on talent changes. Dave (CRO) has improved sales talent but bookings are structurally constrained by upstream execution gaps. Org restructure underway: Partnerships and SDRs moving under Dave; CS performance conversation cleared.",
-          "[Memory] Q1 pipeline at 38% of plan; AE self-gen at single digits vs 20-30% benchmark; mid-funnel conversion 11% vs 32% target. GTM fundamentals under sustained pressure across multiple runs. Workday partnership momentum is the one bright spot post-SKO.",
-          "[Signal] No new signals today (Sunday)."
-        ],
-        "action": []
-      },
-      "CloudZero": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-05 via cloudzero-ingest",
-        "teamVisibility": "Justin (CEO), Scott (CPO), Matt Katz (SVP CS), Dan Carducci, Miguel (RevOps), Sharon (Head of People)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CloudZero is mid-transformation: leadership, operating model, product direction, and market positioning all being reworked simultaneously. Middle-funnel conversion is the binding commercial constraint \u2014 product/value proposition does not yet match buyer expectations. Organization has accepted the reset but execution speed is the test.",
-          "[Memory] Revenue pacing behind target. CS team attrition risk: three high-performer resignations during manager absence. AI pricing crisis emerging \u2014 AI-native prospects resisting percentage-of-spend model. Internal sales competition energizing teams.",
-          "[Signal] Justin proposing tiered services/FAM pricing restructure: 0% (no FAM, ticket-only), 10% (pooled FAM), 25% (named FAM + Slack channel), plus onboarding package. Recommends increasing minimum annual fee from $12K to $25K. Flagging missing ROI calculator as critical gap in value-selling motion. Dan Carducci and Miguel consulted on structure.",
-          "[Signal] Nubank gross margin issue escalated as red-priority decision item before April 14 Brazil customer meeting \u2014 current burn rate reduction incomplete, implications for pricing or configuration downgrade.",
-          "[Signal] Matt Katz (SVP CS) rewriting Confluence pages for Customer Success \u2014 requesting admin access to archive and republish. Signals CS operational reset underway.",
-          "[Signal] Kubernetes cluster error state investigation ongoing \u2014 Matt Katz asking whether FinOps team needs leadership escalation to get K8s team attention."
-        ],
-        "action": []
-      },
-      "Delightree": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-03 via slack_channels/#delightree-gtm-acceleration",
-        "teamVisibility": "Tushar (CEO), Doug (Head of Sales), Griffin (RevOps), Xiaolei",
-        "hasSignal": true,
-        "know": [
-          "[Context] Growth outpacing GTM leadership maturity. Doug is a growing concern \u2014 three independent signals indicate he may be over his skis (weak responsiveness, inability to attract strong candidates, insufficient strategic rigor). Expansion motion is structurally absent, increasing urgency on sales leadership and org design.",
-          "[Memory] Q1 closed strong ($645K in 2 days; run rate tracking $5.5M annually). Eight data packs in phased rollout. Vendor stack consolidation active: Equals, Sybill, Frandata decisions pending. Head of Marketing hire (Jono Andrews via Revelone) pending this week. High-touch vendor integration remains gating factor for sales infrastructure velocity.",
-          "[Signal] No new signals today (Sunday)."
-        ],
-        "action": []
-      },
-      "X-Cures": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-03 via granola/Akash | Stu sync",
-        "teamVisibility": "Mika (CEO), Bryan (Head of Sales)",
-        "hasSignal": true,
-        "know": [
-          "[Context] No interpretive context card recorded. Sales infrastructure overhaul accelerating with concrete wins (Exact Sciences $2M+, LabCorp, Caris). CRO search progressing (Cole Group pipeline narrowing to 3 qualified candidates). Capacity constraints creating orchestration risk across CRO ramp, CRM transition, and sales infrastructure stabilization.",
-          "[Memory] [PERSISTENT \u00b7 seen across multiple runs] HubSpot expiration April 10 has been an open carry-over for 10 days \u2014 the longest-standing unresolved action in the system. Bryan driving CRM migration decision but no confirmed path yet.",
-          "[Signal] No new signals today (Sunday)."
-        ],
-        "action": []
-      },
-      "ClearML": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-03 via gmail/Alex Newman interview + granola/Akash | Stu sync",
-        "teamVisibility": "Moses (CEO), Alex (CRO), Stu",
-        "hasSignal": true,
-        "know": [
-          "[Context] CEO-led execution and strategic clarity problem. Moses is too involved in minute-level decisions with 3-4 key engineers carrying core dependency. RevOps hiring remains urgent. Product strategy misalignment is the bottleneck preventing hiring acceleration.",
-          "[Memory] Alex Newman interview and Scott Castle advisor intro both scheduled. Kevin Venturino and Heather Robinette panel interviews also in pipeline. Multiple candidates being evaluated simultaneously \u2014 need to clarify whether roles are competing or complementary.",
-          "[Signal] No new signals today (Sunday)."
-        ],
-        "action": []
-      },
-      "RightRev": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-03 via slack_dms/DM with Joel",
-        "teamVisibility": "Joel (CMO), Jagan (CEO), Dan (CFO), Brian Michael (Budburst), Jamaica (Budburst)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Major operating-system and leadership-alignment problem beneath strong market perception. Jagan (CEO) is a product visionary, not an operational leader. Dan (CFO) filling informal COO/GTM role but lacks strong GTM judgment. CRO search is the critical hire to fill the operating vacuum.",
-          "[Memory] CRO search momentum strong \u2014 Nirvano Brans interview positive, offer mechanics pending. RevOps SOW signed, first hire references underway. Second sales hire Mitch Larson in final reference stage. $16M RCB FY27 target against 75 live-migrated customers lacks ACV clarity.",
-          "[Signal] No new signals today (Sunday)."
-        ],
-        "action": []
-      },
-      "Innovius": {
-        "engagement": "Active (internal)",
-        "lastTouch": "",
-        "teamVisibility": "",
-        "hasSignal": true,
-        "know": [
-          "[Context] Innovius is in a scale-and-proof moment. GTM accelerator bandwidth is the binding constraint. Hiring (Ali Mehdi, Rohith Manoj) are infrastructure unlocks, not incremental additions. Monday is highest-density hiring day in recent runs.",
-          "[Memory] FullFunnel retainer signed ($4.75k/mo). Ali Mehdi in panel/challenge stage; Rohith Manoj advancing to offer. Prometheus system live and receiving positive internal feedback from Justin Moore.",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] Equals renewal notice (~60-day window, renewal date 06/03/2026) received from Abbey Minondo \u2014 Abbey requesting alignment conversation on goals and value delivered. No urgency for 60 days but should be flagged for Delightree context (Equals also used in Delightree portco stack).",
-          "[Signal] [RECOVERED FROM RAW \u2014 not in draft] Justin Moore asked Akash whether a generalized build framework exists for new products \u2014 strategic question about organizational capability, low urgency, no action required today.",
-          "[Signal] Raunak candidate assessed by Akash: initial read is he may not be a meaningful upgrade from Nikhil \u2014 strong academics but no production ML experience or product/roadmap ownership. No action required today.",
-          "**Monday hiring convergence (Innovius):** Two offer-stage candidates (Ali Mehdi readout, Rohith Manoj offer discussion) both require Akash's direct involvement Monday, plus Omar Qaddoumi reference call at 9 AM. This is the highest-density hiring day in recent runs \u2014 sequencing and preparation tonight are critical.",
-          "**CRM/tool decisions aging across portfolio:** X-Cures HubSpot expiration (Day 10, 4 days remaining) and Delightree vendor stack decisions (Sybill, Frandata) are both stalling. Infrastructure decisions are consistently the slowest-resolving carry-over category.",
-          "**Pricing architecture in motion at CloudZero:** Justin's services/FAM restructure and minimum fee increase are directionally aligned with the mid-funnel conversion diagnosis \u2014 moving from services-heavy to product-led value. This is a transformation-accelerating signal, not just a pricing change.",
-          "**Sunday signal pattern:** Low signal volume is expected (0 from Slack channels, 0 from Granola). The meaningful signals today are email-driven hiring actions and CloudZero ingest data from Saturday activity."
-        ],
-        "action": []
-      }
-    },
-    {
-      "_date": "April 4, 2026",
-      "_dateKey": "2026-04-04",
-      "_metrics": {
-        "slackMsgs": 192,
-        "slackChannelSignals": 4,
-        "slackDmSignals": 188,
-        "emails": 9,
-        "granolaMeetings": 5,
-        "cloudzeroSignals": 0,
-        "totalRetrieved": 206,
-        "sourcesCited": 35,
-        "coverage": "7/7",
-        "claimsKept": 35,
-        "dropped": 1,
-        "rewritten": 3,
-        "hotSignals": 5,
-        "hotActions": 4,
-        "mappingCorrections": 1,
-        "mappingAmbiguities": 0,
-        "sourceTagsAdded": 0,
-        "hotActionsReordered": "yes",
-        "falseNegativesRecovered": 2,
-        "toolCallsA1": 25,
-        "toolCallsA2": 17,
-        "toolCallsB": 7,
-        "toolCallsC": 4,
-        "toolCallsD": 3,
-        "carryOversOpen": 16,
-        "oldestCarryOverDays": 8
-      },
-      "_hotSignals": [
-        "[Auditoria \u00b7 Q1 pipeline at 38% PG attainment \u2014 structural miss driven by Marketing/SDR low yield and AE single-digit generation; channel holding at ~90% \u00b7 SOURCE: gmail/Roi Pipeline Review \u00b7 2026-04-03]",
-        "[Delightree \u00b7 Justin flags Doug (Head of Sales) likely needs to be layered like Matthew at RightRev \u2014 \"I can pretty much guarantee Doug won't live up to the position\" \u2014 leadership ceiling concern intensifying; multiple DM threads confirm Xiaolei and Justin both working founder-alignment angle \u00b7 SOURCE: slack_dms/DM with Justin \u00b7 2026-04-03]",
-        "[Innovius \u00b7 Ali Mehdi (GTM Engineer candidate) strong consensus, in-person session Monday, targeting offer EOD Tuesday \u2014 competing timeline makes speed critical \u00b7 SOURCE: slack_channels/#innovius-team + gmail/References \u00b7 2026-04-03]",
-        "[X-Cures \u00b7 HubSpot license expires April 10 \u2014 7 days remaining, CRM evaluation (Salesforce, Monaco, Lightfield) or month-to-month bridge decision required \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 Day 8]",
-        "[Auditoria \u00b7 Nick Ezzo (Head of Marketing) flags data quality issue: finance systems and Workday admin contacts (Kristen VanBlarcom, Winnie Bridges, Carolyn Kelfer, Mike Lynch) being deprioritized from prospecting \u2014 these were champions at major accounts, potentially undermining Oracle/KPMG push \u00b7 SOURCE: gmail/Auditoria Pipeline Review Follow-up \u00b7 2026-04-03]"
-      ],
-      "_hotActions": [
-        "[X-Cures \u00b7 Resolve CRM path before April 10 HubSpot expiration: confirm evaluation track (Salesforce, Monaco, Lightfield) or authorize month-to-month extension \u00b7 lapses in 7 days \u00b7 Bryan (Head of Sales) action items dependent on CRM path \u00b7 SOURCE: carry-over \u00b7 2026-03-26 \u00b7 Day 8]",
-        "[RightRev \u00b7 Provide Nirvano Brans CRO interview feedback to Nick Tashima (True Search) \u2014 Joel needs before offer stage \u00b7 lapses within 48h \u00b7 Joel (CMO), Nick Tashima waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-01 \u00b7 Day 2]",
-        "[Innovius \u00b7 Complete Ali Mehdi reference calls (Genaro Ocreto at Adyen, Laksh Agrawal at Stenn) before Monday in-person session \u00b7 lapses Monday \u00b7 Nicole coordinating, competing timeline \u00b7 SOURCE: new \u00b7 slack_channels/#innovius-team + gmail/References \u00b7 2026-04-03]",
-        "[Innovius \u00b7 Circle back with recruiters (Fraser + Rivi + Braxton) \u00b7 lapses within 48h \u00b7 recruiters waiting \u00b7 SOURCE: carry-over \u00b7 2026-04-01 \u00b7 Day 2]"
-      ],
-      "Sewer AI": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-03 via slack_dms/DM with Justin, DM with user:U08SAU",
-        "teamVisibility": "Justin Moore, Billy (CEO), Cole (RevOps Analyst)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Sewer AI is a scaling execution story, not a PMF problem. Q1 soft ($1.8M vs $2.5M plan) but driven by revenue-shape change (PG&E/Houston shifting PAYG to subscription). Q2 outlook materially stronger ($2.9M base, $3.5-4M upside). Key watch: middle-funnel conversion, CS leadership upgrade, expansion motion.",
-          "[Memory] Billy actively recruiting VP of CS \u2014 Akash providing candidate referrals. Cole refreshing adoption dashboards to close fleet-size data tracking gap. Advisory engagement healthy with regular stand-ups.",
-          "[Signal] Sewer AI sales process call held today (2:30-3:30pm MT via Google Meet) \u2014 DM with Justin and U08SAU confirm scheduling. SOURCE: slack_dms/DM with Justin + DM with user:U08SAU \u00b7 2026-04-03",
-          "[Signal] Akash experimenting with AI-native lookalike system for Sewer AI targeting \u2014 shared with analyst team (Marci, Koby, Ethan) for feedback on ICP filters. SOURCE: slack_dms/Group DM \u00b7 2026-04-02"
-        ],
-        "action": []
-      },
-      "Auditoria": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-03 via gmail/Roi Pipeline Review + granola/Partner Process Discussion",
-        "teamVisibility": "Rohit (CEO), Dave Osborne (CRO), Roi (RevOps), Nick Ezzo (Head of Marketing), Xiaolei",
-        "hasSignal": true,
-        "know": [
-          "[Context] Underperformance is a CEO execution issue, not PMF. Rohit exhibits slow decision-making, inconsistent engagement, weak follow-through. Sales execution (Dave) is not the limiting factor \u2014 bookings are structurally constrained by upstream org dysfunction. On track to miss Q1 FY27 ($1.6M target, projected 400K-1M).",
-          "[Memory] Persistent pattern: org restructuring blocked by execution pace across multiple runs. Dave overextended with 18 direct reports; North America RVP hire urgent. Vince/BDR moves verbally approved by Rohit but not implemented \u2014 eroding Dave's trust. SDR quality crisis (sub-1% reply rates), mid-funnel conversion at 11% vs 32% target.",
-          "[Signal] Q1 PG attainment at 38% \u2014 confirms structural miss. Channel performing (~90%) but Marketing/SDR and AE generation critically low. Oracle/KPMG focus next week with enablement. SOURCE: gmail/Roi Pipeline Review \u00b7 2026-04-03",
-          "[Signal] Nick Ezzo (Head of Marketing) flags data quality risk: Workday admin contacts and finance system champions being deprioritized from prospecting \u2014 potential loss of key account pathways (Kristen VanBlarcom, Winnie Bridges, Carolyn Kelfer, Mike Lynch named). SOURCE: gmail/Auditoria Pipeline Review Follow-up \u00b7 2026-04-03",
-          "[Signal] Partner process discussion held with David Osborne (CRO), Rohit (CEO), and Xiaolei. SOURCE: granola \u00b7 2026-04-03",
-          "[Signal] Auditoria Marketing meeting invite confirmed for Tue 4/7 at 3PM EDT / 12PM PDT. SOURCE: slack_dms/DM with Xiaolei \u00b7 2026-04-02"
-        ],
-        "action": []
-      },
-      "CloudZero": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-03 via slack_dms/DM with Stu",
-        "teamVisibility": "Justin Moore (CEO), Stu, Brady (SVP Sales)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CloudZero in broad company reset \u2014 leadership, product, positioning all being reworked simultaneously. Bookings flat ~$2M net new QoQ. Core bottleneck is middle-funnel conversion: product/value proposition not yet matching buyer expectations, especially for engineering/DevOps buyers. Read as product-market-value translation problem, not just sales execution.",
-          "[Memory] AI pricing crisis emerging: AI-native prospects resist percentage-of-spend model. CS team attrition risk (three high-performer resignations). CTO search active. Sales pacing behind target \u2014 every deal essential. Snowflake/LSEG partnership introducing FinOps use cases.",
-          "[Signal] CloudZero retriever returned 0 actionable signals this run (routine internal signals filtered). No hot signals from CloudZero-specific sources. SOURCE: cloudzero retriever \u00b7 2026-04-03",
-          "[Signal] Akash discussing forecasting methodology with Stu \u2014 triangulating via Equals historical pacing, stage-based probability, and rep-level MEDDPICC gating through Sybill/Gong. SOURCE: slack_dms/DM with Stu \u00b7 2026-04-02",
-          "[Signal] Akash coordinated call with Justin today via Stu. SOURCE: slack_dms \u00b7 2026-04-03"
-        ],
-        "action": []
-      },
-      "Delightree": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-03 via slack_dms/Group DMs with Tushar+Doug+Adrian, Xiaolei+Tushar, granola/Sales Process",
-        "teamVisibility": "Tushar (CEO), Doug (Head of Sales), Adrian (Head of Finance), Xiaolei, Griffin (RevOps)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Real commercial traction but growth outpacing GTM leadership maturity. Doug is a growing concern \u2014 three independent signals from recruiters and CRO advisor indicate he may be over his skis. Lacks expansion motion (structural weakness). Q1 pacing below plan (~$345K) tests repeatability.",
-          "[Memory] Four GTM workstreams executing (data packs, tech stack, sales process, pricing/packaging). Sybill decision was due Apr 3 \u2014 no outcome signal yet. Jono Andrews HoM final presentation was today (Apr 3-4 window). Sustained daily engagement across Slack and Granola.",
-          "[Signal] Justin explicitly flags Doug ceiling: \"I can pretty much guarantee Doug won't live up to the position. He will need to be layered like Matthew at RR.\" Need to align with Tushar on how he views Doug's trajectory before escalating. SOURCE: slack_dms/DM with Justin \u00b7 2026-04-03",
-          "[Signal] Jono Andrews Head of Marketing working session held today \u2014 structured 30/60/90-day plan presentation. Xiaolei shared prep notes with Tushar. Post-session debrief requested. Tushar wants references while Jono is out next week, then 1:1 with Akash or Xiaolei before decision. SOURCE: slack_dms/Group DM Xiaolei+Tushar \u00b7 2026-04-03",
-          "[Signal] Jono Andrews HoM working session debrief: multiple signals suggest mixed energy \u2014 \"lower energy than expected,\" pattern was more reactive than proactive. Tushar to be asked his read before escalating to broader Innovius team. SOURCE: slack_dms/DM with user:U026YJ \u00b7 2026-04-03 [RECOVERED FROM RAW \u2014 not in draft]",
-          "[Signal] Xiaolei raises embedded-model clarity concern: \"is Tushar clear on how the embedded model is working, and has he clearly let Doug know? I'm sensing they're not understanding we're offering...\" \u2014 relationship and role-clarity risk at the engagement level. SOURCE: slack_dms/DM with user:U026YJ \u00b7 2026-04-02 [RECOVERED FROM RAW \u2014 not in draft]",
-          "[Signal] Xiaolei seeking founder network recommendations for Series B/C marketing leaders to help Tushar calibrate hiring bar. SOURCE: slack_channels/#innovius-team \u00b7 2026-04-03",
-          "[Signal] Xiaolei requesting involvement in all Head/Director+ level searches across Delightree for candidate cross-pollination. SOURCE: slack_dms/Group DM Xiaolei+Tushar \u00b7 2026-04-03",
-          "[Signal] AE Manager hire prioritized \u2014 Xiaolei to post LinkedIn sourcing; Doug to send JD and summary. New ATS stood up. SOURCE: slack_dms/Group DM Xiaolei+Tushar+Doug \u00b7 2026-04-03",
-          "[Signal] Williams Tison partnership consideration raised by team. SOURCE: slack_dms/Group DM Tushar+Doug+Adrian \u00b7 2026-04-03",
-          "[Signal] Sales process call held today with reference scheduling (Good Friday timing impact). SOURCE: granola/Sales Process \u00b7 2026-04-03"
-        ],
-        "action": []
-      },
-      "X-Cures": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-03 via granola/Middle of Funnel Review",
-        "teamVisibility": "Bryan (Head of Sales), Mika (CEO)",
-        "hasSignal": true,
-        "know": [
-          "[Context] No durable interpretive context card yet. Commercial momentum strong (SPV increased to $12.5M, major wins with Exact Sciences, LabCorp, Caris). Parallel sales infrastructure rebuild underway \u2014 Bryan deploying territory tools and running CRM evaluation.",
-          "[Memory] CRO search active via Cole Group (112 prospects, 9 active, 3 qualified). Bryan running CRM evaluation workshops (Salesforce, Monaco, Lightfield). HubSpot expires April 10 \u2014 7 days remaining [PERSISTENT \u00b7 seen across multiple runs, Day 8 carry-over].",
-          "[Signal] Middle of funnel review held with Bryan today \u2014 pipeline discussion. SOURCE: granola \u00b7 2026-04-03"
-        ],
-        "action": []
-      },
-      "ClearML": {
-        "engagement": "Advisory",
-        "lastTouch": "2026-04-03 via slack_dms/DM with Stu, gmail/Alex Newman interview",
-        "teamVisibility": "Alex Paquette (CRO), Stu, Moses (CEO)",
-        "hasSignal": true,
-        "know": [
-          "[Context] CEO-led execution and strategic clarity problem. Moses slow to respond, dismissive. Vision unclear. Board-facing presentations diverge from operating reality. Alex (CRO) likely experiencing similar frustrations. Commercial stability reliant on external anchors (HP, Dell).",
-          "[Memory] Kevin Venturino Rev Ops candidate advancing through challenge round. Zypsy rebranding underway but product strategy misalignment risk acute \u2014 must lock direction before launch. Akash introduced Clarke Patterson and Scott Castle as advisors. Heather Robinette interested in GTM engine build.",
-          "[Signal] Alex Newman (candidate for Head of Rev Ops) interview booked with Akash next week \u2014 expressed strong excitement about greenfield opportunity. Alex Paquette (CRO) facilitated intro. SOURCE: gmail \u00b7 2026-04-02",
-          "[Signal] Stu notes ClearML and Innovius Rev Ops search profiles similar \u2014 candidates could cross-pollinate. SOURCE: slack_dms/DM with Stu \u00b7 2026-04-03"
-        ],
-        "action": []
-      },
-      "RightRev": {
-        "engagement": "Active",
-        "lastTouch": "2026-04-03 via slack_dms/DM with Xiaolei, gmail/Reference Check for Mitch Larson",
-        "teamVisibility": "Joel (CMO), Dan (CFO), Natalie (Advisor), Brian Michael (Budburst), Jamaica (Budburst)",
-        "hasSignal": true,
-        "know": [
-          "[Context] Major operating-system and leadership-alignment problem beneath strong market perception. Jagan (CEO) disengaged from operations; Dan (CFO) filling vacuum but lacks GTM judgment. VP of Sales too green \u2014 CRO hire underway. CMO frustrated with fragmentation. GTM motion narrow, Salesforce-dependent.",
-          "[Memory] Aggressive GTM transformation executing from foundational maturity gap (least mature in portfolio). RevOps SOW signed, hiring underway. Nirvano Brans CRO interview completed by Akash Apr 1 \u2014 positive, offer mechanics discussion with Joel. Mitch Larson (second sales hire) in final reference stage. Weekly GTM staff meeting structure needed.",
-          "[Signal] Mitch Larson references wrapping: Erik Stromness confirmed Friday ET, Robert Gammon confirmed 7pm ET Thursday callback. SOURCE: gmail \u00b7 2026-04-03",
-          "[Signal] Dan (CFO) reminder: enablement program should emphasize RightRev's above-average cybersecurity posture for enterprise sales \u2014 Corey and Peter can help with whitepapers/training. SOURCE: slack_channels/#rightrev-gtm-acceleration \u00b7 2026-04-03",
-          "[Signal] Discussion about having Natalie talk to a candidate on what to look for. SOURCE: slack_dms/DM with Xiaolei \u00b7 2026-04-03"
-        ],
-        "action": []
-      },
-      "Innovius": {
-        "engagement": "Unknown",
-        "lastTouch": "2026-04-03 via slack_channels/#innovius-team + gmail + granola",
-        "teamVisibility": "Nicole, Xiaolei, Stu, Jasmine, Marci, Koby, Ethan",
-        "hasSignal": true,
-        "know": [
-          "[Context] Scale-and-proof moment: Fund II ($100M committed vs $250M target). GTM accelerator validated in principle \u2014 challenge is now capacity, not concept. Hiring progress is leading indicator of whether GTM promise holds at scale.",
-          "[Memory] FullFunnel retainer confirmed ($4.75K/mo, 25 hrs/mo). Zach Friedland declined GTM Engineer but interested in Data Platform. Max Kardon pipeline aging. Rohith Manoj refs due this week. Tool consolidation ongoing.",
-          "[Signal] Ali Mehdi \u2014 strong consensus from all interviewers, his top choice. In-person working session Monday, offer target EOD Tuesday. References submitted (Genaro Ocreto at Adyen, Laksh Agrawal at Stenn). Competing timeline. Nicole coordinating scheduling via Jasmine. SOURCE: slack_channels/#innovius-team + gmail/References \u00b7 2026-04-03",
-          "[Signal] Rohith Manoj visa update: pursuing emergency appointment at US consulate in Oman, can start remotely under F-1 STEM OPT. Moving to offer stage pending references this week. SOURCE: gmail \u00b7 2026-04-03",
-          "[Signal] Prometheus multi-agent system live \u2014 dashboard at dashboard.runprometheus.com, Slackbot in Slack. Walkthrough Monday. Available for portfolio CEO deployment. SOURCE: slack_channels/#innovius-team \u00b7 2026-04-03",
-          "[Signal] Justin raised question: \"Have we locked down how we are positioning our portfolio services and what the costs are in a repeatable way?\" \u2014 signals need for standardized portco services framework. SOURCE: slack_dms/Group DM Justin+Stu+Xiaolei \u00b7 2026-04-03",
-          "[Signal] Weekly RevelOne demand gen sync held with Kera Pappas, Nicole, Emerson Wolfe, Dan Weiner. SOURCE: granola \u00b7 2026-04-03",
-          "[Signal] Nicole asks about sending Carta and Clay dinner invitations. SOURCE: slack_dms/DM with Nicole \u00b7 2026-04-03",
-          "[Signal] HubSpot enriched data delete requests pending review. SOURCE: gmail/HubSpot notification \u00b7 2026-04-04"
-        ],
         "action": []
       }
     }

@@ -1,3 +1,11 @@
+## 2026-04-19 — Week of 2026-04-13
+- Framing identified as final gap for Shay. Akash synced with Billy and Turley; all required data already provided. Billy meeting Luminate and JMI to surface additional gaps.
+- B. Gilmartin prepared Insight Partners deck with MTD bookings data. Team deciding whether to strip MTD from broader investor version.
+- Completed: weighed in on Insight Partners distribution, finalized LP investor framing, synced with Justin on SAI pipeline ("million plus" target).
+- Adoption Data Pack for Cole's dashboard rebuild aging significantly—needs prioritization or delegation.
+
+---
+
 ## 2026-04-12 — Week of 2026-04-06
 - [2026-04-07] Billy shared account context questions via Slack (low-confidence signal; peer exploring SAI market fit)
 - [2026-04-10] Granted Billy write access to Delightree Revenue Operations MOC

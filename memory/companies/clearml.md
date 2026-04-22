@@ -9,13 +9,13 @@
 **Signal Interpretation Rules:** Map issues first to CEO responsiveness and strategic clarity before assuming isolated departmental misses. Board-level positive presentations should be discounted unless matched by internal execution urgency and leadership alignment.
 
 <!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
-Moses (CEO) remains a critical bottleneck with excessive tactical involvement; recent CEO underwriting assessment indicates he may not meet standards for leadership rigor and founder alignment, signaling mounting pressure to directly address leadership fit. CRO Alex Paquette is severely bandwidth-constrained. Despite product strategy misalignment, RevOps hiring is advancing: two candidates (Alex Newman, Katie Shellenberger) progressed through interviews with positive intent signals. Alex Newman demonstrated hands-on sales tech expertise and identified persistent Outreach/HubSpot bidirectional sync issues—a near-term capability gap.
+Moses (CEO) remains critical bottleneck; Q1 confirmed 50-70% miss with $700K new ARR — board flagged product positioning risk (ML platform → "AI velocity generator" pivot threatens GPU orchestration value prop). CRO Alex Paquette severely bandwidth-constrained; board concerned about hiring pace vs. quality balance.
 
-External advisor introductions now active: Scott Castle (ex-CloudZero/Tecton CPO) recently introduced to Moses for strategic engagement; Clarke Patterson (PMM/GTM advisor) on standby pending Stu approval. These external voices aim to provide perspective on leadership constraints and go-to-market strategy.
+Board partnerships anchor external execution: Dell baking ClearML into cloud automation (consumption-based AWS), HPE progressing, Canonical marketplace active, ORNL $350K+ as design partner. External anchors dwarf internal capability.
 
-Core dynamic: Moses favors incremental scaling and is risk-averse on external hires, yet CEO underwriting escalation and advisor interventions signal mounting institutional pressure to address fundamental leadership capacity and product-market strategy alignment. RevOps execution is the near-term focal point for acceleration.
+Three urgent decisions converging: (1) Alex Newman RevOps hire — deliverables submitted, panel complete, competing offers escalating, Akash sole decision-maker. (2) Clarke Patterson PMM advisor connection — hot action (Stu approved, Justin confirmed fit for technical AI product marketing). (3) Finance VP search (Stu leading) + announcement date decision (pre-summer window closing, rebrand coordination with Zipsy underway).
 
----
+External advisor strategy forming: Scott Castle (ex-CloudZero/Tecton CPO) introduced to Moses; Clarke Patterson cleared for intro. CRO frustration escalating around hiring velocity blocking revenue scaling.
 
-**Word count: 144** | Ready for integration into company card at `/home/prometheus/innovius-brief/memory/companies/`
+Apr 21 signals: ClearML RevOps kickoff (Apr 20) completed — critical infrastructure identified: deal/company-level data mapping, ARR tracking strategy, source attribution. Multiple process changes needed before scaling. Alex Newman (prospective fractional RevOps) shifting from full-time ClearML role to fractional across multiple companies; requested 15-min call next week with Akash to discuss outreach strategy. Post BoD Meeting Feedback doc (Justin, Apr 19) still pending Akash review (Day 1 carry-over).
 <!-- END-AUTO-MEMORY -->

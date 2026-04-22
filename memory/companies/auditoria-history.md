@@ -1,3 +1,13 @@
+## 2026-04-19 — Week of 2026-04-13
+- VP Marketing Nick Ezzo challenged pipeline coverage model (6.8x); Akash corrected: 3x coverage is below-standard benchmarking
+- Workday channel: AE assignment misalignment identified (file vs. Salesforce); Akash prototyped AI partner visibility tool in 35 minutes showing CAO alignment and renewal ops
+- Q1 revenue close ($1.1–1.2M) contingent on Sutter deal via KPMG partnership; CFO alignment in progress; ~2 weeks remaining
+- Saturday calibration call with Rohit (CEO) completed; founder relationship maintained despite PTO
+- Completed: Workday consolidation (Claude Ingest/Insights/dashboarding), Vendilux proposal follow-up, akash@auditoria email setup + Prometheus migration, AE reconciliation
+- Vince Barrett acknowledged feedback request; review expected in coming days
+
+---
+
 ## 2026-04-12 — Week of 2026-04-06
 - **Marketing effectiveness audit:** Akash/Xiaolei identified critical gap—events consuming 60% of budget but generating only 7% of pipeline. Marketing Brainstorm (Apr 7-8) with Rohit, Nick, leadership revealed event saturation and LinkedIn underutilization; calibration call scheduled with Rohit.
 - **Workday partnership locked:** $5M revenue target, 20 SQOs/month (~$100K each) from Fins customer base. Vince recommends 2-party plays (Auditoria + SI); Dave Osborne (CRO) driving US/Canada/UK engagement.

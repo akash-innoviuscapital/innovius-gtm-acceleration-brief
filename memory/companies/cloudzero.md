@@ -17,13 +17,23 @@
 **Signal Interpretation Rules:** When reading CloudZero signals, start by mapping issues to transformation lag rather than pure execution failure. Flat bookings should be interpreted primarily through the middle-of-funnel product/value mismatch, not just sales weakness. Positive engineering velocity and strategic partnerships are real strengths, but they should not be mistaken for proof that the commercial engine is fixed. Treat leadership stability, product modernization, and mid-funnel conversion as the three key indicators of whether the turnaround is working. External strategic interest — including Snowflake/Observe and Anthropic-related pathways — adds upside, but only becomes truly valuable if CloudZero can close the gap between product evolution and buyer demand.
 
 <!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
-AI pricing crisis driving GTM transformation: percentage-of-spend model rejected by AI-native prospects; Scott/Matt deploying concession trade matrices and pricing playbooks. Justin's FAM/services proposal ($25K floor) under GTM testing before field rollout.
+GTM pricing transformation executing: Scott/Matt deployed concession playbooks and trade matrices in field; Justin's FAM services proposal ($25K floor) tested; Beth Boisvert (intro pending with CPO Scott) adds credibility on services positioning. Sales funnel under sustained pressure (revenue-critical quarter, middle-stage drop) with two largest customers at risk—Coinbase operational (3–4 of 10 features working), Uber update Mike pending. Q1 OKRs outstanding.
 
-Sales funnel under pressure (pacing behind, significant middle-stage drop) in revenue-critical quarter, though internal ADR competition (Umesh Rao) energizing broader org. Brady tracking competitive threat: ScaleOps GPU growth displacing Cast.ai.
+Product momentum advancing: 90 major commitments delivered in 30 days; comms package drafted for interim CEO Justin's review and external send (LP milestone). Azure/AWS parity closed (Azure Resource Connector live); AI Hub webinar 138 registrations; new customer stories (SumoLogic, DraftKings). Justin shared strong Claude adoption metrics (all employees, 6 weeks post-retreat).
 
-Engineering leadership depth gaps (Eric Weiss technical depth concern) being addressed via Dan Carducci → Scott PMM role connection. CS team rebuilding after three high-performer resignations; Matt Katz driving pricing/playbook/Confluence modernization.
+Q2 Moat Sprint (Apr 20 signal): 89 shallow-but-healthy accounts ($3M cohort ARR) targeted for L3+ deepening. Guardrails: CRITICAL band to zero, A-T1/T2 exposure -30%. Combined ~$4.7M ARR impact. Approval needed this week before FAMs lock Q2 (Hot Signal).
 
-Product momentum: Azure Resource Connector live (AWS/Azure parity closed), AI Hub Webinar 138 registrations, new customer stories (SumoLogic, DraftKings).
+Active deal blocker: Brady seeking Innovius investor connections for $500K Roblox deal stuck at procurement. Two warm paths: (1) Justin Moore/Dragoneer → CFO Naveen Chopra; (2) Josh Stein/DFJ → VP Finance Hans Gunawan. Brady is waiting (new Hot Action: activate Dragoneer path).
 
-Critical action: Nubank (top customer) GM meeting Apr 14 requires burn-rate reduction dialogue—may necessitate pricing changes or service downgrades. Sharon launching VP+ pulse survey (leadership confidence, team collaboration, autonomy). ELT meeting upcoming (deal review, decision topics, Brazil expansion).
+Talent/leadership: Dan Carducci now supporting Scott in VP PMM capacity (Eric Weiss technical depth gaps being addressed). CS team rebuilding after three departures; Matt Katz driving pricing/ops/Confluence modernization. FAM hiring advancing: HM screens completed 4/14–4/16; comp ceiling guidance provided; top 5 candidate submissions narrowing from 9 ($120–220K OTE).
+
+Apr 21 signals: Security incident (Jan 29–Apr 20 window): unauthorized account creation on customer domains with no validation — 73 orgs affected. Fix deployed; exploitation log review underway. Engineering process changes required. Board-visible risk.
+
+ARR cohort compression confirmed: 2026 cohort $3.8M vs $6.4M prior year — deal size down 44% ($142K→$80K); pipeline yield dropped 71% (12.9%→3.7%). Middle-funnel value-translation problem confirmed.
+
+Nubank margin neutrality at impasse: primary cost lever (reduce ingest 7→3 days) rejected by Thomas. Three decision paths remain: absorb, trade price for service, or escalate to cancellation clock. CloudZero leadership must decide.
+
+Beth (ex-Snyk, demand gen, 85-115M quarterly pipeline, 28% conversion) introduced to Scott (CPO) Apr 20. Brady on redeye from Vegas — prioritize Wed/Thu for meetings. Commvault CIO postponed (go-private bid); Mathworks backfill pushes to Q2. Every Meeting Deck rolled out on GTM Update call. New AI cost governance sales assets deployed (CFO, Engineering, FinOps personas).
+
+**CRITICAL BLOCKER:** CloudZero ingest stale Day 11 (last push Apr 10); no fresh Slack signal data since Apr 10. Brief quality degraded. Restoration via POST /innovius-brief/cloudzero-ingest essential.
 <!-- END-AUTO-MEMORY -->

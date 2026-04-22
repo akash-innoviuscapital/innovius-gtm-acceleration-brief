@@ -1,3 +1,13 @@
+## 2026-04-19 — Week of 2026-04-13
+- Q1 financial results missed 50-70% target with only $700K new ARR; board flagged product positioning clarity concerns amid platform-to-solution shift
+- Dell partnership progressing: GPU machines for SMB segment to include ClearML licenses with AWS consumption-based billing; HPE partnership advancing
+- Finance VP search initiated under Stu's leadership; board raised hiring pace vs. quality concerns and need for structured pre-sales team onboarding
+- Alex Newman RevOps candidate: completed exercise deliverables (data validation, written answers, PDF deck), panel interview Apr 15, readout scheduled Wed/Thu
+- Investment announcement timeline at risk: ClearML rebrand planned but no announcement date set; pre-summer window closing without confirmation
+- Moses connected with Clarke Patterson for technical product marketing advising—critical need flagged given noisy competitive landscape
+
+---
+
 ## 2026-04-12 — Week of 2026-04-06
 - Alex Newman (RevOps candidate) progressed after interview; confirmed availability Apr 11 for exercise. Flagged persistent Outreach/HubSpot sync issues in ClearML's sales stack (HubSpot, Outreach, Gong). Katie Shellenberger also advanced—strong post-interview signals.
 - Scott engaged as Moses (CEO) advisor; initial meeting completed. Clarke on standby for CEO intro awaiting Stu's approval.

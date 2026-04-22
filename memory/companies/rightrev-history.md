@@ -1,3 +1,11 @@
+## 2026-04-19 — Week of 2026-04-13
+- Sweep.io and Sybill order forms sent to Kathy Grimes for procurement (Joel signature target); Dan Miller (CFO) OOO through 4/22 stalling vendor setup for two software tools awaiting his return.
+- RightRev Essentials launch decision pending—Joel (CMO) blocking due to readiness concerns vs Salesforce push; GTM Acceleration Session (4/14) established strategy inflection point: essentials package vs process implementation approach.
+- Jagan requesting combined GTM messaging feedback from Dan on value pillars framework and TAM/SAM documents for sales discovery cycle; ZoomInfo domain additions requested for email provisioning (Joseph Marshall/Demand Gen).
+- Market analysis presentation finalized and delivered for essentials workshop; essentials pricing tested with Dan to inform GTM direction decision.
+
+---
+
 ## 2026-04-12 — Week of 2026-04-06
 - **Pipeline quality crisis**: Marketing pipeline ($450k) converts to zero bookings; cold outbound rising, warm leads falling, ASP declining YoY.
 - **Org structure conflict**: Dan (CFO) hired Mitch Larson as RevOps without informing Joel (CMO), who worried Mitch would be "overpowered." Dan committed to realigning reporting structure.

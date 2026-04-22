@@ -9,11 +9,13 @@
 **Signal Interpretation Rules:** When reading Auditoria signals, map them to execution discipline and Rohit's engagement level first. Cultural defensiveness or delays are data about leadership capacity, not product-market signals. Dave's reporting on sales should be read through the lens of his constrained sales funnel—improvements in efficiency mask bookings ceilings set by upstream execution gaps.
 
 <!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
-Org restructure active: Dave Osborne (CRO) now owns Partnerships and SDRs with green light to address CS performance gap. Q1 pipeline at 38% of target; Rohit's 90-day targets aggressive ($2M/mo from Workday, 30% AE self-gen, $10M incremental). Execution velocity remains core blocker—org changes in flight but not yet resolved.
+Workday partnership execution accelerating despite operational constraints. Data Consolidation V0 complete; Rob's email sequence driving real Workday rep meetings. Akash prototyped AI-powered partner visibility tool (CAO alignment, renewal ops, ICP scores, engagement signals) in 35 minutes—demonstrating strategic value to leadership. AE assignment misalignment (file vs Salesforce) identified for Workday channel; reconciliation to master DB pending.
 
-Marketing effectiveness crisis surfaced: events consume 60% budget but generate only 7% pipeline; ABM strategy unclear; awareness/demand gap for Enterprise deals identified. Vendilux event intelligence tool (Gartner CFO conference, May) being signed by end April—key enabler for event season strategy refresh.
+Q1 close at risk: targeting $1.1–1.2M contingent on Sutter deal (KPMG partner channel); ~2 weeks remaining. Rohit's 90-day targets ($2M/mo Workday, 30% AE self-gen) remain aggressive against 38% pipeline coverage. Mid-funnel conversion gap (11% vs 32% target) persists as operational risk.
 
-Workday partnership strategy locked: $5M annual target, 20 SQOs/month at $100K each, 2-party play (Auditoria + SI) preferred over 3-way. Data Consolidation V0 complete; Vince Barrett awaiting 1–2 WD document updates. Claude/Prometheus project now in Auditoria team account (akash@auditoria alias active); Brennan Melser looped in.
+Marketing dysfunction surfacing: VP Marketing (Nick Ezzo) challenged pipeline coverage model (14.7% close rate); Akash corrected. Events still generating only 7% pipeline despite 60% budget. Vendilux event intelligence tool signing deadline April (enables May season strategy). Head of Marketing recruitment ongoing.
 
-Post-marketing brainstorm: Akash calibration call with Rohit scheduled. Head of Marketing recruitment needed (Xiaolei flagged). Mid-funnel conversion remains critical risk (11% vs 32% target). Xiaolei reports renewed energy post-org changes despite systemic pressure.
+Claude/Prometheus project moved to Auditoria team account (akash@auditoria active); Brennan Melser and Vince Barrett looped in on Workday consolidation. Roi (RevOps) validating data models. Strategic pattern: AI-driven transparency proving more efficient than manual coordination—emerging core capability for portfolio company.
+
+Apr 21 signals: Apex Assembly attendees Nick Ezzo and Mike Lynch generated open pipeline opportunities — list available in Salesforce. Equals SQO Weekly Pulse and New & Expansion Forecast dashboards delivered: Q1 FY27 $1.6M target, 15% win rate required, 6.8x pipeline coverage needed — structural miss risk confirmed. Channel ops V2 still overdue (Day 6 carry-over, original deadline Apr 18).
 <!-- END-AUTO-MEMORY -->

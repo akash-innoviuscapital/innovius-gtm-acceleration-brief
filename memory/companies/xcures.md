@@ -3,13 +3,5 @@
 _No context recorded yet. Submit judgment via the dashboard Context Layer._
 
 <!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
-Sales infrastructure delivering results: territory tool, commercial targets, account systematization live. Pipeline definitions finalized (Dave Scaglione approved); contract phase redesign proposed to collapse 30-45+ day bottleneck with CS workshop series. CRO search progressing (Cole Group: 112 → 9 → 3 qualified; Grandy/Scott advancing to workshops). CRM migration decision (Salesforce/Monaco/Lightfield) pending from Bryan.
-
-RevOps tech stack overhaul accelerating. Eric Svetcov offering full partnership on rebuild with explicit no-pushback on starting fresh. Akash committed to tech audit assessment and proposals next week, deepening advisory engagement.
-
-Capacity constraints persistent: Dave Scaglione (Dir Customer Innovation) drowning in technical calls (10:1 rep ratio); SME cohort model proposed (Dave on tech, Marker on legal) to distribute load. Mika/Bryan availability constrained during CRO onboarding and systems transition.
-
-SPV capital allocation window closes Friday (Apr 12); LP demand strong, additional allocation secured, partners submitting desired amounts.
-
-Blocker: CISO approval required for company-wide Claude AI rollout (PHI data/API access).
+Sales infrastructure operationalized: territory tool live, Dave Scaglione-approved pipeline definitions, CRO search advancing (3 qualified to workshops). Contract redesign proposed to compress 30-45+ day bottleneck. RevOps rebuild accelerating with Eric Svetcov's full partnership; Akash's tech audit assessment Day 7 overdue—credibility risk. CRM decision (Salesforce/Monaco/Lightfield) pending from Bryan; HubSpot expired Apr 10. SPV at 12.25–13.25M targeting 15M; needs commitments from Emanuel, Nikhil, North Island. Critical blocker: investment announcement requires date and 6-week lead time for pre-summer window—round unfinished. Capacity constraints persistent: Dave drowning in technical calls (10:1 rep ratio). CISO approval required for Claude rollout.
 <!-- END-AUTO-MEMORY -->

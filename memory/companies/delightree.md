@@ -11,13 +11,13 @@
 **Signal Interpretation Rules:** Prioritize signals around Doug's recruitment success and sales system design. Discount the Q1 miss in isolation — it is a test of repeatability, not a demand signal. The expansion motion gap is structural and requires active attention.
 
 <!-- AUTO-MEMORY: updated weekly by company-memory-agent.py -->
-**Rolling Memory — Delightree**
+Delightree executes multi-month GTM transformation ($645K closed, 5.5M run rate). Critical path: account scoring phases 1–2 (due Apr 22–24, Akash) gates territory planning, 90-day call migration, and sales build; Griffin capacity constrained. Sales process locked (5 qualified-to-win stages, funnel split); Budburst joint call completed Apr 16; asset mapping with Brian Michael underway (Erin done, awaiting Brian review).
 
-Delightree sustains multi-week infrastructure and GTM transformation driven by Q1 momentum ($645K closed; 5.5M run rate targeting). Tushar (CEO), Doug (Sales), Griffin (RevOps), and Xiaolei coordinate vendor integration and sales process redesign; Akash orchestrates end-to-end sequencing.
+Head of Marketing final rounds: Jono advancing; Claire, Joel, Clark progressed. Hiring acceleration: two AE Manager roles live; GTM Engineer/Revenue Systems hire launched. Vendors live: HubSpot integrated, Sybill X22 configured and deployed.
 
-**Active workstreams:** (1) Eight data packs phased (packs 3, 5 live; pack 8 pending YTD pacing axis fix; packs 1a, 1b, 2, 6, 7 rolling). Sales process refresh completed with TOFU/MOFU/BOFU stage mapping for Equals BI; awaiting Griffin execution bandwidth. (2) Head of Marketing search active: Claire (Akash's network) and Jono Andrews in final rounds; interview panel locked (Recruiter Screen → Tushar Focus Round → Resume walkthrough → Challenge/Presentation → Team). (3) Vendor decisions progressing: Sybill ($16K/22 seats, migration waived) ready for signatures; Frandata FDD scraping complete, validation underway; Equals consolidation targeting $140K savings.
+Interim first-line sales leader: Zach Greenberg (Disney) decision pending with Doug/Tushar (Brian Michael availability window closing). Cross-portfolio mentorship active: Brady Lenahan (CloudZero SVP), Dave Osborne (Auditoria CRO), Dave Barden (Sewer AI) with Tushar. Ignacio confirmed intro for announcement + AI product launch.
 
-**Current blocker:** Bookings target definition (new vs. expansion breakdown; quarterization) halts revenue execution. Griffin capacity constrained; execution time-blocking critical.
+Apr 21 signals: Ignacio Ramirez (SwitchPR) sent scope of work for PR campaign covering AI product launch and Series A announcement — Tushar engaged. Ignacio was previously confirmed for intro; now actively scoping. Announcement date still unset despite PR vendor now engaged.
 
-**Pattern:** Vendor go/no-go and data infrastructure decisions gate sales infrastructure velocity. High-touch cross-functional coordination (RevOps, Sales, GTM, Finance) is load-bearing.
+Blockers: Account scoring due Apr 22–24 (Akash gates territory planning + 90-day call migration + sales build); announcement date unset (6-week pre-summer window; PR vendor now engaged).
 <!-- END-AUTO-MEMORY -->

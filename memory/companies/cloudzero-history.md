@@ -1,3 +1,13 @@
+## 2026-04-19 — Week of 2026-04-13
+- 90 major commitments delivered in 30 days; GTM comms drafted for Justin's review ahead of external send
+- Customer risk flagged: Coinbase (3-4 of 10 features operational), Uber scorecard update pending from Mike
+- FAM hiring: 9 candidates ($120K–$220K OTE) with HM screens 4/16; comp ceiling provided to Christa; Brenna to remind on OKRs
+- Beth Boisvert (CPO intro candidate) confirmed availability (Apr 14 3pm, Apr 16 4pm, Apr 17 8:30am, Apr 20 1pm ET); coordinating with Scott Castle
+- Completed intros: Dan Carducci to Scott (VP PMM role); reviewed Matt Katz trade/routing matrix for field deployment
+- Restored CloudZero ingest endpoint; pricing proposal reviewed and GTM guidance provided
+
+---
+
 ## 2026-04-12 — Week of 2026-04-06
 - Scott integrated Matt Katz feedback into pricing playbooks: T20-T22 FAM tier concession trades, AE routing matrix, and floor analysis with ROI calculator review
 - Azure Resource Connector launched (CloudNine delivery), enabling resource property/tag visibility and faster incident response—closes Azure/AWS parity gap

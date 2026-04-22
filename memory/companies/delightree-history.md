@@ -1,3 +1,13 @@
+## 2026-04-19 — Week of 2026-04-13
+- Sales Process locked: 5-stage qualified-to-win with split funnel for TOF visibility; asset mapping exercise underway with Budburst (Erin/PMM reviewing templates)
+- Execution plan locked: Account scoring phases 1-2 due Apr 22-24 (Akash leading), Sybill config live Apr 17, 90-day call migration Apr 24
+- Marketing hiring active with 3 finalists (Jono, Claire, Tyler Robbi); Jono interview tomorrow with deck; Tushar emphasizing specificity on business impact
+- First-line leader hiring final stages; 2 candidates approved by Brian/Akash; Doug and Tushar deciding on Zach as interim 3-month leader
+- Investment announcement at risk—pre-summer window closing; Stu checking rebrand timeline with Zipsy; Ignacio (GTM partner) confirmed intro to Tushar for funding + AI launch
+- HubSpot and Sybill X22 live with discounts; RevOps candidate (Matthew) interviewing; two AE Manager listings (Commercial/Mid Market) ready for promotion
+
+---
+
 ## 2026-04-12 — Week of 2026-04-06
 - Head of Marketing search: Interview panel designed (Recruiter → Tushar Focus → Resume → Challenge/Presentation → Team); Claire (Akash's network) interested but requires clear agenda/goals before committing; reconsidering Jono Andrews.
 - Sales process refresh completed: Equals TOFU/MOFU/BOFU mapping finalized; data pack 8 pending system enablement (YTD pacing axis correction needed); Griffin needs scheduled time blocks for execution phase.

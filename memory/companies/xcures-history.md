@@ -1,3 +1,11 @@
+## 2026-04-19 — Week of 2026-04-13
+- Investment announcement timing at risk: X-Cures funding round unfinished; requires 6-week lead time to publication but will miss pre-summer window without committed announcement date (Dave Scaglione, slack 4/16).
+- Accepted Dave Scaglione's Lucidchart 'Sales Tools' collaboration invitation (shared 4/13, accepted 4/17).
+- Completed urgent SPV allocation sizing submission to Justin Moore (deadline 4/12, Tier 1 board/LP-visible capital decision).
+- Floated Chief of Staff opportunity with Mika; submitted Maggie Wu profile as candidate.
+
+---
+
 ## 2026-04-12 — Week of 2026-04-06
 - **RevOps overhaul**: Eric Svetcov committed to full partnership on tech stack rebuild (willing to start from scratch); Akash delivering tech audit assessment next week.
 - **SPV allocation**: LP demand strong; additional slots secured; deadline April 12 (submitted to Justin).
